@@ -5,6 +5,7 @@ function AddProject(props) {
   const titleRef = useRef('');
   const openingTextRef = useRef('');
   const releaseDateRef = useRef('');
+  const slugRef = useRef('');
 
   function submitHandler(event) {
     event.preventDefault();
@@ -15,6 +16,7 @@ function AddProject(props) {
       title: titleRef.current.value,
       openingText: openingTextRef.current.value,
       releaseDate: releaseDateRef.current.value,
+      slug: slugRef.current.value,
     };
 
     props.onAddProject(project);
@@ -34,7 +36,11 @@ function AddProject(props) {
         <label htmlFor='date'>Release Date</label>
         <input type='text' id='date' ref={releaseDateRef} />
       </div>
-      <button>Add Project</button>
+      <div>
+        <label htmlFor='slug'>Slug</label>
+        <input type='text' id='slug' ref={slugRef} />
+      </div>
+      <button>Ajouter le Projet</button>
     </form>
   );
 }

@@ -18,6 +18,8 @@ function Projects() {
       }
 
       const data = await response.json();
+      console.log(data);
+
 
       const loadedProjects = [];
 
@@ -27,10 +29,9 @@ function Projects() {
             title: data[key].title,
             openingText: data[key].openingText,
             releaseDate: data[key].releaseDate,
+            slug: data[key].slug
         })
       }
-
-
       setProjects(loadedProjects);
     } catch (error) {
       setError(error.message);
@@ -42,6 +43,8 @@ function Projects() {
     fetchProjectsHandler();
   }, [fetchProjectsHandler]);
 
+//Add project
+
   async function addProjectHandler(project) {
     const response = await fetch('https://graph-and-co-react-default-rtdb.europe-west1.firebasedatabase.app/movies.json', {
         method: 'POST',
@@ -51,8 +54,27 @@ function Projects() {
         }
     });
     const data = await  response.json();
-    console.log(data);
+    fetchProjectsHandler()
   }
+
+  //Remove project
+//   const deleteProjectHandler = async (id) => {
+//     try {
+//       await fetch(
+//         `https://graph-and-co-react-default-rtdb.europe-west1.firebasedatabase.app/movies/${id}.json`,
+//         {
+//           method: 'DELETE'
+//         }
+//       );
+ 
+//       setProjects(projects.filter((project) => project.id !== id));
+//     } catch (error) {
+//       console.log(error);
+//     }
+ 
+//     fetchProjectsHandler();
+//   };
+
 
   let content = <p>Found no movies.</p>;
 
@@ -74,7 +96,7 @@ function Projects() {
         <AddProject onAddProject={addProjectHandler} />
       </section>
       <section>
-        <button onClick={fetchProjectsHandler}>Fetch Movies</button>
+        {/* <button onClick={fetchProjectsHandler}>Fetch Movies</button> */}
       </section>
       <section>{content}</section>
     </React.Fragment>

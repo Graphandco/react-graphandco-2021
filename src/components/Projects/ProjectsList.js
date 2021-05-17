@@ -9,8 +9,9 @@ const ProjectsList = (props) => {
         <ProjectSingle
           key={project.id}
           title={project.title}
-          releaseDate={project.release}
+          releaseDate={project.releaseDate}
           openingText={project.openingText}
+          slug={project.slug}
         />
       ))}
     </ul>
