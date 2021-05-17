@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Layout from './components/Layout/Layout';
 import UserProfile from './components/Profile/UserProfile';
+import Projects from './components/Projects/Projects';
 import AuthPage from './pages/AuthPage';
 import HomePage from './pages/HomePage';
 import TestAuth from './pages/TestAuth';
@@ -29,6 +30,9 @@ function App() {
         <Route path='/test-auth'>
           {authCtx.isLoggedIn && <TestAuth />}
           {!authCtx.isLoggedIn && <Redirect to='/auth' />}
+        </Route>
+        <Route path='/projects'>
+          <Projects />
         </Route>
         <Route path='*'>
           <Redirect to='/' />

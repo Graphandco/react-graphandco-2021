@@ -21,6 +21,9 @@ const MainNavigation = () => {
       </Link>
       <nav>
         <ul>
+            <li>
+              <Link to='/projects'>Projets</Link>
+            </li>
           {!isLoggedIn && (
             <li>
               <Link to='/auth'>Login</Link>
