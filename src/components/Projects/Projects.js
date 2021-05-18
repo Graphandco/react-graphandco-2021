@@ -58,7 +58,7 @@ function Projects() {
   }
 
   //Remove project
-//   const deleteProjectHandler = async (id) => {
+//   const deleteHandler = async (id) => {
 //     try {
 //       await fetch(
 //         `https://graph-and-co-react-default-rtdb.europe-west1.firebasedatabase.app/movies/${id}.json`,

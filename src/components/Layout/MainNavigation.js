@@ -24,6 +24,9 @@ const MainNavigation = () => {
             <li>
               <Link to='/projects'>Projets</Link>
             </li>
+            <li>
+              <Link to='/tips'>Tips</Link>
+            </li>
           {!isLoggedIn && (
             <li>
               <Link to='/auth'>Login</Link>
