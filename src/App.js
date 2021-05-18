@@ -1,24 +1,42 @@
+//CORE
 import { useContext } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import Layout from './components/Layout/Layout';
-import UserProfile from './components/Profile/UserProfile';
-import Projects from './components/Projects/Projects';
+//STYLES
+import './styles/base.scss'
+import { GlobalStyles, lightTheme, darkTheme } from './styles/globalStyles';
+import { ThemeProvider } from 'styled-components';
+import { useDarkMode } from './styles/useDarkMode';
+import { ToggleDarkMode } from './components/ToggleDarkMode';
+
+//PAGES
 import AuthPage from './pages/AuthPage';
 import HomePage from './pages/HomePage';
 import TestAuth from './pages/TestAuth';
+import Tips from './pages/Tips';
+
+//COMPONENTS
+import Layout from './components/Layout/Layout';
+import UserProfile from './components/Profile/UserProfile';
+import Projects from './components/Projects/Projects';
 import { AddTip } from "./components/Tips/AddTip";
 import { EditTip } from "./components/Tips/EditTip";
+
+//CONTEXT
 import AuthContext from './store/auth-context';
-import { GlobalProvider } from "./components/Context/GlobalState";
-import Tips from './pages/Tips';
+import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
   const authCtx = useContext(AuthContext);
+  const [ theme, toggleTheme ] = useDarkMode()
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   return (
     <GlobalProvider>
+      <ThemeProvider theme={themeMode}>
+      <GlobalStyles />
       <Layout>
+        <ToggleDarkMode theme={theme} toggleTheme={toggleTheme} />
         <Switch>
           <Route path='/' exact>
             <HomePage />
@@ -49,6 +67,7 @@ function App() {
           </Route>
         </Switch>
       </Layout>
+      </ThemeProvider>
     </GlobalProvider>
   );
 }

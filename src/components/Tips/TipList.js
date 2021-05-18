@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { GlobalContext } from "../Context/GlobalState";
+import { GlobalContext } from "../../context/GlobalState";
 import { Link } from "react-router-dom";
 
 
@@ -25,7 +25,9 @@ export const TipList = () => {
       ) : (
           <h4 className="text-center">No tips</h4>
         )}
-        <Link className="btn btn-primary" to="/add">Add Tip</Link>
+        <button className=" btn btn-primary">
+            <Link to="/add">Ajouter un Tip</Link>
+        </button>
     </div>
   )
 }
