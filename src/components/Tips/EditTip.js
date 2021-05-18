@@ -7,7 +7,8 @@ export const EditTip = (props) => {
     const { editUser, users } = useContext(GlobalContext);
     const [selectedUser, setSelectedUser] = useState({
       id: '',
-      name: ''
+      name: '',
+      slug: ''
     })
     const history = useHistory();
     const currentUserId = props.match.params.id;
@@ -18,7 +19,11 @@ export const EditTip = (props) => {
       setSelectedUser(selectedUser);
     }, [currentUserId, users])
   
-    const onChange = (e) => {
+    const onNameChange = (e) => {
+      setSelectedUser({ ...selectedUser, [e.target.name]: e.target.value })
+    }
+  
+    const onSlugChange = (e) => {
       setSelectedUser({ ...selectedUser, [e.target.name]: e.target.value })
     }
   
@@ -31,7 +36,8 @@ export const EditTip = (props) => {
     return (
       <form onSubmit={onSubmit}>
           <label>Name</label>
-          <input type="text" value={selectedUser.name} onChange={onChange} name="name" placeholder="Enter user" required></input>
+          <input type="text" value={selectedUser.name} onChange={onNameChange} name="name" placeholder="Enter user" required></input>
+          <input type="text" value={selectedUser.slug} onChange={onSlugChange} name="slug" placeholder="Enter slug" required></input>
         <button type="submit">Edit Name</button>
         <Link to="/tips" className="btn btn-danger ml-2">Cancel</Link>
       </form>

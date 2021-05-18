@@ -13,7 +13,8 @@ export const TipList = () => {
         <>
           {users.map(user => (
             <div key={user.id}>
-              <strong>{user.name}</strong>
+              <strong>{user.name}</strong><br></br>
+              <strong>{user.slug}</strong>
               <div className="ml-auto">
                 <Link to={`/edit/${user.id}`} color="warning" className="btn btn-warning mr-1">Edit</Link>
                 <button onClick={() => removeUser(user.id)} color="danger">Delete</button>
