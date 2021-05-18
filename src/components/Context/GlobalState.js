@@ -3,7 +3,7 @@ import AppReducer from './AppReducer';
 
 // Initial State
 const initialState = {
-  users: []
+  tips: []
 }
 
 // Create Context
@@ -14,33 +14,33 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   // Actions
-  const removeUser = (id) => {
+  const removeTip = (id) => {
     dispatch({
-      type: 'REMOVE_USER',
+      type: 'REMOVE_TIP',
       payload: id
     })
   }
 
-  const addUser = (user) => {
+  const addTip = (tip) => {
     dispatch({
-      type: 'ADD_USER',
-      payload: user
+      type: 'ADD_TIP',
+      payload: tip
     })
   }
 
-  const editUser = (user) => {
+  const editTip = (tip) => {
     dispatch({
-      type: 'EDIT_USER',
-      payload: user
+      type: 'EDIT_TIP',
+      payload: tip
     })
   }
 
   return (
     <GlobalContext.Provider value={{
-      users: state.users,
-      removeUser,
-      addUser,
-      editUser
+      tips: state.tips,
+      removeTip,
+      addTip,
+      editTip
     }}>
       {children}
     </GlobalContext.Provider>

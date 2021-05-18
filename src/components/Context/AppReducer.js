@@ -1,29 +1,29 @@
 export default (state, action) => {
     switch (action.type) {
-      case 'REMOVE_USER':
+      case 'REMOVE_TIP':
         return {
           ...state,
-          users: state.users.filter(user => {
-            return user.id !== action.payload;
+          tips: state.tips.filter(tip => {
+            return tip.id !== action.payload;
           })
         }
-      case 'ADD_USER':
+      case 'ADD_TIP':
         return {
           ...state,
-          users: [action.payload, ...state.users]
+          tips: [action.payload, ...state.tips]
         }
-      case 'EDIT_USER':
-        const updateUser = action.payload;
+      case 'EDIT_TIP':
+        const updateTip = action.payload;
   
-        const updateUsers = state.users.map(user => {
-          if (user.id === updateUser.id) {
-            return updateUser;
+        const updateTips = state.tips.map(tip => {
+          if (tip.id === updateTip.id) {
+            return updateTip;
           }
-          return user;
+          return tip;
         })
         return {
           ...state,
-          users: updateUsers
+          tips: updateTips
         }
   
       default:

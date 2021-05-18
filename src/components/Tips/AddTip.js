@@ -6,17 +6,17 @@ import { v4 as uuid } from "uuid";
 export const AddTip = () => {
     const [name, setName] = useState('');
     const [slug, setSlug] = useState('');
-    const { addUser } = useContext(GlobalContext);
+    const { addTip } = useContext(GlobalContext);
     const history = useHistory();
   
     const onSubmit = (e) => {
       e.preventDefault();
-      const newUser = {
+      const newTip = {
         id: uuid(),
         name,
         slug
       }
-      addUser(newUser);
+      addTip(newTip);
       history.push("/tips");
     }
   

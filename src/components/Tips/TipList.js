@@ -5,25 +5,25 @@ import { Link } from "react-router-dom";
 
 export const TipList = () => {
 
-  const { users, removeUser } = useContext(GlobalContext);
+  const { tips, removeTip } = useContext(GlobalContext);
 
   return (
     <div>
-      {users.length > 0 ? (
+      {tips.length > 0 ? (
         <>
-          {users.map(user => (
-            <div key={user.id}>
-              <strong>{user.name}</strong><br></br>
-              <strong>{user.slug}</strong>
+          {tips.map(tip => (
+            <div key={tip.id}>
+              <strong>{tip.name}</strong><br></br>
+              <strong>{tip.slug}</strong>
               <div className="ml-auto">
-                <Link to={`/edit/${user.id}`} color="warning" className="btn btn-warning mr-1">Edit</Link>
-                <button onClick={() => removeUser(user.id)} color="danger">Delete</button>
+                <Link to={`/edit/${tip.id}`} color="warning" className="btn btn-warning mr-1">Edit</Link>
+                <button onClick={() => removeTip(tip.id)} color="danger">Delete</button>
               </div>
             </div>
           ))}
         </>
       ) : (
-          <h4 className="text-center">No Users</h4>
+          <h4 className="text-center">No tips</h4>
         )}
         <Link className="btn btn-primary" to="/add">Add Tip</Link>
     </div>
