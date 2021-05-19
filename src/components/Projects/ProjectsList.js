@@ -4,6 +4,7 @@ import ProjectSingle from './ProjectSingle';
 
 const ProjectsList = (props) => {
   return (
+    <div className="project-list container">
     <ul>
       {props.projects.map((project) => (
         <ProjectSingle
@@ -15,6 +16,7 @@ const ProjectsList = (props) => {
         />
       ))}
     </ul>
+    </div>
   );
 };
 

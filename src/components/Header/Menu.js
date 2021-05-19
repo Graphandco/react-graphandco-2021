@@ -2,9 +2,8 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import AuthContext from '../../store/auth-context';
-import classes from './MainNavigation.module.css';
 
-const MainNavigation = () => {
+const Menu = () => {
   const authCtx = useContext(AuthContext);
 
   const isLoggedIn = authCtx.isLoggedIn;
@@ -15,9 +14,9 @@ const MainNavigation = () => {
   };
 
   return (
-    <header className={classes.header}>
-      <Link to='/'>
-        <div className={classes.logo}>Graph and Co</div>
+    <>
+      <Link to='/' className="site-logo">
+        Graph and Co
       </Link>
       <nav>
         <ul>
@@ -49,8 +48,8 @@ const MainNavigation = () => {
           )}
         </ul>
       </nav>
-    </header>
+    </>
   );
 };
 
-export default MainNavigation;
+export default Menu;

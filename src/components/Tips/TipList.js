@@ -8,7 +8,7 @@ export const TipList = () => {
   const { tips, removeTip } = useContext(GlobalContext);
 
   return (
-    <div>
+    <div className="container">
       {tips.length > 0 ? (
         <>
           {tips.map(tip => (

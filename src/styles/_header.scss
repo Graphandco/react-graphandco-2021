@@ -1,0 +1,16 @@
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    nav {
+        margin-left: auto;
+        margin-right: 2rem;
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+    }
+}

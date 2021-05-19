@@ -28,6 +28,7 @@ export const AddTip = () => {
     }
   
     return (
+      <div className="tip-submit container">
       <form onSubmit={onSubmit}>
           <label>Name</label>
           <input type="text" value={name} onChange={onNameChange} name="name" placeholder="Enter user" required></input>
@@ -35,5 +36,6 @@ export const AddTip = () => {
         <button type="submit">Submit</button>
         <Link to="/tips" >Cancel</Link>
       </form>
+      </div>
     )
 }

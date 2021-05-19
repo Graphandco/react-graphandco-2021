@@ -23,6 +23,7 @@ function AddProject(props) {
   }
 
   return (
+    <div className="addproject container">
     <form onSubmit={submitHandler}>
       <div>
         <label htmlFor='title'>Title</label>
@@ -42,6 +43,7 @@ function AddProject(props) {
       </div>
       <button>Ajouter le Projet</button>
     </form>
+    </div>
   );
 }
 

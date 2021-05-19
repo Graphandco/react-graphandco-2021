@@ -25,7 +25,7 @@ const ProjectSingle = (props) => {
     <li>
       <h2>{props.title}</h2>
       <p>{props.openingText}</p>
-      <h3>{props.releaseDate}</h3>
+      <p>{props.releaseDate}</p>
       <p>{props.slug}</p>
       <form onSubmit={deleteHandler}>
       <button>Supprimer le Projet</button>
