@@ -3,23 +3,6 @@ import React from 'react';
 
 const ProjectSingle = (props) => {
 
-  const id={props}
-
-  const deleteHandler = async (id) => {
-    try {
-      await fetch(
-        `https://graph-and-co-react-default-rtdb.europe-west1.firebasedatabase.app/movies/${id}.json`,
-        {
-          method: 'DELETE'
-        }
-      );
- 
-    } catch (error) {
-      console.log(error);
-    }
- 
-  };
-
 
   return (
     <li>
@@ -27,9 +10,7 @@ const ProjectSingle = (props) => {
       <p>{props.openingText}</p>
       <p>{props.releaseDate}</p>
       <p>{props.slug}</p>
-      <form onSubmit={deleteHandler}>
-      <button>Supprimer le Projet</button>
-    </form>
+
     </li>
   );
 };

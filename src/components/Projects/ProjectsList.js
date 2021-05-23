@@ -13,6 +13,7 @@ const ProjectsList = (props) => {
           releaseDate={project.releaseDate}
           openingText={project.openingText}
           slug={project.slug}
+          id={project.id}
         />
       ))}
     </ul>

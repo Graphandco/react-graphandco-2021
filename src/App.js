@@ -36,6 +36,7 @@ function App() {
          <ThemeProvider theme={themeMode}>
             <GlobalStyles />
             <Header theme={theme} toggleTheme={toggleTheme} />
+               <main>
                <Switch>
                   <Route path="/" exact>
                      <HomePage />
@@ -65,6 +66,7 @@ function App() {
                      <Redirect to="/" />
                   </Route>
                </Switch>
+               </main>
             <Footer />
          </ThemeProvider>
       </GlobalProvider>

@@ -1,7 +1,71 @@
+import { useRef, useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
+
 const StartingPageContent = () => {
+   const h1Ref = useRef(null)
+   const sectionRef = useRef(null)
+   
+   // useEffect(() => {
+   //    gsap.from(h1Ref.current, {
+   //       x: 500,
+   //       scrollTrigger: {
+   //          trigger: sectionRef.current,
+   //          scrub: true
+   //       }
+   //    })
+   // }, [h1Ref])
+   
+   // useEffect(() => {
+   //    gsap.to(h1Ref.current, {
+   //       x: 500,
+   //       scrollTrigger: {
+   //          trigger: sectionRef.current,
+   //          start: 'top bottom-=100',
+   //          end: 'bottom bottom+=400',
+   //          scrub: true,
+   //          markers: true
+   //       }
+   //    })
+   // }, [h1Ref])
+   
+   // useEffect(() => {
+   //    gsap.from(h1Ref.current, {
+   //       x: -100,
+   //       opacity: 0,
+   //       duration: 1,
+   //       scrollTrigger: {
+   //          trigger: sectionRef.current,
+   //          start: 'top bottom-=100',
+   //          end: 'bottom bottom+=400',
+   //          //scrub: true,
+   //          markers: true
+   //       }
+   //    })
+   // }, [h1Ref])
+   
+   useEffect(() => {
+      gsap.from(".sample p", {
+         x: -100,
+         opacity: 0,
+         duration: 1,
+         stagger: .5,
+         scrollTrigger: {
+            trigger: ".sample p",
+            start: 'top bottom-=100',
+            end: 'bottom bottom+=400',
+            //scrub: true,
+            //markers: true
+         }
+      })
+   }, [h1Ref])
+   
    return (
-      <div className="sample">
-         <h1>Header 1</h1>
+      <div ref={sectionRef} className="sample">
+         <h1 ref={h1Ref}>Header 1</h1>
          <p>
             Lorem ipsum <em>emphasised text</em> dolor sit amet,{" "}
             <strong>strong text</strong> consectetur adipisicing elit,{" "}
