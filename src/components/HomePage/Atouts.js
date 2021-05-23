@@ -33,11 +33,10 @@ const Atouts = () => {
          ease: 'none',
          scale: 0,
          delay: 1,
-         start: 'top bottom-=100',
          stagger: .5,
          scrollTrigger: {
+            start: 'top bottom-=100',
             trigger: sectionRef.current,
-            markers: true
          }
       })
    }, [sectionRef])

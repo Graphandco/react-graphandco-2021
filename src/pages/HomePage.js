@@ -10,8 +10,8 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <Atouts />
       <Presentation />
+      <Atouts />
       <StartingPageContent />
       {authCtx.isLoggedIn && (
           <span>Hello</span>
