@@ -32,18 +32,6 @@ const Menu = () => {
       },
    ]
 
-   const navLinksLogged = [
-
-      {
-         name: "Profile",
-         link: "/profile"
-      },
-      {
-         name: "Test",
-         link: "/test-auth"
-      },
-   ]
-
    const navLinksUnlogged = [
       {
          name: "Login",
@@ -85,11 +73,6 @@ const Menu = () => {
                {navLinks.map(navLink => (
                   <NavLink key={navLink.link} to={navLink.link} exact>{navLink.name}</NavLink>
                ))}
-               {isLoggedIn && (
-                  navLinksLogged.map(navLink => (
-                     <NavLink key={navLink.link} to={navLink.link} exact>{navLink.name}</NavLink>
-                  ))
-               )}
                {!isLoggedIn && (
                   navLinksUnlogged.map(navLink => (
                      <NavLink key={navLink.link} to={navLink.link} exact>{navLink.name}</NavLink>

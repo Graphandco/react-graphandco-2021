@@ -11,13 +11,11 @@ import "./styles/style.scss";
 //PAGES
 import AuthPage from "./pages/AuthPage";
 import HomePage from "./pages/HomePage";
-import TestAuth from "./pages/TestAuth";
 import Tips from "./pages/Tips";
 import Contact from "./pages/Contact";
 
 //COMPONENTS
 import Header from "./components/Header/Header";
-import UserProfile from "./components/Profile/UserProfile";
 import { AddTip } from "./components/Tips/AddTip";
 import { EditTip } from "./components/Tips/EditTip";
 import Realisations from "./pages/Realisations";
@@ -47,14 +45,6 @@ function App() {
                         <AuthPage />
                      </Route>
                   )}
-                  <Route path="/profile">
-                     {authCtx.isLoggedIn && <UserProfile />}
-                     {!authCtx.isLoggedIn && <Redirect to="/auth" />}
-                  </Route>
-                  <Route path="/test-auth">
-                     {authCtx.isLoggedIn && <TestAuth />}
-                     {!authCtx.isLoggedIn && <Redirect to="/auth" />}
-                  </Route>
                   <Route path="/tips">
                      <Tips />
                   </Route>
