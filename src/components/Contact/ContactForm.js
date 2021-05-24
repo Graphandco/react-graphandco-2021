@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import * as emailjs from "emailjs-com";
 
 const SERVICE_ID = "service_zfif42a";
