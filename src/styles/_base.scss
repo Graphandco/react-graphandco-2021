@@ -21,3 +21,10 @@
 .sample {
     @include container;
 }
+
+//breakpoints :(767, 1024)
+
+$breakpoints: (
+   small: 767px,
+   medium: 1024px
+)

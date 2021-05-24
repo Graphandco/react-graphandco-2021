@@ -37,6 +37,7 @@ const Presentation = () => {
       gsap.from(imgRef.current, {
          x: '100%',
          opacity: 0,
+         scale: 1.5,
          duration: 2,
          ease: "Power4.easeOut",
          scrollTrigger: {
@@ -99,8 +100,8 @@ const Presentation = () => {
                <button className="btn btn-primary">Voir nos offres</button>
             </p>
          </div>
-         <div ref={imgRef} className="presentation-hero">
-            <img src="/img/presentation.jpg" alt="Présentation"/>
+         <div className="presentation-hero">
+            <img ref={imgRef} src="/img/presentation.jpg" alt="Présentation"/>
          </div>
       </section>
    );

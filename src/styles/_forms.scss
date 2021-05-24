@@ -1,4 +1,4 @@
-.admin-form {
+.admin-form, .contact-form {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
@@ -12,9 +12,19 @@
                 display: block;
                 margin-bottom: 5px;
             }
-            input {
+            input, textarea {
                 width: 100%;
                 padding: 10px 15px;
+                outline: none;
+                border: none;
+                background-color: hsl(39deg 42% 65% / 10%);
+                color: var(--text-color);
+
+                &:focus {
+                    outline: none;
+                    border: none;
+                    background-color: hsl(39deg 42% 65% / 40%);
+                }
             }
         }
     }

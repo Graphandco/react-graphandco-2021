@@ -1,0 +1,12 @@
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 2rem;
+
+    .error {
+        color: #e93b3b;
+        font-style: italic;
+        font-size: 1rem;
+    }
+}

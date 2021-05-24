@@ -37,8 +37,9 @@ export const GlobalStyles = createGlobalStyle`
       flex-direction: column;
    }
    main {
-      //padding-top: 70px;  
+      padding-top: 70px;  
       background-color: var(--primary-300);
+      flex-grow: 1;
    }
    p {
       line-height: 1.4rem;
@@ -65,6 +66,10 @@ export const GlobalStyles = createGlobalStyle`
    }
    .btn:hover, .btn:focus {
       background-position: 100% 0;
+   }
+   .btn-small {
+      padding: .3rem 1rem;
+      font-size: .9rem;
    }
    .btn-primary {
       background-image: linear-gradient(to left, #9e752b, #ccb283);

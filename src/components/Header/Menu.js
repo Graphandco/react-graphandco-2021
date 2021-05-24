@@ -19,12 +19,16 @@ const Menu = () => {
          link: "/"
       },
       {
-         name: "Projets",
-         link: "/projects"
+         name: "Realisations",
+         link: "/realisations"
       },
       {
          name: "Tips",
          link: "/tips"
+      },
+      {
+         name: "Contact",
+         link: "/contact"
       },
    ]
 
