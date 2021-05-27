@@ -1,113 +1,102 @@
 import React, { useState } from "react";
 import * as emailjs from "emailjs-com";
 
+import { Formik, Form, yupToFormErrors } from "formik";
+import * as Yup from "yup";
+import TextField from "./TextField";
+import Checkbox from "./Checkbox"
+import Button from "./Button"
+
 const SERVICE_ID = "service_zfif42a";
 const TEMPLATE_ID = "template_w7r6zhj";
 const USER_ID = "user_0u115ugzQWZ0sPRaOzsiy";
 
 const ContactForm = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [object, setObject] = useState("");
-    const [message, setMessage] = useState("");
-    const [nameMissing, setNameMissing] = useState(false);
-    const [emailMissing, setEmailMissing] = useState(false);
-    const [messageMissing, setMessageMissing] = useState(false);
+   const [values, setValues] = useState({});
 
-    const nameHandler = (e) => {
-        setName(e.target.value)
-        setNameMissing(false)
-    }
+   function handleForm() {
 
-    const emailHandler = (e) => {
-        setEmail(e.target.value)
-        setEmailMissing(false)
-    }
+      const {name, email, object, message} = values
 
-    const messageHandler = (e) => {
-        setMessage(e.target.value)
-        setMessageMissing(false)
-    }
+      const data = {
+         name,
+         email,
+         object,
+         message,
+      };
 
-    function handleForm(e) {
-        !name && setNameMissing(true);
-        !email && setEmailMissing(true);
-        !name && setMessageMissing(true);
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, data, USER_ID).then(
+         function (response) {
+            console.log(response.status, response.text);
+            setValues({})
+         },
+         function (err) {
+            console.log(err);
+         }
+      );
+   }
 
-        e.preventDefault();
-        const data = {
-        name,
-        email,
-        object,
-        message,
-        };
+   const INITIAL_FORM_STATE = {
+      name: "",
+      email: "",
+      object: "",
+      message:"",
+      rgpd: false
+   };
 
-        if (name && email && message) {
-            emailjs.send(SERVICE_ID, TEMPLATE_ID, data, USER_ID).then(
-                function (response) {
-                    console.log(response.status, response.text);
-                    setName("");
-                    setEmail("");
-                    setObject("");
-                    setMessage("");
-                    },
-                    function (err) {
-                        console.log(err);
-                }
-            );
-        }
-
-    }
+   const FORM_VALIDATION = Yup.object().shape({
+      name: Yup.string()
+      .required('Merci de renseigner votre nom'),
+      email: Yup.string()
+      .email('Merci de renseigner un email valide')
+      .required('Merci de renseigner votre email'),
+      object: Yup.string(),
+      message: Yup.string()
+      .required('Merci de renseigner votre message'),
+      rgpd: Yup.boolean()
+      .oneOf([true], "Merci d'accepter les termes de la politique de confidentialité")
+      .required("Merci d'accepter les termes de la politique de confidentialité"),
+   });
 
    return (
       <div className="contact-wrapper">
          <div className="contact-form">
-            <form onSubmit={handleForm}>
-               <div className="form-body">
-                  <div className="form-item">
-                     <label>Nom *</label>
-                     {nameMissing && <div className="error">Merci de renseigner votre nom</div>}
-                     <input
-                        type="text"
-                        id="name"
-                        value={name}
-                        onChange={nameHandler}
-                     />
-                  </div>
-                  <div className="form-item">
-                     <label>Email *</label>
-                    {emailMissing && <div className="error">Merci de renseigner votre email</div>}
-                     <input
-                        type="email"
-                        id="name"
-                        value={email}
-                        onChange={emailHandler}
-                     />
-                  </div>
-                  <div className="form-item">
-                     <label>Objet</label>
-                     <input
-                        type="text"
-                        id="name"
-                        value={object}
-                        onChange={(event) => setObject(event.target.value)}
-                     />
-                  </div>
-                  <label>Message *</label>
-                  {messageMissing && <div className="error">Merci de renseigner votre message</div>}
-                  <div className="form-item">
-                     <textarea
-                        rows="5"
-                        id="name"
-                        value={message}
-                        onChange={messageHandler}
-                     />
-                  </div>
-               </div>
-               <button className="btn btn-primary" type="submit">
-                  Envoyer
-               </button>
-            </form>
+            <Formik
+               initialValues={{
+                  ...INITIAL_FORM_STATE,
+               }}
+               validationSchema={FORM_VALIDATION}
+               onSubmit={(values) => {
+                  setValues(values);
+                  handleForm()
+               }}
+            >
+               <Form>
+                  <TextField
+                     name="name"
+                     label="Nom"
+                  />
+                  <TextField
+                     name="email"
+                     label="Email"
+                  />
+                  <TextField
+                     name="object"
+                     label="Objet"
+                  />
+                  <TextField
+                     name="message"
+                     label="Message"
+                     multiline
+                     rowsMax={6}
+                  />
+                  <Checkbox
+                     name="rgpd"
+                     label="J'accepte les termes de la politique de confidentialité"
+                  />
+                  <Button/>
+               </Form>
+            </Formik>
          </div>
          <img src="/img/contact.svg" alt="Contact" />
       </div>
