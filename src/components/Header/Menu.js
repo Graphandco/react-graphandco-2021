@@ -1,84 +1,78 @@
-import { useContext, useRef, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import AuthContext from "../../store/auth-context";
-import { gsap } from 'gsap'
+import { useContext, useRef, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import { gsap } from 'gsap';
+import { useAuth } from '../../hooks/';
 
 const Menu = () => {
-   const authCtx = useContext(AuthContext);
+  const logoutHandler = () => {
+    // optional: redirect the user
+  };
 
-   const isLoggedIn = authCtx.isLoggedIn;
+  const { isAuthed } = useAuth();
 
-   const logoutHandler = () => {
-      authCtx.logout();
-      // optional: redirect the user
-   };
+  const navLinks = [
+    {
+      name: 'Accueil',
+      link: '/',
+    },
+    {
+      name: 'Réalisations',
+      link: '/realisations',
+    },
+    {
+      name: 'Contact',
+      link: '/contact',
+    },
+  ];
 
-   const navLinks = [
-      {
-         name: "Accueil",
-         link: "/"
-      },
-      {
-         name: "Realisations",
-         link: "/realisations"
-      },
-      {
-         name: "Tips",
-         link: "/tips"
-      },
-      {
-         name: "Contact",
-         link: "/contact"
-      },
-   ]
+  const navLinksUnauthed = [
+    {
+      name: "S'identifier",
+      link: '/login',
+    },
+  ];
 
-   const navLinksUnlogged = [
-      {
-         name: "Login",
-         link: "/auth"
-      }
-   ]
+  const navRef = useRef(null);
+  // useEffect(() => {
+  //    gsap.from(navRef.current, {
+  //       duration: .5,
+  //       autoAlpha: 0,
+  //       ease: 'none',
+  //       y: -30,
+  //       delay: 1
+  //    })
+  // }, [navRef])
 
-   const navRef = useRef(null)
-   // useEffect(() => {
-   //    gsap.from(navRef.current, {
-   //       duration: .5,
-   //       autoAlpha: 0,
-   //       ease: 'none',
-   //       y: -30,
-   //       delay: 1
-   //    })
-   // }, [navRef])
+  useEffect(() => {
+    gsap.from('nav a', {
+      duration: 0.5,
+      autoAlpha: 0,
+      ease: 'none',
+      y: -30,
+      delay: 1,
+      stagger: 0.2,
+    });
+  }, [navRef]);
 
-   useEffect(() => {
-      gsap.from("nav a", {
-         duration: .5,
-         autoAlpha: 0,
-         ease: 'none',
-         y: -30,
-         delay: 1,
-         stagger: .2,
-      })
-   }, [navRef])
+  return (
+    <>
+      <NavLink to="/" className="site-logo">
+        Graph and Co
+      </NavLink>
+      <nav ref={navRef}>
+        {navLinks.map((navLink) => (
+          <NavLink key={navLink.link} to={navLink.link} exact>
+            {navLink.name}
+          </NavLink>
+        ))}
+        {!isAuthed &&
+          navLinksUnauthed.map((navLinkUnauthed) => (
+            <NavLink key={navLinkUnauthed.link} to={navLinkUnauthed.link} exact>
+              {navLinkUnauthed.name}
+            </NavLink>
+          ))}
 
-
-   return (
-      <>
-         <NavLink to="/"  className="site-logo">
-            Graph and Co
-         </NavLink>
-         <nav ref={navRef} className={
-               isLoggedIn ? "logged" : "unlogged"
-            }>
-               {navLinks.map(navLink => (
-                  <NavLink key={navLink.link} to={navLink.link} exact>{navLink.name}</NavLink>
-               ))}
-               {!isLoggedIn && (
-                  navLinksUnlogged.map(navLink => (
-                     <NavLink key={navLink.link} to={navLink.link} exact>{navLink.name}</NavLink>
-                  ))
-               )}
-                  {/* <NavLink to="/" exact>Accueil</NavLink>
+        {/* <NavLink to="/" exact>Accueil</NavLink>
                   <NavLink to="/projects">Projets</NavLink>
                   <NavLink to="/tips">Tips</NavLink>
                {!isLoggedIn && (
@@ -90,14 +84,9 @@ const Menu = () => {
                {isLoggedIn && (
                      <NavLink to="/test-auth">Test</NavLink>
                )} */}
-               {isLoggedIn && (
-                  <span onClick={logoutHandler}>
-                     Logout
-                  </span>
-               )}
-         </nav>
-      </>
-   );
+      </nav>
+    </>
+  );
 };
 
 export default Menu;

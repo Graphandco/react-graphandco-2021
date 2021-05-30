@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import firebase from "../../utils/firebaseConfig";
+import {firebase} from "../Auth/firebase";
 import UpdateDelete from "./UpdateDelete";
 
 const Read = () => {

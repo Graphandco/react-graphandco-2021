@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import firebase from "../../utils/firebaseConfig";
+import {firebase} from "../Auth/firebase";
 
 const UpdateDelete = ({ item }) => {
    const [update, setUpdate] = useState(false);

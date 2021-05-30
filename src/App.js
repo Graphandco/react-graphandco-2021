@@ -1,70 +1,72 @@
 //CORE
-import { useContext } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { useContext } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 //STYLES
-import { GlobalStyles, lightTheme, darkTheme } from "./styles/globalStyles";
-import { ThemeProvider } from "styled-components";
-import { useDarkMode } from "./styles/useDarkMode";
-import "./styles/style.scss";
+import { GlobalStyles, lightTheme, darkTheme } from './styles/globalStyles';
+import { ThemeProvider } from 'styled-components';
+import { useDarkMode } from './styles/useDarkMode';
+import './styles/style.scss';
 
 //PAGES
-import AuthPage from "./pages/AuthPage";
-import HomePage from "./pages/HomePage";
-import Tips from "./pages/Tips";
-import Contact from "./pages/Contact";
+import HomePage from './pages/HomePage';
+import Tips from './pages/Tips';
+import Contact from './pages/Contact';
 
 //COMPONENTS
-import Header from "./components/Header/Header";
-import { AddTip } from "./components/Tips/AddTip";
-import { EditTip } from "./components/Tips/EditTip";
-import Realisations from "./pages/Realisations";
-import { Footer } from "./components/Footer";
+import Header from './components/Header/Header';
+import { AddTip } from './components/Tips/AddTip';
+import { EditTip } from './components/Tips/EditTip';
+//import Realisations from "./pages/Realisations";
+import { Footer } from './components/Footer';
+import { Login } from './components/Login';
+// import { Signup } from './components/Signup/Signup';
 
 //CONTEXT
-import AuthContext from "./store/auth-context";
-import { GlobalProvider } from "./context/GlobalState";
+import { GlobalProvider } from './context/GlobalState';
+import { useAuth } from './hooks';
+import { Projets } from './components/Projets';
 
 function App() {
-   const authCtx = useContext(AuthContext);
-   const [theme, toggleTheme] = useDarkMode();
-   const themeMode = theme === "light" ? lightTheme : darkTheme;
+  const [theme, toggleTheme] = useDarkMode();
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+  const { isAuthed } = useAuth();
 
-   return (
-      <GlobalProvider>
-         <ThemeProvider theme={themeMode}>
-            <GlobalStyles />
-            <Header theme={theme} toggleTheme={toggleTheme} />
-               <main>
-               <Switch>
-                  <Route path="/" exact>
-                     <HomePage />
-                  </Route>
-                  {!authCtx.isLoggedIn && (
-                     <Route path="/auth">
-                        <AuthPage />
-                     </Route>
-                  )}
-                  <Route path="/tips">
-                     <Tips />
-                  </Route>
-                  <Route path="/contact">
-                     <Contact />
-                  </Route>
-                  <Route path="/realisations">
+  return (
+    <GlobalProvider>
+      <ThemeProvider theme={themeMode}>
+        <GlobalStyles />
+        <Header theme={theme} toggleTheme={toggleTheme} />
+        <main>
+          <Projets />
+          {/* <Signup /> */}
+          <Switch>
+            <Route path="/" exact>
+              <HomePage />
+            </Route>
+            <Route path="/tips">
+              <Tips />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            {/* <Route path="/realisations">
                      <Realisations />
-                  </Route>
-                  <Route path="/add" component={AddTip} />
-                  <Route path="/edit/:id" component={EditTip} />
-                  <Route path="*">
-                     <Redirect to="/" />
-                  </Route>
-               </Switch>
-               </main>
-            <Footer />
-         </ThemeProvider>
-      </GlobalProvider>
-   );
+                  </Route> */}
+            <Route path="/add" component={AddTip} />
+            <Route path="/edit/:id" component={EditTip} />
+            <Route path="*">
+              <Redirect to="/" />
+            </Route>
+          </Switch>
+        </main>
+        <Footer />
+      </ThemeProvider>
+    </GlobalProvider>
+  );
 }
 
 export default App;
