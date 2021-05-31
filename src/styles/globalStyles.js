@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
@@ -11,7 +11,12 @@ export const GlobalStyles = createGlobalStyle`
       --primary-500: ${({ theme }) => theme.primary500};
       --primary-400: ${({ theme }) => theme.primary400};
       --primary-300: ${({ theme }) => theme.primary300};
-      --secondary-400: hsl(39, 42%, 65%, 1);
+      --secondary-600: ${({ theme }) => theme.secondary600};
+      --secondary-500: ${({ theme }) => theme.secondary500};
+      --secondary-400: ${({ theme }) => theme.secondary400};
+      --secondary-300: ${({ theme }) => theme.secondary300};
+      --secondary-200: ${({ theme }) => theme.secondary200};
+      --secondary-100: ${({ theme }) => theme.secondary100};
       --primary: ${({ theme }) => theme.primary};
       --bg-color: ${({ theme }) => theme.bgColor};
       --text-color: ${({ theme }) => theme.text};
@@ -89,25 +94,37 @@ export const GlobalStyles = createGlobalStyle`
    `;
 
 export const lightTheme = {
-   primary800: "hsl(0, 0%, 70%, 1)",
-   primary700: "hsl(0, 0%, 75%, 1)",
-   primary600: "hsl(0, 0%, 80%, 1)",
-   primary500: "hsl(0, 0%, 85%, 1)",
-   primary400: "hsl(0, 0%, 90%, 1)",
-   primary300: "hsl(0, 0%, 95%, 1)",
-   bgColor: "#e8e8e8",
-   text: "#4b4b4c",
-   heroBG: "#fcd8bd",
+  primary800: 'hsl(0, 0%, 70%, 1)',
+  primary700: 'hsl(0, 0%, 75%, 1)',
+  primary600: 'hsl(0, 0%, 80%, 1)',
+  primary500: 'hsl(0, 0%, 85%, 1)',
+  primary400: 'hsl(0, 0%, 90%, 1)',
+  primary300: 'hsl(0, 0%, 95%, 1)',
+  secondary100: 'hsl(39, 42%, 90%, 1)',
+  secondary200: 'hsl(39, 42%, 75%, 1)',
+  secondary300: 'hsl(39, 42%, 60%, 1)',
+  secondary400: 'hsl(39, 42%, 45%, 1)',
+  secondary500: 'hsl(39, 42%, 30%, 1)',
+  secondary600: 'hsl(39, 42%, 15%, 1)',
+  bgColor: '#e8e8e8',
+  text: '#4b4b4c',
+  heroBG: '#fcd8bd',
 };
 
 export const darkTheme = {
-   primary800: "hsl(240, 8%, 0%, 1)",
-   primary700: "hsl(240, 8%, 0%, 1)",
-   primary600: "hsl(240, 8%, 5%, 1)",
-   primary500: "hsl(240, 8%, 10%, 1)",
-   primary400: "hsl(240, 8%, 15%, 1)",
-   primary300: "hsl(240, 8%, 20%, 1)",
-   bgColor: "hsl(240, 8%, 14%, 1)",
-   text: "#cecece",
-   heroBG: "#333958",
+  primary800: 'hsl(240, 8%, 0%, 1)',
+  primary700: 'hsl(240, 8%, 0%, 1)',
+  primary600: 'hsl(240, 8%, 5%, 1)',
+  primary500: 'hsl(240, 8%, 10%, 1)',
+  primary400: 'hsl(240, 8%, 15%, 1)',
+  primary300: 'hsl(240, 8%, 20%, 1)',
+  secondary100: 'hsl(39, 42%, 15%, 1)',
+  secondary200: 'hsl(39, 42%, 30%, 1)',
+  secondary300: 'hsl(39, 42%, 45%, 1)',
+  secondary400: 'hsl(39, 42%, 60%, 1)',
+  secondary500: 'hsl(39, 42%, 75%, 1)',
+  secondary600: 'hsl(39, 42%, 90%, 1)',
+  bgColor: 'hsl(240, 8%, 14%, 1)',
+  text: '#cecece',
+  heroBG: '#333958',
 };

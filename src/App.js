@@ -1,5 +1,4 @@
 //CORE
-import { useContext } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 //STYLES
@@ -24,13 +23,13 @@ import { Login } from './components/Login';
 
 //CONTEXT
 import { GlobalProvider } from './context/GlobalState';
-import { useAuth } from './hooks';
-import { Projets } from './components/Projets';
+// import { useAuth } from './hooks';
+import { Projects } from './components/Projets';
 
 function App() {
   const [theme, toggleTheme] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
-  const { isAuthed } = useAuth();
+  // const { isAuthed } = useAuth();
 
   return (
     <GlobalProvider>
@@ -38,7 +37,6 @@ function App() {
         <GlobalStyles />
         <Header theme={theme} toggleTheme={toggleTheme} />
         <main>
-          <Projets />
           {/* <Signup /> */}
           <Switch>
             <Route path="/" exact>
@@ -53,9 +51,9 @@ function App() {
             <Route path="/login">
               <Login />
             </Route>
-            {/* <Route path="/realisations">
-                     <Realisations />
-                  </Route> */}
+            <Route path="/realisations">
+              <Projects />
+            </Route>
             <Route path="/add" component={AddTip} />
             <Route path="/edit/:id" component={EditTip} />
             <Route path="*">

@@ -1,13 +1,9 @@
-import { useContext, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { useAuth } from '../../hooks/';
 
 const Menu = () => {
-  const logoutHandler = () => {
-    // optional: redirect the user
-  };
-
   const { isAuthed } = useAuth();
 
   const navLinks = [

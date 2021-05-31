@@ -1,1 +1,3 @@
-export * from './Projets';
+export * from './Projects';
+export * from './CreateProject';
+export * from './UpdateDeleteProject';
