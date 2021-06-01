@@ -25,12 +25,11 @@ header {
 }
 
 .header-wrapper {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
   max-width: 900px;
-
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
   nav {
     margin-left: auto;
     margin-right: 2rem;
