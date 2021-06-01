@@ -16,9 +16,11 @@ header {
     a {
       font-size: 0.9em;
     }
-    .toggletheme svg {
-      width: 22px;
-    }
+    // .user-login img,
+    // .toggletheme svg {
+    //   width: 22px;
+    //   height: 22px;
+    // }
   }
 }
 
@@ -27,6 +29,7 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  max-width: 900px;
 
   nav {
     margin-left: auto;
@@ -60,19 +63,15 @@ header {
       }
     }
   }
-  .toggletheme svg {
+  .controls {
     display: flex;
-    transition: all 0.5s linear;
-    cursor: pointer;
-    width: 30px;
-    height: auto;
-    stroke: var(--text-color);
+    align-items: center;
   }
-
   .user-login {
     display: flex;
     position: relative;
     cursor: pointer;
+    padding: 0 1vw;
     img {
       border-radius: 50%;
       background: white;
@@ -100,6 +99,17 @@ header {
           white-space: nowrap;
         }
       }
+    }
+  }
+  .toggletheme {
+    padding: 0 1vw;
+    svg {
+      display: flex;
+      transition: all 0.5s linear;
+      cursor: pointer;
+      width: 30px;
+      height: auto;
+      stroke: var(--text-color);
     }
   }
 }

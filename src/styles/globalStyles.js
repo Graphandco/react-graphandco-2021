@@ -11,13 +11,8 @@ export const GlobalStyles = createGlobalStyle`
       --primary-500: ${({ theme }) => theme.primary500};
       --primary-400: ${({ theme }) => theme.primary400};
       --primary-300: ${({ theme }) => theme.primary300};
-      --secondary-600: ${({ theme }) => theme.secondary600};
-      --secondary-500: ${({ theme }) => theme.secondary500};
-      --secondary-400: ${({ theme }) => theme.secondary400};
-      --secondary-300: ${({ theme }) => theme.secondary300};
-      --secondary-200: ${({ theme }) => theme.secondary200};
-      --secondary-100: ${({ theme }) => theme.secondary100};
       --primary: ${({ theme }) => theme.primary};
+      --secondary-400: ${({ theme }) => theme.secondary400};
       --bg-color: ${({ theme }) => theme.bgColor};
       --text-color: ${({ theme }) => theme.text};
       --hero-bg: ${({ theme }) => theme.heroBG};
@@ -32,6 +27,11 @@ export const GlobalStyles = createGlobalStyle`
    }
    h1, h2, h3, h4, h5 {
       font-family: var(--title-font);
+      line-height: 1;
+   }
+   h2 {
+      font-size: calc(2rem + 1vw);
+      text-transform: uppercase;
    }
    img {
       max-width: 100%;
@@ -42,9 +42,11 @@ export const GlobalStyles = createGlobalStyle`
       flex-direction: column;
    }
    main {
-      padding-top: 70px;  
       background-color: var(--primary-300);
       flex-grow: 1;
+   }
+   body:not(#home) main {
+      padding-top: 70px;
    }
    p {
       line-height: 1.4rem;
@@ -100,12 +102,7 @@ export const lightTheme = {
   primary500: 'hsl(0, 0%, 85%, 1)',
   primary400: 'hsl(0, 0%, 90%, 1)',
   primary300: 'hsl(0, 0%, 95%, 1)',
-  secondary100: 'hsl(39, 42%, 90%, 1)',
-  secondary200: 'hsl(39, 42%, 75%, 1)',
-  secondary300: 'hsl(39, 42%, 60%, 1)',
   secondary400: 'hsl(39, 42%, 45%, 1)',
-  secondary500: 'hsl(39, 42%, 30%, 1)',
-  secondary600: 'hsl(39, 42%, 15%, 1)',
   bgColor: '#e8e8e8',
   text: '#4b4b4c',
   heroBG: '#fcd8bd',
@@ -118,12 +115,7 @@ export const darkTheme = {
   primary500: 'hsl(240, 8%, 10%, 1)',
   primary400: 'hsl(240, 8%, 15%, 1)',
   primary300: 'hsl(240, 8%, 20%, 1)',
-  secondary100: 'hsl(39, 42%, 15%, 1)',
-  secondary200: 'hsl(39, 42%, 30%, 1)',
-  secondary300: 'hsl(39, 42%, 45%, 1)',
   secondary400: 'hsl(39, 42%, 60%, 1)',
-  secondary500: 'hsl(39, 42%, 75%, 1)',
-  secondary600: 'hsl(39, 42%, 90%, 1)',
   bgColor: 'hsl(240, 8%, 14%, 1)',
   text: '#cecece',
   heroBG: '#333958',

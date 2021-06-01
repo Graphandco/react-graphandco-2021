@@ -16,8 +16,10 @@ const Header = ({ theme, toggleTheme }) => {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-wrapper container">
         <Menu />
-        <User />
-        <ToggleDarkMode theme={theme} toggleTheme={toggleTheme} />
+        <div className="controls">
+          <User />
+          <ToggleDarkMode theme={theme} toggleTheme={toggleTheme} />
+        </div>
       </div>
     </header>
   );

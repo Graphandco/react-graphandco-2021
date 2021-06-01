@@ -1,30 +1,38 @@
+@use 'sass:map';
+
 @font-face {
-   font-family: "MostraNuova";
-   src: url("./fonts/mostranuova5.woff2") format("woff2"),
-      url("./fonts/mostranuova5.woff") format("woff");
+  font-family: 'MostraNuova';
+  src: url('./fonts/mostranuova5.woff2') format('woff2'),
+    url('./fonts/mostranuova5.woff') format('woff');
 }
 @font-face {
-   font-family: "MostraNuova2";
-   src: url("./fonts/mostranuova2.woff2") format("woff2"),
-      url("./fonts/mostranuova2.woff") format("woff");
+  font-family: 'MostraNuova2';
+  src: url('./fonts/mostranuova2.woff2') format('woff2'),
+    url('./fonts/mostranuova2.woff') format('woff');
 }
 
 @mixin container {
-   margin: 0 auto;
-   max-width: 1200px;
-   width: 100%;
-   padding: 0 2vw;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2vw;
 }
 .container {
-    @include container;
+  @include container;
 }
 .sample {
-    @include container;
+  @include container;
 }
 
-//breakpoints :(767, 1024)
-
 $breakpoints: (
-   small: 767px,
-   medium: 1024px
-)
+  mobile: 767px,
+  tablet: 1024px,
+);
+
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media (max-width: $size) {
+    @content;
+  }
+}
