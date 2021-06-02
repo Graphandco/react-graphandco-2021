@@ -1,10 +1,8 @@
-import React from 'react'
-import Main from '../components/Realisations/Main'
+import React from 'react';
+import Main from '../components/Realisations/Main';
 
 const Realisations = () => {
-    return (
-        <Main />
-    )
-}
+  return <Main />;
+};
 
-export default Realisations
+export default Realisations;

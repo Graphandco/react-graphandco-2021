@@ -17,8 +17,8 @@ const Header = ({ theme, toggleTheme }) => {
       <div className="header-wrapper container">
         <Menu />
         <div className="controls">
-          <User />
           <ToggleDarkMode theme={theme} toggleTheme={toggleTheme} />
+          <User />
         </div>
       </div>
     </header>

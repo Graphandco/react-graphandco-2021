@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Atouts = () => {
+export const Atouts = () => {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const imgRef = useRef(null);
@@ -56,17 +56,12 @@ const Atouts = () => {
         <div className="atouts-item">
           <FaLock />
           <div className="atouts-title">Sécurité</div>
-          <p>
-            Votre site est protégé, les données de vos visiteurs sont sécurisées
-          </p>
+          <p>Votre site est protégé, les données de vos visiteurs sont sécurisées</p>
         </div>
         <div className="atouts-item">
           <FaMobileAlt />
           <div className="atouts-title">Accessibilité</div>
-          <p>
-            Un site accessible et intuitif sur tous les types de supports et
-            tailles d'écrans
-          </p>
+          <p>Un site accessible et intuitif sur tous les types de supports et tailles d'écrans</p>
         </div>
       </div>
       <div className="atouts-hero">
@@ -76,5 +71,3 @@ const Atouts = () => {
     </section>
   );
 };
-
-export default Atouts;

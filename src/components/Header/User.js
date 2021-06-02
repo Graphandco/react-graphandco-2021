@@ -13,20 +13,21 @@ const User = () => {
 
   return (
     <div className="user-login" onClick={toggleHover}>
-      {isAuthed ? (
-        <Gravatar email={authUser.email} size={30} default="mp" />
-      ) : (
-        <Gravatar email="blahblah@blah.com" size={30} default="mp" />
-      )}
+      {isAuthed ? <Gravatar email={authUser.email} size={30} default="mp" /> : <Gravatar email="blahblah@blah.com" size={30} default="mp" />}
       <div className={`user-infos ${hovered ? 'show' : ''}`}>
-        <div className={`user-name ${isAuthed ? 'authed' : 'unauthed'}`}>
-          {isAuthed
-            ? `Connecté sous ${authUser.email}`
-            : "Vous n'êtes pas connecté"}
-        </div>
-        <div className={`user-connexion ${isAuthed ? 'authed' : 'unauthed'}`}>
-          {isAuthed ? 'Se déconnecter' : 'Se connecter'}
-        </div>
+        {isAuthed ? (
+          <>
+            <div className="user-name authed">
+              <span>Connecté sous</span> {authUser.email}
+            </div>
+            <div className="user-connexion authed">Se déconnecter</div>
+          </>
+        ) : (
+          <>
+            <div className="user-name unauthed">Vous n'êtes pas connecté</div>
+            <div className="user-connexion unauthed">Se connecter</div>
+          </>
+        )}
       </div>
     </div>
   );

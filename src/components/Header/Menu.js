@@ -1,32 +1,35 @@
 import { useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { gsap } from 'gsap';
-import { useAuth } from '../../hooks/';
+import { useMediaQuery } from '@material-ui/core';
+import { AiOutlineHome } from 'react-icons/ai';
+import { BiMailSend, BiPhotoAlbum } from 'react-icons/bi';
+//import { useAuth } from '../../hooks/';
 
 const Menu = () => {
-  const { isAuthed } = useAuth();
+  //const { isAuthed } = useAuth();
 
-  const navLinks = [
-    {
-      name: 'Accueil',
-      link: '/',
-    },
-    {
-      name: 'Réalisations',
-      link: '/realisations',
-    },
-    {
-      name: 'Contact',
-      link: '/contact',
-    },
-  ];
+  // const navLinks = [
+  //   {
+  //     name: 'Accueil',
+  //     link: '/',
+  //   },
+  //   {
+  //     name: 'Réalisations',
+  //     link: '/realisations',
+  //   },
+  //   {
+  //     name: 'Contact',
+  //     link: '/contact',
+  //   },
+  // ];
 
-  const navLinksUnauthed = [
-    {
-      name: "S'identifier",
-      link: '/login',
-    },
-  ];
+  // const navLinksUnauthed = [
+  //   {
+  //     name: "S'identifier",
+  //     link: '/login',
+  //   },
+  // ];
 
   const navRef = useRef(null);
   // useEffect(() => {
@@ -38,6 +41,16 @@ const Menu = () => {
   //       delay: 1
   //    })
   // }, [navRef])
+
+  // useEffect(() => {
+  //   function handleResize() {
+  //     console.log('resized to: ', window.innerWidth, 'x', window.innerHeight);
+  //     window.innerWidth <= 767 ? setResponsive(true) : setResponsive(false);
+  //   }
+  //   // window.addEventListener('resize', handleResize);
+  // }, []);
+
+  const isResponsive = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
     gsap.from('nav a', {
@@ -56,17 +69,26 @@ const Menu = () => {
         Graph and Co
       </NavLink>
       <nav ref={navRef}>
-        {navLinks.map((navLink) => (
+        <NavLink to="/" exact>
+          {isResponsive ? <AiOutlineHome /> : 'Accueil'}
+        </NavLink>
+        <NavLink to="/realisations" exact>
+          {isResponsive ? <BiPhotoAlbum /> : 'Réalisation'}
+        </NavLink>
+        <NavLink to="/contact" exact>
+          {isResponsive ? <BiMailSend /> : 'Contact'}
+        </NavLink>
+        {/* {navLinks.map((navLink) => (
           <NavLink key={navLink.link} to={navLink.link} exact>
             {navLink.name}
           </NavLink>
-        ))}
-        {!isAuthed &&
+        ))} */}
+        {/* {!isAuthed &&
           navLinksUnauthed.map((navLinkUnauthed) => (
             <NavLink key={navLinkUnauthed.link} to={navLinkUnauthed.link} exact>
               {navLinkUnauthed.name}
             </NavLink>
-          ))}
+          ))} */}
 
         {/* <NavLink to="/" exact>Accueil</NavLink>
                   <NavLink to="/projects">Projets</NavLink>
