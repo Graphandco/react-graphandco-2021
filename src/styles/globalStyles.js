@@ -46,7 +46,12 @@ export const GlobalStyles = createGlobalStyle`
       flex-grow: 1;
    }
    body:not(#home) main {
-      padding-top: 70px;
+      padding-top: 100px;
+   }
+   section, footer {
+      position: relative;
+      z-index: 1;
+      background-color: var(--primary-400);
    }
    p {
       line-height: 1.4rem;
@@ -61,6 +66,7 @@ export const GlobalStyles = createGlobalStyle`
       border: none;
       border-radius: 3px;
       transition: all .2s linear;
+      text-transform: uppercase;
    }
    .btn, .btn a {
       font-size: 1.1rem;

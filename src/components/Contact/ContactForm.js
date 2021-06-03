@@ -45,19 +45,12 @@ const ContactForm = () => {
 
   const FORM_VALIDATION = Yup.object().shape({
     name: Yup.string().required('Merci de renseigner votre nom'),
-    email: Yup.string()
-      .email('Merci de renseigner un email valide')
-      .required('Merci de renseigner votre email'),
+    email: Yup.string().email('Merci de renseigner un email valide').required('Merci de renseigner votre email'),
     object: Yup.string(),
     message: Yup.string().required('Merci de renseigner votre message'),
     rgpd: Yup.boolean()
-      .oneOf(
-        [true],
-        "Merci d'accepter les termes de la politique de confidentialité",
-      )
-      .required(
-        "Merci d'accepter les termes de la politique de confidentialité",
-      ),
+      .oneOf([true], "Merci d'accepter les termes de la politique de confidentialité")
+      .required("Merci d'accepter les termes de la politique de confidentialité"),
   });
 
   return (
@@ -74,14 +67,11 @@ const ContactForm = () => {
           }}
         >
           <Form>
-            <TextField name="name" label="Nom" />
-            <TextField name="email" label="Email" />
-            <TextField name="object" label="Objet" />
-            <TextField name="message" label="Message" multiline rowsMax={6} />
-            <Checkbox
-              name="rgpd"
-              label="J'accepte les termes de la politique de confidentialité"
-            />
+            <TextField name="name" label="Nom" className="form-field" />
+            <TextField name="email" label="Email" className="form-field" />
+            <TextField name="object" label="Objet" className="form-field" />
+            <TextField name="message" label="Message" multiline rowsMax={6} className="form-field" />
+            <Checkbox name="rgpd" label="J'accepte les termes de la politique de confidentialité" />
             <Button />
           </Form>
         </Formik>

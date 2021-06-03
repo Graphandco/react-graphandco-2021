@@ -11,6 +11,7 @@ import './styles/style.scss';
 import HomePage from './pages/HomePage';
 import Tips from './pages/Tips';
 import Contact from './pages/Contact';
+import Prestations from './pages/Prestations';
 
 //COMPONENTS
 import Header from './components/Header/Header';
@@ -53,6 +54,9 @@ function App() {
             </Route>
             <Route path="/realisations">
               <Projects />
+            </Route>
+            <Route path="/prestations">
+              <Prestations />
             </Route>
             <Route path="/add" component={AddTip} />
             <Route path="/edit/:id" component={EditTip} />

@@ -1,12 +1,58 @@
 .contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  gap: 2rem;
+  @include mq(mobile) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 
-    .error {
-        color: #e93b3b;
-        font-style: italic;
-        font-size: 1rem;
+  form {
+    margin-top: 3rem;
+    > div {
+      margin-bottom: 2rem;
     }
+    label {
+      color: var(--text-color) !important;
+      opacity: 0.5;
+      &.Mui-focused {
+        opacity: 1;
+        .form-field div {
+          &:before,
+          &:after {
+            opacity: 1;
+            border-width: 3px;
+          }
+        }
+      }
+    }
+    .form-field div {
+      &:before,
+      &:after {
+        border-bottom: 1px solid var(--text-color) !important;
+        opacity: 0.5;
+      }
+    }
+    input,
+    textarea {
+      color: var(--text-color) !important;
+    }
+    svg {
+      color: var(--text-color) !important;
+    }
+    button {
+      display: block;
+    }
+  }
+
+  img {
+    width: 400px;
+  }
+
+  .error {
+    color: #e93b3b;
+    font-style: italic;
+    font-size: 1rem;
+  }
 }

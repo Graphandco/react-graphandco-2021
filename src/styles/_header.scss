@@ -33,7 +33,7 @@ header {
     padding-right: 1vw;
     position: relative;
     @include mq(mobile) {
-      padding-right: 2vw;
+      padding: 5px 2vw 0 2vw;
     }
     &:after {
       content: '';
@@ -45,12 +45,15 @@ header {
       background-color: var(--secondary-400);
     }
     a {
+      position: relative;
+      padding: 0 1.5vw;
+      font-weight: normal;
+      @include mq(mobile) {
+        padding: 0 3vw;
+      }
       svg {
         font-size: 1.5rem;
       }
-      position: relative;
-      padding: 0 1vw;
-      font-weight: normal;
       &:after {
         content: '';
         background: var(--secondary-400);
@@ -117,7 +120,8 @@ header {
       display: flex;
       transition: all 0.5s linear;
       cursor: pointer;
-      width: 30px;
+      width: 25px;
+      height: 25px;
       height: auto;
       stroke: var(--text-color);
     }

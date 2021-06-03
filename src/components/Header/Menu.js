@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { useMediaQuery } from '@material-ui/core';
 import { AiOutlineHome } from 'react-icons/ai';
 import { BiMailSend, BiPhotoAlbum } from 'react-icons/bi';
+import { TiTags } from 'react-icons/ti';
 //import { useAuth } from '../../hooks/';
 
 const Menu = () => {
@@ -72,8 +73,11 @@ const Menu = () => {
         <NavLink to="/" exact>
           {isResponsive ? <AiOutlineHome /> : 'Accueil'}
         </NavLink>
+        <NavLink to="/prestations" exact>
+          {isResponsive ? <TiTags /> : 'Prestations'}
+        </NavLink>
         <NavLink to="/realisations" exact>
-          {isResponsive ? <BiPhotoAlbum /> : 'Réalisation'}
+          {isResponsive ? <BiPhotoAlbum /> : 'Réalisations'}
         </NavLink>
         <NavLink to="/contact" exact>
           {isResponsive ? <BiMailSend /> : 'Contact'}

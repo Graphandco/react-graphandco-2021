@@ -1,41 +1,42 @@
-.admin-form, .contact-form {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
+.admin-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 
-    .form-body {
-        margin: 2rem 0;
+  .form-body {
+    margin: 2rem 0;
 
-        .form-item {
-            margin: 1rem 0;
-            label {
-                display: block;
-                margin-bottom: 5px;
-            }
-            input, textarea {
-                width: 100%;
-                padding: 10px 15px;
-                outline: none;
-                border: none;
-                background-color: hsl(39deg 42% 65% / 10%);
-                color: var(--text-color);
+    .form-item {
+      margin: 1rem 0;
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px 15px;
+        outline: none;
+        border: none;
+        background-color: hsl(39deg 42% 65% / 10%);
+        color: var(--text-color);
 
-                &:focus {
-                    outline: none;
-                    border: none;
-                    background-color: hsl(39deg 42% 65% / 40%);
-                }
-            }
+        &:focus {
+          outline: none;
+          border: none;
+          background-color: hsl(39deg 42% 65% / 40%);
         }
+      }
     }
-    .btn {
-        margin-right: 20px;
-    }
+  }
+  .btn {
+    margin-right: 20px;
+  }
 }
 
 .single-tip-control {
-    .btn {
-        padding: 5px 8px;
-        font-size: 0.9rem;
-    }
+  .btn {
+    padding: 5px 8px;
+    font-size: 0.9rem;
+  }
 }
