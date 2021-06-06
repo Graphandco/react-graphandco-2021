@@ -66,9 +66,6 @@ const Menu = () => {
 
   return (
     <>
-      <NavLink to="/" className="site-logo">
-        Graph and Co
-      </NavLink>
       <nav ref={navRef}>
         <NavLink to="/" exact>
           {isResponsive ? <AiOutlineHome /> : 'Accueil'}
