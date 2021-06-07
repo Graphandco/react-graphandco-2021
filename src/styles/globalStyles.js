@@ -81,8 +81,11 @@ export const GlobalStyles = createGlobalStyle`
       background-position: 100% 0;
    }
    .btn-small {
-      padding: .3rem 1rem;
-      font-size: .9rem;
+      padding: .7rem 1rem;
+      font-size: .9rem; 
+      a {
+         font-size: .9rem;
+      }
    }
    .btn-primary {
       background-image: linear-gradient(to left, #9e752b, #ccb283);
