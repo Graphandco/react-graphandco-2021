@@ -1,7 +1,8 @@
 header {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   background-color: var(--primary-400);
   transition: 0.3s;
@@ -15,7 +16,7 @@ header {
     background-color: var(--primary-400);
     nav {
       background-color: var(--primary-400);
-      padding: 20px 1vw 20px 1vw;
+      padding: 20px 0;
     }
     a {
       font-size: 0.9em;
@@ -92,7 +93,7 @@ header {
 }
 
 nav {
-  padding: 10px 1vw 20px 1vw;
+  padding: 10px 0 20px 0;
   position: relative;
   display: flex;
   justify-content: flex-end;

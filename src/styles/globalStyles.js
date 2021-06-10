@@ -12,10 +12,13 @@ export const GlobalStyles = createGlobalStyle`
       --primary-400: ${({ theme }) => theme.primary400};
       --primary-300: ${({ theme }) => theme.primary300};
       --primary: ${({ theme }) => theme.primary};
+      --contrast: ${({ theme }) => theme.contrast};
       --secondary-400: ${({ theme }) => theme.secondary400};
       --bg-color: ${({ theme }) => theme.bgColor};
       --text-color: ${({ theme }) => theme.text};
       --hero-bg: ${({ theme }) => theme.heroBG};
+      --bg1: ${({ theme }) => theme.bg1};
+      --bg2: ${({ theme }) => theme.bg2};
       --main-font: 'MostraNuova', sans-serif;
       --title-font: 'MostraNuova2', sans-serif;
       margin: 0;
@@ -28,12 +31,13 @@ export const GlobalStyles = createGlobalStyle`
    h1, h2, h3, h4, h5 {
       font-family: var(--title-font);
       line-height: 1;
+      color: var(--contrast);
    }
    h2 {
       font-size: calc(2rem + 1vw);
       text-transform: uppercase;
    }
-   img {
+   img, svg {
       max-width: 100%;
    }
    .main-wrapper {
@@ -112,9 +116,12 @@ export const lightTheme = {
   primary400: 'hsl(0, 0%, 90%, 1)',
   primary300: 'hsl(0, 0%, 95%, 1)',
   secondary400: 'hsl(39, 42%, 45%, 1)',
+  contrast: '#000',
   bgColor: '#e8e8e8',
   text: '#4b4b4c',
   heroBG: '#fcd8bd',
+  bg1: '#c6e8ff ',
+  bg2: '#e6e6e6',
 };
 
 export const darkTheme = {
@@ -125,7 +132,10 @@ export const darkTheme = {
   primary400: 'hsl(240, 8%, 15%, 1)',
   primary300: 'hsl(240, 8%, 20%, 1)',
   secondary400: 'hsl(39, 42%, 60%, 1)',
+  contrast: '#FFF',
   bgColor: 'hsl(240, 8%, 14%, 1)',
   text: '#cecece',
   heroBG: '#333958',
+  bg1: '#092436 ',
+  bg2: '#141515 ',
 };

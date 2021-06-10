@@ -35,16 +35,18 @@ const Header = ({ theme, toggleTheme }) => {
   return (
     <>
       <header className={`header ${!visible ? 'scrolled' : ''} ${top ? 'top' : ''}  `} style={{ top: visible ? '0' : '-50px' }}>
-        <div className="header-top container">
-          <NavLink to="/" className="site-logo">
-            Graph and Co
-          </NavLink>
-          <div className="controls">
-            <ToggleDarkMode theme={theme} toggleTheme={toggleTheme} />
-            <User />
+        <div className="container">
+          <div className="header-top">
+            <NavLink to="/" className="site-logo">
+              Graph and Co
+            </NavLink>
+            <div className="controls">
+              <ToggleDarkMode theme={theme} toggleTheme={toggleTheme} />
+              <User />
+            </div>
           </div>
+          <Menu />
         </div>
-        <Menu />
       </header>
     </>
   );
