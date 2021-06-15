@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Button from '../Button';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,7 +92,7 @@ export const Presentation = () => {
           <p ref={addToRefs} key={index} dangerouslySetInnerHTML={{ __html: p }}></p>
         ))}
         <p ref={btnRef} className="cta">
-          <button className="btn btn-primary">Voir nos offres</button>
+          <Button title="Tout voir" />
         </p>
       </div>
       <div className="presentation-hero">

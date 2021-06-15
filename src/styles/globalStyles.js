@@ -14,6 +14,10 @@ export const GlobalStyles = createGlobalStyle`
       --primary: ${({ theme }) => theme.primary};
       --contrast: ${({ theme }) => theme.contrast};
       --secondary-400: ${({ theme }) => theme.secondary400};
+      --secondary-500: ${({ theme }) => theme.secondary500};
+      --secondary-600: ${({ theme }) => theme.secondary600};
+      --secondary-700: ${({ theme }) => theme.secondary700};
+      --secondary-800: ${({ theme }) => theme.secondary800};
       --bg-color: ${({ theme }) => theme.bgColor};
       --text-color: ${({ theme }) => theme.text};
       --hero-bg: ${({ theme }) => theme.heroBG};
@@ -28,84 +32,7 @@ export const GlobalStyles = createGlobalStyle`
       color: var(--text-color);
       transition: background-color .5s linear;
    }
-   h1, h2, h3, h4, h5 {
-      font-family: var(--title-font);
-      line-height: 1;
-      color: var(--contrast);
-   }
-   h2 {
-      font-size: calc(2rem + 1vw);
-      text-transform: uppercase;
-   }
-   img, svg {
-      max-width: 100%;
-   }
-   .main-wrapper {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-   }
-   main {
-      background-color: var(--primary-300);
-      flex-grow: 1;
-   }
-   body:not(#home) main {
-      padding-top: 100px;
-   }
-   section, footer {
-      position: relative;
-      z-index: 1;
-      background-color: var(--primary-400);
-   }
-   p {
-      line-height: 1.4rem;
-   }
-   .btn {
-      padding: 0.8rem 2rem;
-      background-size: 150%;
-      background-position: 0 0;
-      -webkit-appearance: none !important;
-      cursor: pointer;
-      outline: none;
-      border: none;
-      border-radius: 3px;
-      transition: all .2s linear;
-      text-transform: uppercase;
-   }
-   .btn, .btn a {
-      font-size: 1.1rem;
-      color: white;
-      font-weight: 400;
-      margin: 0;
-   }
-   .btn a {
-      padding: 0;
-   }
-   .btn:hover, .btn:focus {
-      background-position: 100% 0;
-   }
-   .btn-small {
-      padding: .7rem 1rem;
-      font-size: .9rem; 
-      a {
-         font-size: .9rem;
-      }
-   }
-   .btn-primary {
-      background-image: linear-gradient(to left, #9e752b, #ccb283);
-   }
-   .btn-success {
-      background-image: linear-gradient(to left, #52bd00, #2f6d00);
-   }
-   .btn-alert {
-      background-image: linear-gradient(to left, #ff0000, #8c0000);
-   }
-   a {
-      color: var(--text-color);
-      font-weight: bold;
-      text-decoration: none;
-      padding: 0;
-   }
+  
    `;
 
 export const lightTheme = {
@@ -115,7 +42,11 @@ export const lightTheme = {
   primary500: 'hsl(0, 0%, 85%, 1)',
   primary400: 'hsl(0, 0%, 90%, 1)',
   primary300: 'hsl(0, 0%, 95%, 1)',
-  secondary400: 'hsl(39, 42%, 45%, 1)',
+  secondary400: 'hsl(222, 60%, 50%, 1);',
+  secondary500: 'hsl(222, 60%, 60%, 1);',
+  secondary600: 'hsl(222, 60%, 70%, 1);',
+  secondary700: 'hsl(222, 60%, 80%, 1);',
+  secondary800: 'hsl(222, 60%, 90%, 1);',
   contrast: '#000',
   bgColor: '#e8e8e8',
   text: '#4b4b4c',
@@ -131,7 +62,11 @@ export const darkTheme = {
   primary500: 'hsl(240, 8%, 10%, 1)',
   primary400: 'hsl(240, 8%, 15%, 1)',
   primary300: 'hsl(240, 8%, 20%, 1)',
-  secondary400: 'hsl(39, 42%, 60%, 1)',
+  secondary400: 'hsl(222, 60%, 70%, 1);',
+  secondary500: 'hsl(222, 60%, 60%, 1);',
+  secondary600: 'hsl(222, 60%, 50%, 1);',
+  secondary700: 'hsl(222, 60%, 40%, 1);',
+  secondary800: 'hsl(222, 60%, 30%, 1);',
   contrast: '#FFF',
   bgColor: 'hsl(240, 8%, 14%, 1)',
   text: '#cecece',
