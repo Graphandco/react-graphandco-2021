@@ -111,10 +111,14 @@ header.mobile {
   left: 0;
   align-items: initial;
   padding: 50px;
-  transition: 0.3s ease-in-out;
+  clip-path: circle(1000px at 90% -10%);
+  -webkit-clip-path: circle(1000px at 90% -10%);
+  border-radius: 0;
+  transition: all 1s ease-out;
   &.close {
-    left: 100%;
-    transition: 0.3s ease-in-out;
+    border-radius: 50%;
+    clip-path: circle(00px at 90% -20%);
+    -webkit-clip-path: circle(00px at 90% -10%);
   }
 
   .header-wrapper {
