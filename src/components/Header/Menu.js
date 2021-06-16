@@ -2,28 +2,32 @@ import { useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { useMediaQuery } from '@material-ui/core';
-import { AiOutlineHome } from 'react-icons/ai';
-import { BiMailSend, BiPhotoAlbum } from 'react-icons/bi';
-import { TiTags } from 'react-icons/ti';
+// import { AiOutlineHome } from 'react-icons/ai';
+// import { BiMailSend, BiPhotoAlbum } from 'react-icons/bi';
+// import { TiTags } from 'react-icons/ti';
 //import { useAuth } from '../../hooks/';
 
-const Menu = () => {
+const Menu = ({ setIsOpen }) => {
   //const { isAuthed } = useAuth();
 
-  // const navLinks = [
-  //   {
-  //     name: 'Accueil',
-  //     link: '/',
-  //   },
-  //   {
-  //     name: 'Réalisations',
-  //     link: '/realisations',
-  //   },
-  //   {
-  //     name: 'Contact',
-  //     link: '/contact',
-  //   },
-  // ];
+  const navLinks = [
+    {
+      name: 'Accueil',
+      url: '/',
+    },
+    {
+      name: 'Prestations',
+      url: '/prestations',
+    },
+    {
+      name: 'Réalisations',
+      url: '/realisations',
+    },
+    {
+      name: 'Contact',
+      url: '/contact',
+    },
+  ];
 
   // const navLinksUnauthed = [
   //   {
@@ -51,7 +55,7 @@ const Menu = () => {
   //   // window.addEventListener('resize', handleResize);
   // }, []);
 
-  const isResponsive = useMediaQuery('(max-width: 768px)');
+  //const isResponsive = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
     gsap.from('nav a', {
@@ -67,23 +71,12 @@ const Menu = () => {
   return (
     <>
       <nav ref={navRef}>
-        <NavLink to="/" exact>
-          {isResponsive ? <AiOutlineHome /> : 'Accueil'}
-        </NavLink>
-        <NavLink to="/prestations" exact>
-          {isResponsive ? <TiTags /> : 'Prestations'}
-        </NavLink>
-        <NavLink to="/realisations" exact>
-          {isResponsive ? <BiPhotoAlbum /> : 'Réalisations'}
-        </NavLink>
-        <NavLink to="/contact" exact>
-          {isResponsive ? <BiMailSend /> : 'Contact'}
-        </NavLink>
-        {/* {navLinks.map((navLink) => (
-          <NavLink key={navLink.link} to={navLink.link} exact>
-            {navLink.name}
+        {navLinks.map((link, index) => (
+          <NavLink key={index} to={link.url} onClick={() => setIsOpen(false)} exact>
+            {link.name}
           </NavLink>
-        ))} */}
+        ))}
+
         {/* {!isAuthed &&
           navLinksUnauthed.map((navLinkUnauthed) => (
             <NavLink key={navLinkUnauthed.link} to={navLinkUnauthed.link} exact>
