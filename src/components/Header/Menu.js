@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { gsap } from 'gsap';
-import { useMediaQuery } from '@material-ui/core';
+//import { useMediaQuery } from '@material-ui/core';
 // import { AiOutlineHome } from 'react-icons/ai';
 // import { BiMailSend, BiPhotoAlbum } from 'react-icons/bi';
 // import { TiTags } from 'react-icons/ti';
