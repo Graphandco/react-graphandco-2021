@@ -3,7 +3,7 @@ import React from 'react';
 // import {ReactComponent as BlackTrees} from '../../assets/01-black-trees.svg'
 // import {ReactComponent as DarkPurpleTrees} from '../../assets/02-dark-purple-trees.svg'
 // import {ReactComponent as PurpleTrees} from '../../assets/03-purple-trees.svg'
-import { ReactComponent as HeroImg } from '../../assets/hero.svg';
+import { ReactComponent as HeroImg } from '../../assets/illustration.svg';
 import TextAnimation from '../animations/TextAnimation';
 
 export const Hero = () => {
