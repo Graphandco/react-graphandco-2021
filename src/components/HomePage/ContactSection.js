@@ -1,17 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Button from '../Button';
 
-export const Packs = () => {
+export const ContactSection = () => {
   return (
     // <section className="packs" style={{ backgroundImage: 'url(./img/bg-packs.jpg)' }}>
-    <section className="packs">
+    <section className="contact-section">
       <img src="/img/bg-packs.jpg" alt="" />
-      <div className="packs-content container">
+      <div className="contact-section-content container">
         <h2>Contactez-nous !</h2>
         <p>N'hésitez pas à nous contacter pour en savoir plus sur nos prestations !</p>
-        <button className="btn btn-primary">
-          <Link to="/contact"> Nous écrire</Link>
-        </button>
+        <Button title="Nous écrire" link="/contact" />
       </div>
     </section>
   );

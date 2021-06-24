@@ -37,7 +37,7 @@ export const ProjectItem = (props) => {
         <h2>{props.project.name}</h2>
         <p>{props.project.description}</p>
         <div className="project-item-footer">
-          <Button title="Voir le site" link={props.project.url} outside />
+          <Button small title="Voir le site" link={props.project.url} outside />
           {authUser && (
             <div className="project-item-manage">
               <FaTrash className="delete" onClick={deleteProject} />
@@ -66,9 +66,7 @@ export const ProjectItem = (props) => {
                   <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
                 </div>
               </div>
-              <button className="btn btn-primary" onClick={updateProject}>
-                Editer
-              </button>
+              <Button small title="Editer" onClick={updateProject} />
             </form>
           </div>
         )}

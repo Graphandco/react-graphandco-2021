@@ -5,7 +5,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import TextField from './TextField';
 import Checkbox from './Checkbox';
-import Button from './Button';
+import ButtonContact from './ButtonContact';
 
 const SERVICE_ID = 'service_zfif42a';
 const TEMPLATE_ID = 'template_w7r6zhj';
@@ -72,7 +72,7 @@ const ContactForm = () => {
             <TextField name="object" label="Objet" className="form-field" />
             <TextField name="message" label="Message" multiline rowsMax={6} className="form-field" />
             <Checkbox name="rgpd" label="J'accepte les termes de la politique de confidentialité" />
-            <Button />
+            <ButtonContact />
           </Form>
         </Formik>
       </div>

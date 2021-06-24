@@ -1,6 +1,6 @@
 import StartingPageContent from '../components/StartingPage/StartingPageContent';
 import PageAttributes from './PageAttributes';
-import { Atouts, Hero, Packs, Presentation } from '../components/HomePage';
+import { Atouts, Hero, ContactSection, Presentation } from '../components/HomePage';
 
 const HomePage = () => {
   return (
@@ -9,7 +9,7 @@ const HomePage = () => {
       <Hero />
       <Presentation />
       <Atouts />
-      <Packs />
+      <ContactSection />
       <StartingPageContent />
     </>
   );

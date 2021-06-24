@@ -16,6 +16,7 @@ export const Projects = () => {
         ...doc.data(),
       }));
       setprojects(data);
+      console.log(data);
     });
     return unsubscribe;
   }, []);

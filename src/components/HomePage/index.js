@@ -1,4 +1,4 @@
 export * from './Atouts';
 export * from './Hero';
-export * from './Packs';
+export * from './ContactSection';
 export * from './Presentation';

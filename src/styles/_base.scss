@@ -158,7 +158,8 @@ p {
   line-height: 1.4rem;
 }
 button {
-  @include btn-border-drawing(#58afd1, var(--contrast), 1px, bottom, right);
+  @include btn-border-drawing(var(--secondary-400), var(--contrast), 2px, bottom, right);
+  background-color: transparent;
 }
 a {
   color: var(--text-color);
