@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-const Button = ({ title, link, outside, small, onClick, mt, mr, mb, ml }) => {
+const Button = ({ title, link, outside, small, onClick, disabled, mt, mr, mb, ml }) => {
   return (
-    <Btn small={small} onClick={onClick} mt={mt} mr={mr} mb={mb} ml={ml}>
+    <Btn small={small} onClick={onClick} mt={mt} mr={mr} mb={mb} ml={ml} disabled={disabled}>
       {link ? (
         outside ? (
           <a href={link} target="blank">
@@ -37,13 +37,18 @@ const Btn = styled.button`
     outline: 2px solid var(--secondary-400);
   }
 
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
   span {
     display: block;
     padding: ${(props) => (props.small ? '0.5em 1.5em' : '1em 3em')};
-    color: var(--secondary-400);
+    color: var(--contrast);
   }
   &:hover span {
-    color: var(--contrast);
+    color: var(--secondary-400);
   }
 `;
 

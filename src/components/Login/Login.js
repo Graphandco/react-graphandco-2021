@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fb } from '../../services/';
+import Button from '../Button';
+import { useHistory } from 'react-router-dom';
 
 export const Login = () => {
   const [email, setEmail] = useState('');
@@ -7,6 +9,8 @@ export const Login = () => {
   const [valid, setValid] = useState(false);
   const [error, setError] = useState(false);
   const [validation, setValidation] = useState(false);
+
+  let history = useHistory();
 
   useEffect(() => {
     setValid(email && password);
@@ -23,16 +27,14 @@ export const Login = () => {
             setError('Erreur');
           }
           setValidation('Identifié !');
-          console.log(res.user);
+          history.push('/');
+          //console.log(res.user);
           // else if (res.user) {
           //   setError('Identifié !')
           // }
         })
         .catch((err) => {
-          if (
-            err.code === 'auth/invalid-email' ||
-            err.code === 'auth/wrong-password'
-          ) {
+          if (err.code === 'auth/invalid-email' || err.code === 'auth/wrong-password') {
             setError('Identifiants incorrects');
           } else if (err.code === 'auth/user-not-found') {
             setError("Aucun compte n'est lié à cette adresse email");
@@ -44,21 +46,12 @@ export const Login = () => {
   return (
     <div>
       Login Page
-      <input
-        type="email"
-        value={email}
-        placeholder="Email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        value={password}
-        placeholder="Mot de passe"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={login} disabled={!valid}>
+      <input type="email" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+      <input type="password" value={password} placeholder="Mot de passe" onChange={(e) => setPassword(e.target.value)} />
+      {/* <button onClick={login} disabled={!valid}>
         Login
-      </button>
+      </button> */}
+      <Button small title="Se connecter" onClick={login} disabled={!valid} />
       {error && <div>{error}</div>}
       {validation && <div>{validation}</div>}
     </div>
