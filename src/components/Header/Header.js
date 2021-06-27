@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ToggleDarkMode } from './ToggleDarkMode';
 import Menu from './Menu';
 import User from './User';
 //import { debounce } from '../../helpers';
 import { useMediaQuery } from '@material-ui/core';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
-import { RiMenu2Fill } from 'react-icons/ri';
 
 const Header = ({ theme, toggleTheme }) => {
   const isResponsive = useMediaQuery('(max-width: 768px)');
@@ -40,19 +38,25 @@ const Header = ({ theme, toggleTheme }) => {
 
   return (
     <>
-      <header className={`header ${isResponsive ? 'mobile' : ''} ${isOpen ? 'open' : 'close'}`}>
+      <header className={`header ${isResponsive ? 'mobile' : ''}`}>
         <div className="header-wrapper container">
-          <NavLink to="/" className="site-logo">
+          <Link to="/" className="site-logo">
             Graph and Co
-          </NavLink>
-          <Menu setIsOpen={setIsOpen} />
-          <ToggleDarkMode theme={theme} toggleTheme={toggleTheme} />
-          <User />
+          </Link>
+          <div className={`header-menu ${isOpen ? 'open' : 'close'}`}>
+            <Menu setIsOpen={setIsOpen} />
+            <div className="header-controls">
+              <ToggleDarkMode theme={theme} toggleTheme={toggleTheme} />
+              <User />
+            </div>
+          </div>
         </div>
       </header>
       {isResponsive && (
-        <div className="toggle-btn" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <AiOutlineCloseCircle /> : <RiMenu2Fill />}
+        <div className={`toggle-btn ${isOpen ? 'opened' : 'closed'}`} onClick={() => setIsOpen(!isOpen)}>
+          <div className="line line-1"></div>
+          <div className="line line-2"></div>
+          <div className="line line-3"></div>
         </div>
       )}
     </>
