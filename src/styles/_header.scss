@@ -16,21 +16,21 @@ header {
     @include mq(mobile) {
       position: fixed;
       top: 0;
-      left: 0;
+      left: 100%;
       width: 100%;
       height: 100%;
       flex-direction: column-reverse;
       justify-content: flex-end;
       padding-top: 120px;
-      @include bg2;
-      transition: 0.5s ease-out;
-      clip-path: circle(50px at 90% -20%);
-      -webkit-clip-path: circle(50px at 90% -10%);
+      backdrop-filter: blur(10px) saturate(100%) contrast(75%) brightness(60%);
+      //transition: 0.8s ease-out;
+      // clip-path: circle(50px at 90% -20%);
+      // -webkit-clip-path: circle(50px at 90% -10%);
     }
-    &.open {
-      clip-path: circle(1000px at 90% -10%);
-      -webkit-clip-path: circle(1000px at 90% -10%);
-    }
+    // &.open {
+    //   clip-path: circle(1200px at 90% -10%);
+    //   -webkit-clip-path: circle(1200px at 90% -10%);
+    // }
   }
   nav {
     position: relative;
@@ -50,6 +50,8 @@ header {
         margin: 15px 0;
         font-size: 2rem;
         padding: 0;
+        left: 300px;
+        opacity: 0;
       }
       svg {
         font-size: 1.5rem;
@@ -82,6 +84,7 @@ header {
     @include mq(mobile) {
       margin-left: auto;
       padding-right: 2rem;
+      opacity: 0;
     }
   }
   .user-login {
@@ -140,6 +143,7 @@ header {
   width: 30px;
   height: 20px;
   font-size: 2rem;
+  cursor: pointer;
   z-index: 9;
   .line {
     position: absolute;

@@ -24,18 +24,18 @@
   &-content {
     margin-bottom: 150px;
     position: relative;
-    &:before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      top: 20px;
-      height: 100%;
-      width: 100%;
-      background-color: #994272;
-      filter: blur(60px);
-      opacity: 0.15;
-      z-index: -1;
-    }
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   inset: 0;
+    //   top: 20px;
+    //   height: 100%;
+    //   width: 100%;
+    //   background-color: #994272;
+    //   filter: blur(60px);
+    //   opacity: 0.15;
+    //   z-index: -1;
+    // }
     @include mq(tablet) {
       margin-bottom: 0;
     }

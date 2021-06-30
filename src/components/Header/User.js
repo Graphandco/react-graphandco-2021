@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import { useAuth } from '../../hooks';
 
-const User = () => {
+const User = ({ setIsOpen }) => {
   const { authUser } = useAuth();
 
   const [hovered, setHovered] = useState(false);
@@ -14,6 +14,7 @@ const User = () => {
 
   const logout = async () => {
     await fb.auth.signOut();
+    await setIsOpen(false);
   };
 
   return (
@@ -34,7 +35,9 @@ const User = () => {
             <div className="user-name unauthed">Vous n'êtes pas connecté</div>
 
             <div className="user-connexion unauthed">
-              <Link to="/login">Se connecter</Link>
+              <Link to="/login" onClick={() => setIsOpen(false)}>
+                Se connecter
+              </Link>
             </div>
           </>
         )}
