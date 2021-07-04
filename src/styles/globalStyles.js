@@ -5,6 +5,11 @@ export const GlobalStyles = createGlobalStyle`
       box-sizing: border-box;
   }
    body {
+      --primary: hsl(209, 80%, 60%, 1);
+      --bloc-1: ${({ theme }) => theme.bloc1};
+      --bloc-2: ${({ theme }) => theme.bloc2};
+      --bloc-3: ${({ theme }) => theme.bloc3};
+      --bloc-4: ${({ theme }) => theme.bloc4};
       --primary-800: ${({ theme }) => theme.primary800};
       --primary-700: ${({ theme }) => theme.primary700};
       --primary-600: ${({ theme }) => theme.primary600};
@@ -36,6 +41,10 @@ export const GlobalStyles = createGlobalStyle`
    `;
 
 export const lightTheme = {
+  bloc1: 'hsl(209, 20%, 92%, 1)',
+  bloc2: 'hsl(209, 20%, 94%, 1)',
+  bloc3: 'hsl(209, 20%, 96%, 1)',
+  bloc4: 'hsl(209, 20%, 98%, 1)',
   primary800: 'hsl(0, 0%, 70%, 1)',
   primary700: 'hsl(0, 0%, 75%, 1)',
   primary600: 'hsl(0, 0%, 80%, 1)',
@@ -50,12 +59,16 @@ export const lightTheme = {
   contrast: '#000',
   bgColor: '#e8e8e8',
   text: '#4b4b4c',
-  heroBG: '#fcd8bd',
-  bg1: '#c6e8ff ',
+  //bg1: '#ebf7ff ',
+  bg1: '#f2f5f8',
   bg2: '#e6e6e6',
 };
 
 export const darkTheme = {
+  bloc1: 'hsl(209, 80%, 16%, 1)',
+  bloc2: 'hsl(209, 80%, 14%, 1)',
+  bloc3: 'hsl(209, 80%, 12%, 1)',
+  bloc4: 'hsl(209, 80%, 10%, 1)',
   primary800: 'hsl(240, 8%, 0%, 1)',
   primary700: 'hsl(240, 8%, 0%, 1)',
   primary600: 'hsl(240, 8%, 5%, 1)',
@@ -70,7 +83,6 @@ export const darkTheme = {
   contrast: '#FFF',
   bgColor: 'hsl(240, 8%, 14%, 1)',
   text: '#cecece',
-  heroBG: '#333958',
   bg1: '#092436 ',
-  bg2: '#141515 ',
+  bg2: '#171f2a ',
 };

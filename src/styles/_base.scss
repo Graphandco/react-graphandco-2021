@@ -11,13 +11,11 @@
   padding: 0 2vw;
 }
 @mixin border-left {
-  border-left: 2px solid;
-  border-image: linear-gradient(0deg, var(--secondary-400), var(--secondary-600)) 10;
+  border-left: 2px solid var(--primary);
   padding-left: 1rem;
 }
 @mixin border-right {
-  border-right: 2px solid;
-  border-image: linear-gradient(0deg, var(--secondary-400), var(--secondary-600)) 10;
+  border-right: 2px solid var(--primary);
   padding-right: 1rem;
 }
 @mixin bg1 {
@@ -123,8 +121,13 @@ h5 {
   line-height: 1;
   color: var(--contrast);
 }
-h2 {
+h1,
+.h1 {
   font-size: calc(2rem + 1vw);
+  text-transform: uppercase;
+}
+h2 {
+  font-size: calc(1.5rem + 1vw);
   text-transform: uppercase;
 }
 
@@ -142,11 +145,11 @@ svg {
   flex-direction: column;
 }
 main {
-  background-color: var(--primary-300);
+  background-color: var(--bg2);
   flex-grow: 1;
 }
 body:not(#home) main {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 section,
 footer {
@@ -158,7 +161,7 @@ p {
   line-height: 1.4rem;
 }
 button {
-  @include btn-border-drawing(var(--contrast), var(--secondary-400), 2px, bottom, right);
+  @include btn-border-drawing(var(--contrast), var(--primary), 2px, bottom, right);
   background-color: transparent;
 }
 a {

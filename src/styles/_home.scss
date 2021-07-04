@@ -1,8 +1,11 @@
+#home h2 {
+  font-size: calc(2rem + 1vw);
+}
+
 /*--------------------
   HERO
 ----------------------*/
 .hero {
-  background: var(--hero-bg);
   @include bg1;
   width: 100%;
   position: relative;
@@ -208,16 +211,16 @@
     }
 
     &:nth-child(1) {
-      background-color: var(--primary-500);
+      background-color: var(--bloc-1);
     }
     &:nth-child(2) {
-      background-color: var(--primary-400);
+      background-color: var(--bloc-2);
     }
     &:nth-child(3) {
-      background-color: var(--primary-300);
+      background-color: var(--bloc-3);
     }
     &:nth-child(4) {
-      background-color: var(--primary-600);
+      background-color: var(--bloc-4);
     }
   }
 
@@ -289,4 +292,5 @@
 
 .sample {
   overflow: hidden;
+  @include bg1;
 }

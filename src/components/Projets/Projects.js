@@ -28,7 +28,7 @@ export const Projects = () => {
         <div className="project-item description">
           <img src="/img/projects/project-lead.png" alt="" />
           <div className="content">
-            <h2>Portfolio</h2>
+            {/* <h2>Portfolio</h2> */}
             <p>Retrouvez ici les différents projets que nous avons pu développer pour nos clients.</p>
           </div>
         </div>

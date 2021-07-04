@@ -12,6 +12,8 @@ import HomePage from './pages/HomePage';
 import Tips from './pages/Tips';
 import Contact from './pages/Contact';
 import Prestations from './pages/Prestations';
+import MentionsLégales from './pages/MentionsLégales';
+import PolitiqueConfidentialité from './pages/PolitiqueConfidentialité';
 
 //COMPONENTS
 import Header from './components/Header/Header';
@@ -57,6 +59,12 @@ function App() {
             </Route>
             <Route path="/prestations">
               <Prestations />
+            </Route>
+            <Route path="/mentions-legales">
+              <MentionsLégales />
+            </Route>
+            <Route path="/politique-confidentialite">
+              <PolitiqueConfidentialité />
             </Route>
             <Route path="/add" component={AddTip} />
             <Route path="/edit/:id" component={EditTip} />
