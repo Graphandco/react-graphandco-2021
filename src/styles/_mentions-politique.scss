@@ -1,0 +1,11 @@
+.mentions-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  @include mq(tablet) {
+    grid-template-columns: 1fr;
+  }
+  h2 {
+    font-size: calc(1rem + 1vw);
+  }
+}

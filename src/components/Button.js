@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-const Button = ({ title, link, outside, small, onClick, disabled, mt, mr, mb, ml }) => {
+const Button = ({ title, link, outside, small, onClick, center, disabled, mt, mr, mb, ml }) => {
   return (
-    <Btn small={small} onClick={onClick} mt={mt} mr={mr} mb={mb} ml={ml} disabled={disabled}>
+    <Btn small={small} onClick={onClick} center={center} mt={mt} mr={mr} mb={mb} ml={ml} disabled={disabled}>
       {link ? (
         outside ? (
           <a href={link} target="blank">
@@ -23,15 +23,18 @@ const Button = ({ title, link, outside, small, onClick, disabled, mt, mr, mb, ml
 };
 
 const Btn = styled.button`
+  display: block;
   background: none;
   border: none;
   cursor: pointer;
   line-height: 1.5;
   letter-spacing: 0.05rem;
-  margin-top: ${(props) => props.mt + 'rem'};
-  margin-right: ${(props) => props.mr + 'rem'};
-  margin-bottom: ${(props) => props.mb + 'rem'};
-  margin-left: ${(props) => props.ml + 'rem'};
+  margin-left: ${(props) => props.center && 'auto'};
+  margin-right: ${(props) => props.center && 'auto'};
+  margin-top: ${(props) => props.mt && props.mt + 'rem'};
+  margin-right: ${(props) => props.mr && props.mr + 'rem'};
+  margin-bottom: ${(props) => props.mb && props.mb + 'rem'};
+  margin-left: ${(props) => props.ml && props.ml + 'rem'};
 
   &:focus {
     outline: 2px solid var(--secondary-400);

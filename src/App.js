@@ -19,15 +19,13 @@ import PolitiqueConfidentialité from './pages/PolitiqueConfidentialité';
 import Header from './components/Header/Header';
 import { AddTip } from './components/Tips/AddTip';
 import { EditTip } from './components/Tips/EditTip';
-//import Realisations from "./pages/Realisations";
 import { Footer } from './components/Footer/Footer';
 import { Login } from './components/Login';
-// import { Signup } from './components/Signup/Signup';
+import { Projects } from './components/Projets';
 
 //CONTEXT
 import { GlobalProvider } from './context/GlobalState';
 // import { useAuth } from './hooks';
-import { Projects } from './components/Projets';
 
 function App() {
   const [theme, toggleTheme] = useDarkMode();

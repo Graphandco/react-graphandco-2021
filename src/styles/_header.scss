@@ -17,7 +17,7 @@ header {
       position: fixed;
       top: 0;
       left: 100%;
-      width: 100%;
+      width: 90%;
       height: 100%;
       flex-direction: column-reverse;
       justify-content: flex-end;
@@ -50,8 +50,8 @@ header {
         margin: 15px 0;
         font-size: 2rem;
         padding: 0;
-        left: 300px;
-        opacity: 0;
+        // left: 300px;
+        // opacity: 0;
       }
       svg {
         font-size: 1.5rem;
@@ -84,7 +84,6 @@ header {
     @include mq(mobile) {
       margin-left: auto;
       padding-right: 2rem;
-      opacity: 0;
     }
   }
   .user-login {
@@ -104,7 +103,7 @@ header {
       transform: scaleY(0);
       transform-origin: top;
       transition: 0.2s;
-      background-color: var(--bloc-4);
+      background-color: var(--primary-800);
       opacity: 0;
       z-index: 2;
       &.show {
@@ -114,7 +113,7 @@ header {
       .user-name {
         margin-bottom: 10px;
         span {
-          opacity: 0.8;
+          opacity: 0.6;
         }
         &.unauthed {
           white-space: nowrap;

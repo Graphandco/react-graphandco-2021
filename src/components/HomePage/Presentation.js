@@ -28,7 +28,7 @@ export const Presentation = () => {
       scrollTrigger: {
         start: 'top bottom-=300',
         trigger: sectionRef.current,
-        toggleActions: 'play none none reverse',
+        //toggleActions: 'play none none reverse',
       },
     });
     gsap.from(imgRef.current, {
@@ -40,7 +40,7 @@ export const Presentation = () => {
       scrollTrigger: {
         start: 'top bottom-=200',
         trigger: sectionRef.current,
-        toggleActions: 'play none none reverse',
+        //toggleActions: 'play none none reverse',
       },
     });
     gsap.from(btnRef.current, {
@@ -51,7 +51,7 @@ export const Presentation = () => {
       scrollTrigger: {
         start: 'top bottom-=200',
         trigger: btnRef.current,
-        toggleActions: 'play none none reverse',
+        //toggleActions: 'play none none reverse',
       },
     });
 
@@ -69,7 +69,7 @@ export const Presentation = () => {
             id: `section-${index + 1}`,
             trigger: el,
             start: 'top center+=100',
-            toggleActions: 'play none none reverse',
+            //toggleActions: 'play none none reverse',
             //markers: true
           },
         },
@@ -91,9 +91,9 @@ export const Presentation = () => {
         {content.map((p, index) => (
           <p ref={addToRefs} key={index} dangerouslySetInnerHTML={{ __html: p }}></p>
         ))}
-        <p ref={btnRef} className="cta">
-          <Button title="Tout voir" />
-        </p>
+        <div ref={btnRef} className="cta">
+          <Button title="Voir nos réalisations" link="/realisations" center mt="4" mb="2" />
+        </div>
       </div>
       <div className="presentation-hero">
         <img ref={imgRef} src="/img/presentation.jpg" alt="Présentation" />

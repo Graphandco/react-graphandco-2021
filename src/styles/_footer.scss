@@ -11,11 +11,15 @@ footer {
   @include mq(tablet) {
     grid-template-columns: 1fr 1fr;
   }
-  // @include mq(mobile) {
-  //   grid-template-columns: 1fr;
-  // }
+  @include mq(mobile) {
+    grid-template-columns: 1fr;
+  }
   a {
     font-weight: normal;
+    transition: 0.3s;
+    &:hover {
+      color: var(--contrast);
+    }
   }
   .footer-col {
     display: flex;

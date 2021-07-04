@@ -1,8 +1,8 @@
 import React from 'react';
 
+import Button from '../Button';
+
 // import {ReactComponent as BlackTrees} from '../../assets/01-black-trees.svg'
-// import {ReactComponent as DarkPurpleTrees} from '../../assets/02-dark-purple-trees.svg'
-// import {ReactComponent as PurpleTrees} from '../../assets/03-purple-trees.svg'
 import { ReactComponent as HeroImg } from '../../assets/illustration.svg';
 import TextAnimation from '../animations/TextAnimation';
 
@@ -17,6 +17,7 @@ export const Hero = () => {
             <TextAnimation />
           </div>
           <div className="hero-subtitle">Une agence spécialisée dans la création de sites web modernes et intuitifs.</div>
+          <Button title="Voir nos offres" mt="3" link="/prestations" />
         </div>
         <HeroImg />
       </div>

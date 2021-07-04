@@ -9,7 +9,7 @@ export const Footer = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', () => setscrolled(window.pageYOffset > 500));
+      window.addEventListener('scroll', () => setscrolled(window.pageYOffset > 400));
     }
   }, []);
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { fb } from '../../services/';
 import Button from '../Button';
 import { useHistory } from 'react-router-dom';
+import PageAttributes from '../../pages/PageAttributes';
 
 export const Login = () => {
   const [email, setEmail] = useState('');
@@ -44,16 +45,24 @@ export const Login = () => {
   };
 
   return (
-    <div>
-      Login Page
-      <input type="email" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-      <input type="password" value={password} placeholder="Mot de passe" onChange={(e) => setPassword(e.target.value)} />
-      {/* <button onClick={login} disabled={!valid}>
-        Login
-      </button> */}
-      <Button small title="Se connecter" onClick={login} disabled={!valid} />
-      {error && <div>{error}</div>}
-      {validation && <div>{validation}</div>}
-    </div>
+    <>
+      <PageAttributes bodyID="login" pageTitle="S'identifier" />
+      <section className="login container">
+        <h1>S'identifier</h1>
+        <div className="admin-form">
+          <div className="form-body">
+            <div className="form-item">
+              <input type="email" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+            </div>
+            <div className="form-item">
+              <input type="password" value={password} placeholder="Mot de passe" onChange={(e) => setPassword(e.target.value)} />
+            </div>
+          </div>
+          <Button small title="Se connecter" onClick={login} disabled={!valid} />
+          {error && <div>{error}</div>}
+          {validation && <div>{validation}</div>}
+        </div>
+      </section>
+    </>
   );
 };
