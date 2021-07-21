@@ -6,7 +6,7 @@
   HERO
 ----------------------*/
 .hero {
-  @include bg1;
+  @include bg-pattern1;
   width: 100%;
   position: relative;
 
@@ -140,6 +140,7 @@
   grid-template-columns: 4fr 3fr;
   overflow: hidden;
   @include bg2;
+  @include bg-pattern2;
   @include mq(tablet) {
     grid-template-columns: 1fr 1fr;
   }
@@ -178,6 +179,7 @@
   grid-template-columns: 3fr 4fr;
   padding-top: 100px;
   @include bg1;
+  @include bg-pattern1;
 
   @include mq(tablet) {
     grid-template-columns: 1fr 1fr;

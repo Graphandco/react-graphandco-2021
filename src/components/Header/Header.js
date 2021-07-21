@@ -6,6 +6,8 @@ import User from './User';
 import { gsap } from 'gsap';
 import { useMediaQuery } from '@material-ui/core';
 
+import logo from '../../assets/logo.jpg';
+
 const Header = ({ theme, toggleTheme }) => {
   const isResponsive = useMediaQuery('(max-width: 768px)');
   const [isOpen, setIsOpen] = useState(false);
@@ -108,7 +110,7 @@ const Header = ({ theme, toggleTheme }) => {
       <header className={`header ${isResponsive ? 'mobile' : ''}`}>
         <div className="header-wrapper container">
           <Link to="/" className="site-logo">
-            Graph and Co
+            <img src={logo} alt="Logo" />
           </Link>
           <div
             ref={navMenuRef}
