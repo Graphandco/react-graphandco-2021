@@ -5,11 +5,11 @@ const FooterColumn = ({ title, icon, desc, name, link }) => {
   return (
     <div className="footer-col">
       <div className="footer-col-title">{title}</div>
-      <div className="footer-icon">
+      <a className="footer-icon" href={link}>
         {icon === 'phone' && <FaMobileAlt />}
         {icon === 'mail' && <FaEnvelope />}
         {icon === 'map' && <FaMapMarkerAlt />}
-      </div>
+      </a>
       <div className="col-desc">{desc}</div>
       <div className="col-name">
         {link ? (

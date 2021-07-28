@@ -59,7 +59,7 @@ const Pointer = styled.span`
   left: ${(props) => props.position};
   width: calc(100% / ${(props) => props.linksLength});
   height: 1px;
-  background: var(--primary);
+  background: var(--secondary);
   transition: 0.5s ease-in-out;
 `;
 const Nav = styled.nav`

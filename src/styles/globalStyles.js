@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle`
   }
    body {
       --primary: hsl(209, 80%, 60%, 1);
+      --secondary: hsl(42, 90%, 50%, 1);
       --bloc-1: ${({ theme }) => theme.bloc1};
       --bloc-2: ${({ theme }) => theme.bloc2};
       --bloc-3: ${({ theme }) => theme.bloc3};
@@ -33,17 +34,19 @@ export const lightTheme = {
   bloc4: 'hsl(209, 20%, 98%, 1)',
   contrast: '#000',
   text: '#4b4b4c',
-  bg1: 'hsl(210, 100%, 87%, 1)',
-  bg2: '#e6e6e6',
+  bg1: 'hsl(210, 30%, 90%, 1)',
+  bg2: 'hsl(210, 10%, 95%, 1)',
 };
 
 export const darkTheme = {
-  bloc1: 'hsl(209, 80%, 16%, 1)',
-  bloc2: 'hsl(209, 80%, 14%, 1)',
-  bloc3: 'hsl(209, 80%, 12%, 1)',
-  bloc4: 'hsl(209, 80%, 10%, 1)',
+  bloc1: 'hsl(209, 20%, 16%, 1)',
+  bloc2: 'hsl(209, 20%, 14%, 1)',
+  bloc3: 'hsl(209, 20%, 12%, 1)',
+  bloc4: 'hsl(209, 20%, 10%, 1)',
   contrast: '#FFF',
   text: '#cecece',
-  bg1: '#092436 ',
-  bg2: '#171f2a ',
+  // bg1: '#092436 ',
+  // bg2: '#171f2a ',
+  bg1: 'hsl(204, 43%, 10%, 1)',
+  bg2: 'hsl(204, 20%, 8%, 1)',
 };

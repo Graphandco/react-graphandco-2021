@@ -11,11 +11,11 @@
   padding: 0 2vw;
 }
 @mixin border-left {
-  border-left: 2px solid var(--primary);
+  border-left: 2px solid var(--secondary);
   padding-left: 1rem;
 }
 @mixin border-right {
-  border-right: 2px solid var(--primary);
+  border-right: 2px solid var(--secondary);
   padding-right: 1rem;
 }
 @mixin bg1 {
@@ -142,7 +142,7 @@ h1,
     left: 0;
     width: calc(300px + 5vw);
     height: 2px;
-    background: linear-gradient(to right, var(--primary) 0%, #ffffff00 100%);
+    background: linear-gradient(to right, var(--secondary) 0%, #ffffff00 100%);
     border-radius: 50px;
   }
 }
@@ -154,7 +154,11 @@ h2 {
 /*--------------------
   GLOBALS
 ----------------------*/
-
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 img,
 svg {
   max-width: 100%;
@@ -181,7 +185,7 @@ p {
   line-height: 1.4rem;
 }
 button {
-  @include btn-border-drawing(var(--contrast), var(--primary), 2px, bottom, right);
+  @include btn-border-drawing(var(--contrast), var(--secondary), 2px, bottom, right);
   background-color: transparent;
 }
 a {

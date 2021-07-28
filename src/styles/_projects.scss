@@ -37,6 +37,7 @@
   }
   h2 {
     font-size: calc(1rem + 1vw);
+    @include border-left;
   }
   p {
     margin: 1rem 0 2rem 0;
@@ -66,6 +67,9 @@
     place-items: center;
     gap: 2rem;
     padding: 2rem;
+    .content {
+      @include border-left;
+    }
     &:after {
       content: none;
     }
