@@ -2,6 +2,9 @@ import React from 'react';
 import { PrestationItem } from './PrestationItem';
 import { FaChild } from 'react-icons/fa';
 import { GiMuscleUp } from 'react-icons/gi';
+import { IoIosRocket } from 'react-icons/io';
+import { AiOutlineAppstoreAdd } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 export const PrestationsBloc = () => {
   return (
@@ -18,10 +21,34 @@ export const PrestationsBloc = () => {
         </p>
       </div>
       <div className="prestations-wrapper">
-        <PrestationItem title="Pack Starter"></PrestationItem>
-        <PrestationItem title="Pack Medium" />
-        <PrestationItem title="Pack Commerce" />
-        <PrestationItem title="Sur mesure" />
+        <PrestationItem title="Pack Starter">
+          <li>Vous gérez votre nom de domaine et votre hébergement</li>
+          <li>Votre site est livré clé en main</li>
+        </PrestationItem>
+        <PrestationItem title="Pack Medium">
+          <li>Gestion de votre nom de domaine et hébergement</li>
+          <li>Maintenance permanente de votre site</li>
+          <li>Modifications graphiques et techniques</li>
+        </PrestationItem>
+        <PrestationItem title="Pack Commerce">
+          <li className="medium">Pack Medium +</li>
+          <li>Vente en ligne avec panier et tunnel de commande</li>
+          <li>Paiement en ligne et livraison / click and collect</li>
+        </PrestationItem>
+        <PrestationItem title="Sur mesure">
+          <li>
+            <IoIosRocket />
+            Virtual DOM → un site rapide comme l'éclair !
+          </li>
+          <li>
+            <AiOutlineAppstoreAdd />
+            Applications mobiles, interfaces utilisateurs, bases de données (backend)...
+          </li>
+          <li className="more">Et bien d'autres !</li>
+        </PrestationItem>
+      </div>
+      <div className="prestations-outro">
+        Nous avons forcément le site taillé pour vous ! N'hésitez pas à<Link to="contact"> nous contacter</Link>
       </div>
     </section>
   );
