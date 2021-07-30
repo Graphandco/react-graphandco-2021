@@ -52,6 +52,9 @@ header {
       text-transform: uppercase;
       font-size: 1.1rem;
       letter-spacing: 0.05rem;
+      &.active {
+        color: var(--secondary);
+      }
       @include mq(mobile) {
         margin: 15px 0;
         font-size: 2rem;

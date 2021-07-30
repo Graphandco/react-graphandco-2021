@@ -5,6 +5,7 @@ import { GiMuscleUp } from 'react-icons/gi';
 import { IoIosRocket } from 'react-icons/io';
 import { AiOutlineAppstoreAdd } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { ReactComponent as SurMesure } from '../../assets/sur-mesure.svg';
 
 export const PrestationsBloc = () => {
   return (
@@ -47,8 +48,27 @@ export const PrestationsBloc = () => {
           <li className="more">Et bien d'autres !</li>
         </PrestationItem>
       </div>
-      <div className="prestations-outro">
-        Nous avons forcément le site taillé pour vous ! N'hésitez pas à<Link to="contact"> nous contacter</Link>
+      <h3 className="h2">Nous réalisons le site taillé pour vous !</h3>
+      <div className="prestations-outro container">
+        <div className="prestation-description-wrapper">
+          <div className="prestation-description-content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat laborum, similique ad sit omnis tempore eius dignissimos sequi voluptatum,
+              numquam aliquam, provident veniam quos voluptate excepturi voluptatem velit ipsam? Veritatis laborum autem, numquam fugit ut, maiores nostrum
+              nulla a quo optio minima iusto ipsam accusamus sed! Non incidunt vel facere id sit, quod aliquid aspernatur eos repellendus asperiores cumque,
+              sequi fuga! Commodi sapiente minima sit aliquid illum quidem assumenda corporis saepe? Odit voluptate, fugiat eos beatae totam quam unde provident
+              molestias similique itaque pariatur iure ratione accusantium blanditiis labore rerum facilis. Repellat, culpa unde molestiae autem, architecto
+              aspernatur doloribus laudantium nostrum deleniti sunt
+            </p>
+            <p>
+              Nous avons forcément le site taillé pour vous ! N'hésitez pas à<Link to="contact"> nous contacter</Link>
+            </p>
+          </div>
+        </div>
+        <SurMesure />
+        <div className="prestation-description-accroche">
+          Nous avons forcément le site taillé pour vous ! N'hésitez pas à<Link to="contact"> nous contacter</Link>
+        </div>
       </div>
     </section>
   );

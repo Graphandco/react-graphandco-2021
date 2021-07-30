@@ -36,7 +36,7 @@ const Menu = forwardRef(({ setIsOpen }, ref) => {
             key={index}
             to={link.url}
             onMouseEnter={() => setNavCurrent(index)}
-            onMouseLeave={() => setNavCurrent(index)}
+            //onMouseLeave={() => setNavCurrent(0)}
             onClick={() => setIsOpen(false)}
             exact
             // isActive={(match) => {

@@ -6,7 +6,7 @@
 
 @mixin container {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1600px;
   width: 100%;
   padding: 0 2vw;
 }
@@ -146,7 +146,8 @@ h1,
     border-radius: 50px;
   }
 }
-h2 {
+h2,
+.h2 {
   font-size: calc(1.5rem + 1vw);
   text-transform: uppercase;
 }
@@ -182,14 +183,14 @@ footer {
   z-index: 1;
 }
 p {
-  line-height: 1.4rem;
+  line-height: 1.5rem;
 }
 button {
   @include btn-border-drawing(var(--contrast), var(--secondary), 2px, bottom, right);
   background-color: transparent;
 }
 a {
-  color: var(--text-color);
+  color: var(--contrast);
   font-weight: bold;
   text-decoration: none;
   padding: 0;
