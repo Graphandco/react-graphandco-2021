@@ -6,8 +6,12 @@ import { IoIosRocket } from 'react-icons/io';
 import { AiOutlineAppstoreAdd } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { ReactComponent as SurMesure } from '../../assets/sur-mesure.svg';
+import { ReactComponent as SurMesureMobile } from '../../assets/sur-mesure-mobile.svg';
+import { useMediaQuery } from '@material-ui/core';
 
 export const PrestationsBloc = () => {
+  const isResponsive = useMediaQuery('(min-width: 768px)');
+
   return (
     <section className="prestations">
       <div className="prestations-intro">
@@ -22,34 +26,38 @@ export const PrestationsBloc = () => {
         </p>
       </div>
       <div className="prestations-wrapper">
-        <PrestationItem title="Pack Starter">
+        <PrestationItem title="Pack Starter" slug="starter">
           <li>Vous gérez votre nom de domaine et votre hébergement</li>
           <li>Votre site est livré clé en main</li>
         </PrestationItem>
-        <PrestationItem title="Pack Medium">
+        <PrestationItem title="Pack Medium" slug="medium">
           <li>Gestion de votre nom de domaine et hébergement</li>
           <li>Maintenance permanente de votre site</li>
           <li>Modifications graphiques et techniques</li>
         </PrestationItem>
-        <PrestationItem title="Pack Commerce">
+        <PrestationItem title="Pack Commerce" slug="commerce">
           <li className="medium">Pack Medium +</li>
           <li>Vente en ligne avec panier et tunnel de commande</li>
           <li>Paiement en ligne et livraison / click and collect</li>
         </PrestationItem>
-        <PrestationItem title="Sur mesure">
-          <li>
-            <IoIosRocket />
-            Virtual DOM → un site rapide comme l'éclair !
-          </li>
-          <li>
-            <AiOutlineAppstoreAdd />
-            Applications mobiles, interfaces utilisateurs, bases de données (backend)...
-          </li>
-          <li className="more">Et bien d'autres !</li>
-        </PrestationItem>
+        <div className="prestation-with-title">
+          <div className="need-more">Besoin de plus ?</div>
+          <PrestationItem title="Sur mesure" slug="sur-mesure">
+            <li>
+              <IoIosRocket />
+              Virtual DOM → un site rapide comme l'éclair !
+            </li>
+            <li>
+              <AiOutlineAppstoreAdd />
+              Applications mobiles, interfaces utilisateurs, bases de données (backend)...
+            </li>
+            <li className="more">Et bien d'autres !</li>
+          </PrestationItem>
+        </div>
       </div>
       <h3 className="h2">Nous réalisons le site taillé pour vous !</h3>
       <div className="prestations-outro container">
+        {isResponsive ? <SurMesure /> : <SurMesureMobile />}
         <div className="prestation-description-wrapper">
           <div className="prestation-description-content">
             <p>
@@ -65,7 +73,7 @@ export const PrestationsBloc = () => {
             </p>
           </div>
         </div>
-        <SurMesure />
+
         <div className="prestation-description-accroche">
           Nous avons forcément le site taillé pour vous ! N'hésitez pas à<Link to="contact"> nous contacter</Link>
         </div>

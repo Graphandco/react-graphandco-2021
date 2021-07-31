@@ -11,9 +11,10 @@ footer {
   align-items: baseline;
   @include mq(tablet) {
     grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
   @include mq(mobile) {
-    grid-template-columns: 1fr;
+    //grid-template-columns: 1fr;
   }
   a {
     font-weight: normal;
@@ -24,6 +25,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     &-links .footer-col-title {
       margin-bottom: 2rem;
     }

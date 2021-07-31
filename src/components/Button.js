@@ -49,6 +49,7 @@ const Btn = styled.button`
     display: block;
     padding: ${(props) => (props.small ? '0.5em 1.5em' : '1em 3em')};
     color: var(--contrast);
+    font-size: 1rem;
   }
   &:hover span {
     color: var(--secondary-400);
