@@ -1,3 +1,17 @@
+.projects-description {
+  margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  place-items: center;
+  gap: 2rem;
+  @include mq(tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include mq(mobile) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
 .projects-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -11,7 +25,6 @@
     gap: 2rem;
   }
 }
-
 .project-item {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   background-color: var(--bloc-4);
@@ -19,6 +32,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
   // &:after {
   //   content: '';
   //   position: absolute;
@@ -30,6 +44,15 @@
   //   background: linear-gradient(45deg, var(--secondary-400) 0%, var(--secondary-800) 100%);
   //   opacity: 0.5;
   // }
+  .mockup {
+    position: absolute;
+    top: 20px;
+    right: -40px;
+    background: var(--secondary);
+    color: black;
+    transform: rotate(45deg);
+    padding: 3px 40px;
+  }
   &-content {
     padding: 1rem 1rem 3rem 1rem;
     display: flex;
@@ -83,6 +106,17 @@
     }
     h2 {
       font-size: calc(2rem + 1vw);
+    }
+  }
+  &-edit .buttons {
+    display: flex;
+    gap: 10px;
+    button:last-child {
+      line-height: 1;
+      background-color: rgba(red, 0.4);
+      span {
+        padding: 5px;
+      }
     }
   }
 }

@@ -30,16 +30,19 @@
     .form-field div {
       &:before,
       &:after {
-        border-bottom: 1px solid var(--text-color) !important;
+        border-bottom: 1px solid var(--secondary) !important;
         opacity: 0.5;
       }
     }
     input,
     textarea {
       color: var(--text-color) !important;
+      font-family: var(--main-font);
+      font-size: 1.2rem;
+      line-height: 1.2;
     }
     svg {
-      color: var(--text-color) !important;
+      color: var(--secondary) !important;
     }
     button {
       display: block;

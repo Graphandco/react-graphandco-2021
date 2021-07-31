@@ -9,6 +9,8 @@ export const ProjectItem = (props) => {
   const [description, setDescription] = useState(props.project.description);
   const [slug, setSlug] = useState(props.project.slug);
   const [url, setUrl] = useState(props.project.url);
+  const [mockup, setMockup] = useState(props.project.mockup);
+  const [position, setPosition] = useState(props.project.position);
 
   const [edit, setEdit] = useState(false);
 
@@ -26,6 +28,8 @@ export const ProjectItem = (props) => {
       description,
       slug,
       url,
+      mockup,
+      position,
     });
     setEdit(false);
   };
@@ -34,6 +38,7 @@ export const ProjectItem = (props) => {
     <div className="project-item">
       <img src={`/img/projects/${props.project.slug}.jpg`} alt="" />
       <div className="project-item-content">
+        {mockup && <div className="mockup">Mockup</div>}
         <h2>{props.project.name}</h2>
         <p>{props.project.description}</p>
         <div className="project-item-footer">
@@ -65,8 +70,19 @@ export const ProjectItem = (props) => {
                   <label>URL du projet</label>
                   <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
                 </div>
+                <div className="form-item">
+                  <label>Mockup ?</label>
+                  <input type="checkbox" value={mockup} checked={mockup} onChange={(e) => setMockup(!mockup)} />
+                </div>
+                <div className="form-item">
+                  <label>Position du projet</label>
+                  <input type="text" value={position} onChange={(e) => setPosition(e.target.value)} />
+                </div>
               </div>
-              <Button small title="Editer" onClick={updateProject} />
+              <div className="buttons">
+                <Button small title="Editer" onClick={updateProject} />
+                <Button className="cancel" small title="X" onClick={() => setEdit(!edit)} />
+              </div>
             </form>
           </div>
         )}

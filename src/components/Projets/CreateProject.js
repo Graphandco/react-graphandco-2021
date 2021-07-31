@@ -7,6 +7,8 @@ export const CreateProject = () => {
   const [description, setDescription] = useState('');
   const [slug, setSlug] = useState('');
   const [url, setUrl] = useState('');
+  const [mockup, setMockup] = useState(false);
+  const [position, setPosition] = useState('');
   const [showForm, setShowForm] = useState(false);
 
   const createProject = (e) => {
@@ -16,12 +18,16 @@ export const CreateProject = () => {
       description,
       slug,
       url,
+      mockup,
+      position,
     });
 
     setName('');
     setDescription('');
     setSlug('');
     setUrl('');
+    setPosition('');
+    setMockup(false);
   };
 
   return (
@@ -47,6 +53,14 @@ export const CreateProject = () => {
               <div className="form-item">
                 <label>URL du projet</label>
                 <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
+              </div>
+              <div className="form-item">
+                <label>Mockup ?</label>
+                <input type="checkbox" value={mockup} checked={mockup} onChange={(e) => setMockup(!mockup)} />
+              </div>
+              <div className="form-item">
+                <label>Position du projet</label>
+                <input type="text" value={position} onChange={(e) => setPosition(e.target.value)} />
               </div>
             </div>
             <Button small title="Ajouter le projet" onClick={createProject} />
