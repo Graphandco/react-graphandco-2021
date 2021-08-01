@@ -1,6 +1,4 @@
 import React from 'react';
-import { FaChild } from 'react-icons/fa';
-import { GiMuscleUp } from 'react-icons/gi';
 
 export const PrestationsTools = () => {
   const outils = ['html', 'css', 'javascript', 'php', 'wordpress', 'woocommerce', 'elementor', 'prestashop', 'react', 'next.js', 'strapi'];
