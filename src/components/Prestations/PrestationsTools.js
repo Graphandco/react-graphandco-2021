@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const PrestationsTools = () => {
-  const outils = ['html', 'css', 'javascript', 'php', 'wordpress', 'woocommerce', 'elementor', 'prestashop', 'react', 'next.js', 'strapi'];
+  const outils = ['html', 'css', 'javascript', 'php', 'wordpress', 'woocommerce', 'elementor', 'prestashop', 'react', 'next.js', 'strapi', 'photoshop', 'xd'];
 
   return (
     <div className="prestations-tools">

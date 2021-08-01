@@ -11,7 +11,7 @@ footer {
   align-items: baseline;
   @include mq(tablet) {
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 5rem 1rem;
   }
   @include mq(mobile) {
     //grid-template-columns: 1fr;
@@ -63,12 +63,16 @@ footer {
   .col-name {
     opacity: 0.8;
   }
-  .copyright {
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-weight: bold;
+  .footer-col-links {
+    justify-content: space-between;
+    height: 100%;
+    a {
+      display: block;
+    }
+    .copyright {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
   }
 }
 

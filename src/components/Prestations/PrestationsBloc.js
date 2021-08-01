@@ -62,12 +62,14 @@ export const PrestationsBloc = () => {
         <div className="prestation-description-wrapper">
           <div className="prestation-description-content">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat laborum, similique ad sit omnis tempore eius dignissimos sequi voluptatum,
-              numquam aliquam, provident veniam quos voluptate excepturi voluptatem velit ipsam? Veritatis laborum autem, numquam fugit ut, maiores nostrum
-              nulla a quo optio minima iusto ipsam accusamus sed! Non incidunt vel facere id sit, quod aliquid aspernatur eos repellendus asperiores cumque,
-              sequi fuga! Commodi sapiente minima sit aliquid illum quidem assumenda corporis saepe? Odit voluptate, fugiat eos beatae totam quam unde provident
-              molestias similique itaque pariatur iure ratione accusantium blanditiis labore rerum facilis. Repellat, culpa unde molestiae autem, architecto
-              aspernatur doloribus laudantium nostrum deleniti sunt
+              Nous avons à coeur de définir avec vous le site qui <strong>vous ressemble</strong>. En fonction de vos besoins nous établirons ensemble un cahier
+              des charges. Chaque site est unique, car chaque entreprise l'est également. C'est pour cela qu'il est important que le site soit réalisé{' '}
+              <strong>sur-mesure</strong>, afin qu'il vous convienne comme un vêtement taillé pour vous ! Ni trop grand, ni trop petit, dans une matière seyante
+              et avec un budget qui vous correspond.
+            </p>
+            <p>
+              Vous pouvez jeter un oeil à quelques une de <Link to="realisations"> nos réalisations</Link> pour vous aider à établir vos besoins. Découvrez
+              également plus d'informations en cliquant sur nos différents packs ou n'hésitez pas à nous demander conseil, nous serons ravis de vous guider.
             </p>
             <p>
               Nous avons forcément le site taillé pour vous ! N'hésitez pas à<Link to="contact"> nous contacter</Link>

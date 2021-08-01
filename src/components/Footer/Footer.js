@@ -21,8 +21,10 @@ export const Footer = () => {
         <FooterColumn title="Nous trouver" desc="1, rue de la Lucelle" name="68127 Sainte-Croix-en-Plaine" icon="map" />
         <div className="footer-col footer-col-links">
           <div className="footer-col-title">Liens</div>
-          <Link to="/mentions-legales">Mentions légales</Link>
-          <Link to="/politique-confidentialite">Politique de confidentialité</Link>
+          <div className="footer-links">
+            <Link to="/mentions-legales">Mentions légales</Link>
+            <Link to="/politique-confidentialite">Politique de confidentialité</Link>
+          </div>
           <div className="copyright">
             <FaCopyright /> 2021 Graph and Co
           </div>
