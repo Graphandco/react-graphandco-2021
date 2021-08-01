@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as SurMesure } from '../../assets/sur-mesure.svg';
 import { ReactComponent as SurMesureMobile } from '../../assets/sur-mesure-mobile.svg';
 import { useMediaQuery } from '@material-ui/core';
+import { PrestationsTools } from './PrestationsTools';
 
 export const PrestationsBloc = () => {
   const isResponsive = useMediaQuery('(min-width: 768px)');
@@ -55,7 +56,7 @@ export const PrestationsBloc = () => {
           </PrestationItem>
         </div>
       </div>
-      <h3 className="h2">Nous réalisons le site taillé pour vous !</h3>
+      <h3 className=" h2 taille-pour-vous">Nous réalisons le site taillé pour vous !</h3>
       <div className="prestations-outro container">
         {isResponsive ? <SurMesure /> : <SurMesureMobile />}
         <div className="prestation-description-wrapper">
@@ -74,9 +75,7 @@ export const PrestationsBloc = () => {
           </div>
         </div>
 
-        <div className="prestation-description-accroche">
-          Nous avons forcément le site taillé pour vous ! N'hésitez pas à<Link to="contact"> nous contacter</Link>
-        </div>
+        <PrestationsTools />
       </div>
     </section>
   );

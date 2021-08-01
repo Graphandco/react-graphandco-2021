@@ -124,9 +124,10 @@
   }
 }
 
-.prestations h3 {
+.prestations .taille-pour-vous {
   margin: 100px 0 70px;
   line-height: 1.3;
+  text-align: center;
   @include mq(mobile) {
     margin: 100px 0 0 0;
     text-align: center;
@@ -135,8 +136,6 @@
 
 .prestations-outro {
   position: relative;
-  overflow: hidden;
-
   .prestation-description-wrapper {
     position: absolute;
     top: 0;
@@ -173,5 +172,46 @@
     pointer-events: none;
     z-index: 1;
     opacity: 0.9;
+  }
+}
+.prestations-tools {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  padding: 2%;
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--bloc-1);
+    border-radius: 15px;
+    opacity: 0.7;
+    z-index: 0;
+  }
+  .prestations-tools-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem 1rem;
+    max-width: 70%;
+    position: relative;
+    .tool-item {
+      display: grid;
+      gap: 10px;
+      flex-grow: 1;
+      justify-items: center;
+      align-content: space-between;
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        object-position: bottom;
+      }
+      span {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+    }
   }
 }

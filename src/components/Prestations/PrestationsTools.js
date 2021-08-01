@@ -1,0 +1,21 @@
+import React from 'react';
+import { FaChild } from 'react-icons/fa';
+import { GiMuscleUp } from 'react-icons/gi';
+
+export const PrestationsTools = () => {
+  const outils = ['html', 'css', 'javascript', 'php', 'wordpress', 'woocommerce', 'elementor', 'prestashop', 'react', 'next.js', 'strapi'];
+
+  return (
+    <div className="prestations-tools">
+      <h3>Voici les outils et langages que nous utilisons (entre autres !)</h3>
+      <div className="prestations-tools-list">
+        {outils.map((outil) => (
+          <div className="tool-item" key={outil}>
+            <img src={`/img/tools/${outil}.png`} alt={outil} />
+            <span>{outil}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
