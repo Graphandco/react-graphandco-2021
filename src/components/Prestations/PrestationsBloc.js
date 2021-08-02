@@ -27,23 +27,23 @@ export const PrestationsBloc = () => {
         </p>
       </div>
       <div className="prestations-wrapper">
-        <PrestationItem title="Pack Starter" slug="starter">
+        <PrestationItem title="Pack Starter" slug="starter" url="/pack-starter">
           <li>Vous gérez votre nom de domaine et votre hébergement</li>
           <li>Votre site est livré clé en main</li>
         </PrestationItem>
-        <PrestationItem title="Pack Medium" slug="medium">
+        <PrestationItem title="Pack Medium" slug="medium" url="/pack-medium">
           <li>Gestion de votre nom de domaine et hébergement</li>
           <li>Maintenance permanente de votre site</li>
           <li>Modifications graphiques et techniques</li>
         </PrestationItem>
-        <PrestationItem title="Pack Commerce" slug="commerce">
-          <li className="medium">Pack Medium +</li>
+        <PrestationItem title="Pack Commerce" slug="commerce" url="/pack-commerce">
+          <li className="commerce">Pack Medium +</li>
           <li>Vente en ligne avec panier et tunnel de commande</li>
           <li>Paiement en ligne et livraison / click and collect</li>
         </PrestationItem>
         <div className="prestation-with-title">
           <div className="need-more">Besoin de plus ?</div>
-          <PrestationItem title="Sur mesure" slug="sur-mesure">
+          <PrestationItem title="Sur mesure" slug="sur-mesure" url="/pack-sur-mesure">
             <li>
               <IoIosRocket />
               Virtual DOM → un site rapide comme l'éclair !
@@ -68,7 +68,7 @@ export const PrestationsBloc = () => {
               et avec un budget qui vous correspond.
             </p>
             <p>
-              Vous pouvez jeter un oeil à quelques une de <Link to="realisations"> nos réalisations</Link> pour vous aider à établir vos besoins. Découvrez
+              Vous pouvez jeter un oeil à quelques unes de <Link to="realisations"> nos réalisations</Link> pour vous aider à établir vos besoins. Découvrez
               également plus d'informations en cliquant sur nos différents packs ou n'hésitez pas à nous demander conseil, nous serons ravis de vous guider.
             </p>
             <p>

@@ -25,6 +25,10 @@ import { Projects } from './components/Projets';
 
 //CONTEXT
 import { GlobalProvider } from './context/GlobalState';
+import PackStarter from './pages/prestations/PackStarter';
+import PackMedium from './pages/prestations/PackMedium';
+import PackCommerce from './pages/prestations/PackCommerce';
+import PackSurMesure from './pages/prestations/PackSurMesure';
 // import { useAuth } from './hooks';
 
 function App() {
@@ -57,6 +61,18 @@ function App() {
             </Route>
             <Route path="/prestations">
               <Prestations />
+            </Route>
+            <Route path="/pack-starter">
+              <PackStarter />
+            </Route>
+            <Route path="/pack-medium">
+              <PackMedium />
+            </Route>
+            <Route path="/pack-sur-mesure">
+              <PackSurMesure />
+            </Route>
+            <Route path="/pack-commerce">
+              <PackCommerce />
             </Route>
             <Route path="/mentions-legales">
               <MentionsLégales />

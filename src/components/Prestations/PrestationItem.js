@@ -2,7 +2,7 @@ import React from 'react';
 import { FaPaintBrush, FaLock, FaMobileAlt, FaPlusCircle } from 'react-icons/fa';
 import Button from '../Button';
 
-export const PrestationItem = ({ title, slug, children }) => {
+export const PrestationItem = ({ title, slug, url, children }) => {
   return (
     <div className={`prestation-item prestation-${slug}`}>
       <h2>{title}</h2>
@@ -24,7 +24,7 @@ export const PrestationItem = ({ title, slug, children }) => {
         <FaPlusCircle />
       </div>
       <ul className="prestation-specific">{children}</ul>
-      <Button title="En savoir plus" link="/contact" small center mt="2" mb="2" />
+      <Button title="En savoir plus" link={url} small center mt="2" mb="2" />
     </div>
   );
 };
