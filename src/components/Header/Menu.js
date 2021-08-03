@@ -61,6 +61,9 @@ const Pointer = styled.span`
   height: 1px;
   background: var(--secondary);
   transition: 0.5s ease-in-out;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 const Nav = styled.nav`
   position: relative;

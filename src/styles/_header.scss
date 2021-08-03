@@ -35,6 +35,9 @@ header {
     //   clip-path: circle(1200px at 90% -10%);
     //   -webkit-clip-path: circle(1200px at 90% -10%);
     // }
+    &.full nav a {
+      left: 0 !important;
+    }
   }
   nav {
     @include mq(mobile) {

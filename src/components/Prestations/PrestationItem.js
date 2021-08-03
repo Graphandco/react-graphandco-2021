@@ -24,7 +24,7 @@ export const PrestationItem = ({ title, slug, url, children }) => {
         <FaPlusCircle />
       </div>
       <ul className="prestation-specific">{children}</ul>
-      <Button title="En savoir plus" link={url} small center mt="2" mb="2" />
+      {/* <Button title="En savoir plus" link={url} small center mt="2" mb="2" /> */}
     </div>
   );
 };

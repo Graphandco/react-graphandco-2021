@@ -1,7 +1,7 @@
 footer {
   margin-top: auto;
-  // background-color: var(--bloc-1);
-  @include bg-pattern1;
+  @include bg-pattern;
+  background-color: var(--bg2);
 }
 .footer-wrapper {
   padding: 5rem 0;
