@@ -95,35 +95,6 @@
         transform: rotate(360deg);
       }
     }
-    @keyframes opacityBulleBleue {
-      from {
-        opacity: 1;
-        transform: translate(0, 0);
-      }
-      30% {
-        opacity: 1;
-        transform: translate(0, 0);
-      }
-      31% {
-        opacity: 0;
-        transform: translate(0, 0);
-      }
-      32% {
-        opacity: 0;
-        transform: translate(50px, -50px);
-      }
-      69% {
-        opacity: 0;
-        transform: translate(50px, -50px);
-      }
-      70% {
-        opacity: 1;
-        transform: translate(50px, -50px);
-      }
-      to {
-        opacity: 1;
-      }
-    }
   }
 
   .parallax {

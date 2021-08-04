@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPaintBrush, FaLock, FaMobileAlt, FaPlusCircle } from 'react-icons/fa';
-import Button from '../Button';
+//import Button from '../Button';
 
 export const PrestationItem = ({ title, slug, url, children }) => {
   return (
