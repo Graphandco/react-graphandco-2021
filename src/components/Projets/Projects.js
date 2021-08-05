@@ -40,35 +40,36 @@ export const Projects = () => {
   projects.sort(dynamicSort('position'));
 
   return (
-    <div className="projects container">
-      <h1>Nos réalisations</h1>
-      <div className="projects-description">
-        <div className="projects-description-content">
-          <p>
-            Nous vous présentons les projets réalisés pour les clients qui nous ont fait confiance pour le développement de leur site internet. Qu'il s'agisse
-            d'une refonte ou d'une première présence web, nous avons à coeur de leur livrer <strong>un site qui correspond à leur besoin</strong>, à leur
-            identité, ainsi qu'à leur budget. Nous travaillons également en collaboration avec des référenceurs, graphistes et photographes pour donner vie à un
-            projet dans sa globalité.
-          </p>
-          <p>
-            N'hésitez pas à consulter également les prototypes - ou <strong>"mockups"</strong>- de sites, qui sont des inspirations sur différents thèmes.
-          </p>
-        </div>
-        <RealisationImage />
-      </div>
-      <div className="projects-list">
-        <div className="project-item description">
-          <img src="/img/projects/project-lead.png" alt="" />
-          <div className="content">
-            {/* <h2>Portfolio</h2> */}
-            <p>Retrouvez ici les différents projets que nous avons pu développer pour nos clients.</p>
+    <>
+      <div className="projects container">
+        <div className="projects-description">
+          <div className="projects-description-content">
+            <p>
+              Nous vous présentons les projets réalisés pour les clients qui nous ont fait confiance pour le développement de leur site internet. Qu'il s'agisse
+              d'une refonte ou d'une première présence web, nous avons à coeur de leur livrer <strong>un site qui correspond à leur besoin</strong>, à leur
+              identité, ainsi qu'à leur budget. Nous travaillons également en collaboration avec des référenceurs, graphistes et photographes pour donner vie à
+              un projet dans sa globalité.
+            </p>
+            <p>
+              N'hésitez pas à consulter également les prototypes - ou <strong>"mockups"</strong>- de sites, qui sont des inspirations sur différents thèmes.
+            </p>
           </div>
+          <RealisationImage />
         </div>
-        {projects.map((project) => (
-          <ProjectItem key={project.id} project={project} />
-        ))}
+        <div className="projects-list">
+          <div className="project-item description">
+            <img src="/img/projects/project-lead.png" alt="" />
+            <div className="content">
+              {/* <h2>Portfolio</h2> */}
+              <p>Retrouvez ici les différents projets que nous avons pu développer pour nos clients.</p>
+            </div>
+          </div>
+          {projects.map((project) => (
+            <ProjectItem key={project.id} project={project} />
+          ))}
+        </div>
+        {authUser && <CreateProject />}
       </div>
-      {authUser && <CreateProject />}
-    </div>
+    </>
   );
 };

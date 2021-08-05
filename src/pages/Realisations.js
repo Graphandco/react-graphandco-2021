@@ -1,18 +1,18 @@
 import React from 'react';
+import { Projects } from '../components/Projets/Projects';
 import PageAttributes from './PageAttributes';
-import { PrestationsBloc } from '../components/Prestations';
 import { motion } from 'framer-motion';
 
-const Prestations = ({ variant, transition }) => {
+const Realisations = ({ variant, transition }) => {
   return (
     <>
-      <PageAttributes bodyID="prestations" pageTitle="Prestations" />
+      <PageAttributes pageTitle="Réalisations" bodyID="realisations" />
       <motion.div initial="initial" animate="in" exit="out" variants={variant} transition={transition} className="prestations container">
-        <h1>Nos prestations</h1>
-        <PrestationsBloc />
+        <h1>Nos réalisations</h1>
+        <Projects />
       </motion.div>
     </>
   );
 };
 
-export default Prestations;
+export default Realisations;

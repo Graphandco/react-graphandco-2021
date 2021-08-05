@@ -4,12 +4,12 @@ import PageAttributes from './PageAttributes';
 const PolitiqueConfidentialité = () => {
   return (
     <>
-      <PageAttributes title="Politique de Confidentialité" bodyID="politique-confidentialite" />
+      <PageAttributes pageTitle="Politique de Confidentialité" bodyID="politique-confidentialite" />
       <section className="politique-confidentialite container">
         <h1>Politique de Confidentialité</h1>
         <div className="mention">
-          <h2>Qui suis-je ?</h2>
-          <p>L’adresse de mon site Web est : https://www.graphandco.com</p>
+          <h2>Qui sommes-nous ?</h2>
+          <p>L’adresse de notre site Web est : https://www.graphandco.net</p>
         </div>
         <div className="mention">
           <h2>Commentaires</h2>
@@ -33,7 +33,7 @@ const PolitiqueConfidentialité = () => {
         </div>
         <div className="mention">
           <h2>Formulaire de contact</h2>
-          <p>En me contactant via le formulaire de contact, vous acceptez d’être recontacté par mail</p>
+          <p>En nous contactant via le formulaire de contact, vous acceptez d’être recontacté par mail</p>
         </div>
         <div className="mention">
           <h2>Cookies</h2>
@@ -52,7 +52,6 @@ const PolitiqueConfidentialité = () => {
             moi », votre cookie de connexion sera conservé pendant deux semaines. Si vous vous déconnectez de votre compte, le cookie de connexion sera effacé.
           </p>
           <p>
-            {' '}
             En modifiant ou en publiant une publication, un cookie supplémentaire sera enregistré dans votre navigateur. Ce cookie ne comprend aucune donnée
             personnelle. Il indique simplement l’ID de la publication que vous venez de modifier. Il expire au bout d’un jour.
           </p>
