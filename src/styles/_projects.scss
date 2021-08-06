@@ -44,6 +44,14 @@
   //   background: linear-gradient(45deg, var(--secondary-400) 0%, var(--secondary-800) 100%);
   //   opacity: 0.5;
   // }
+  .project-loading {
+    position: absolute;
+    inset: 0;
+    background-color: red;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    background-color: var(--bloc-4);
+    border-radius: 15px;
+  }
   .mockup {
     position: absolute;
     top: 20px;

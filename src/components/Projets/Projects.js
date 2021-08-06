@@ -9,6 +9,7 @@ import { ReactComponent as RealisationImage } from '../../assets/realisations.sv
 export const Projects = () => {
   const { authUser } = useAuth();
   const [projects, setprojects] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = fb.firestore.collection('projects').onSnapshot((snapshot) => {
@@ -17,7 +18,7 @@ export const Projects = () => {
         ...doc.data(),
       }));
       setprojects(data);
-      console.log(data);
+      setIsLoading(false);
     });
     return unsubscribe;
   }, []);
@@ -65,7 +66,7 @@ export const Projects = () => {
             </div>
           </div>
           {projects.map((project) => (
-            <ProjectItem key={project.id} project={project} />
+            <ProjectItem key={project.id} project={project} isLoading={isLoading} />
           ))}
         </div>
         {authUser && <CreateProject />}

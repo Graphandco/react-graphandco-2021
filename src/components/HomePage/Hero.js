@@ -1,12 +1,39 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
 import Button from '../Button';
+import { gsap } from 'gsap';
 
-// import {ReactComponent as BlackTrees} from '../../assets/01-black-trees.svg'
 import { ReactComponent as HeroImg } from '../../assets/illustration.svg';
 import TextAnimation from '../animations/TextAnimation';
 
 export const Hero = () => {
+  useEffect(() => {
+    let tl = gsap.timeline({ delay: 0.5 });
+    tl.from('#Clavier', {
+      y: '200px',
+      opacity: 0,
+      ease: 'Power4.easeOut',
+      duration: 0.3,
+    });
+    tl.from('#Woman', {
+      y: '-200px',
+      opacity: 0,
+      ease: 'Power4.easeOut',
+      duration: 0.3,
+    });
+    tl.from('#Man_right', {
+      x: '200px',
+      opacity: 0,
+      ease: 'Power4.easeOut',
+      duration: 0.3,
+    });
+    tl.from('#Man_top', {
+      y: '-200px',
+      opacity: 0,
+      ease: 'Power4.easeOut',
+      duration: 0.3,
+    });
+  }, []);
+
   return (
     <section className="hero">
       <div className="hero-wrapper container">
