@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle`
       --text-color: ${({ theme }) => theme.text};
       --bg1: ${({ theme }) => theme.bg1};
       --bg2: ${({ theme }) => theme.bg2};
+      --footer-bg: ${({ theme }) => theme.footerBG};
       --main-font: 'MostraNuova', sans-serif;
       --title-font: 'MostraNuova2', sans-serif;
       margin: 0;
@@ -23,6 +24,8 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 19px;
       color: var(--text-color);
       transition: background-color .5s linear;
+      background-image: url(${({ theme }) => theme.pattern});
+      background-color: ${({ theme }) => theme.bg1};
    }
   
    `;
@@ -34,8 +37,10 @@ export const lightTheme = {
   bloc4: 'hsl(209, 20%, 98%, 1)',
   contrast: '#000',
   text: '#4b4b4c',
-  bg1: 'hsl(210, 30%, 90%, 1)',
-  bg2: 'hsl(210, 10%, 95%, 1)',
+  bg1: 'hsl(210, 10%, 95%, 1)',
+  bg2: 'hsl(210, 30%, 90%, 1)',
+  pattern: 'img/black-pattern.svg',
+  footerBG: 'hsl(0, 0%, 100%, .4)',
 };
 
 export const darkTheme = {
@@ -49,4 +54,6 @@ export const darkTheme = {
   // bg2: '#171f2a ',
   bg1: 'hsl(204, 43%, 8%, 1)',
   bg2: 'hsl(204, 20%, 6%, 1)',
+  pattern: 'img/white-pattern.svg',
+  footerBG: 'hsl(0, 0%, 0%, .3)',
 };

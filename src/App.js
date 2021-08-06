@@ -1,5 +1,5 @@
 //CORE
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 
 //STYLES
 import { GlobalStyles, lightTheme, darkTheme } from './styles/globalStyles';
@@ -38,15 +38,15 @@ function App() {
   const pageVariants = {
     initial: {
       opacity: 0,
-      scale: 0,
+      x: '-100vw',
     },
     in: {
       opacity: 1,
-      scale: 1,
+      x: 0,
     },
     out: {
       opacity: 0,
-      scale: 0,
+      x: '100vw',
     },
   };
 
@@ -56,6 +56,18 @@ function App() {
     duration: 0.4,
   };
 
+  // const pageTransition = {
+  //   type: 'spring',
+  //   //duration: 0.2,
+  //   //bounce: 0.5,
+  //   damping: 10,
+  //   stiffness: 150,
+  //   //mass: 0.5,
+  //   velocity: 2,
+  // };
+
+  const location = useLocation();
+
   return (
     <GlobalProvider>
       <ThemeProvider theme={themeMode}>
@@ -63,7 +75,7 @@ function App() {
         <Header theme={theme} toggleTheme={toggleTheme} />
         <main>
           <AnimatePresence exitBeforeEnter>
-            <Switch>
+            <Switch location={location} key={location.pathname}>
               <Route path="/" exact>
                 <HomePage variant={pageVariants} transition={pageTransition} />
               </Route>

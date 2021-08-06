@@ -15,7 +15,7 @@
     }
     label {
       color: var(--text-color) !important;
-      opacity: 0.5;
+      opacity: 0.8;
       &.Mui-focused {
         opacity: 1;
         .form-field div {
@@ -30,7 +30,7 @@
     .form-field div {
       &:before,
       &:after {
-        border-bottom: 1px solid var(--secondary) !important;
+        border-bottom: 2px solid var(--secondary) !important;
         opacity: 0.5;
       }
     }
