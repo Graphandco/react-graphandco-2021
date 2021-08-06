@@ -26,6 +26,7 @@ export const GlobalStyles = createGlobalStyle`
       transition: background-color .5s linear;
       background-image: url(${({ theme }) => theme.pattern});
       background-color: ${({ theme }) => theme.bg1};
+      overflow-x: hidden;
    }
   
    `;
