@@ -78,213 +78,214 @@
 	<rect x="201.034" y="397.694" fill="#B9B9B9" width="128.2" height="6.534"/>
 </g>
 <g id="Symboles-ecran">
-	<g>
+	<g class="symboles1">
 		<rect x="163.918" y="201.243" fill="#E0E0E0" width="25.561" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles1">
 		<rect x="196.633" y="220.951" fill="#E0E0E0" width="18.455" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles1">
 		<rect x="217.964" y="220.951" fill="#1487E3" width="12.246" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles1">
 		<rect x="242.985" y="300.072" fill="#1487E3" width="12.246" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles1">
 		<rect x="164.208" y="270.511" fill="#1487E3" width="12.247" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles1">
 		<rect x="232.631" y="220.951" fill="#E0E0E0" width="29.568" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles1">
 		<rect x="164.208" y="260.585" fill="#E0E0E0" width="19.001" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles1">
 		<rect x="215.262" y="280.365" fill="#E0E0E0" width="19.001" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles1">
 		<rect x="286.235" y="300.072" fill="#E0E0E0" width="19" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles2">
 		<rect x="190.693" y="280.365" fill="#E0E0E0" width="11.6" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles2">
 		<rect x="164.208" y="280.365" fill="#1487E3" width="22.981" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles2">
 		<rect x="164.208" y="290.219" fill="#E0E0E0" width="12.675" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles2">
 		<rect x="194.452" y="201.243" fill="#78C2FF" width="18.146" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles2">
 		<rect x="194.452" y="230.805" fill="#1487E3" width="18.146" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles2">
 		<rect x="185.38" y="240.659" fill="#E0E0E0" width="7.752" height="2.616"/>
 	</g>
-	<g>
+	<g class="symboles2">
 		<rect x="177.626" y="250.658" fill="#78C2FF" width="17.415" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles2">
 		<rect x="197.674" y="250.658" fill="#1487E3" width="24.041" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles3">
 		<rect x="273.81" y="290.219" fill="#1487E3" width="24.041" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles3">
 		<rect x="164.208" y="240.731" fill="#1487E3" width="18.146" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles3">
 		<rect x="164.208" y="250.658" fill="#1487E3" width="10.768" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles3">
 		<rect x="196.788" y="240.731" fill="#FF8761" width="10.157" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles3">
 		<rect x="164.512" y="300.072" fill="#FF8761" width="10.159" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles3">
 		<rect x="164.136" y="220.951" fill="#78C2FF" width="18.146" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles3">
 		<rect x="180.183" y="270.511" fill="#78C2FF" width="18.146" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles3">
 		<rect x="180.406" y="290.219" fill="#78C2FF" width="18.146" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles3">
 		<rect x="212.642" y="290.219" fill="#78C2FF" width="18.146" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles3">
 		<rect x="164.136" y="230.805" fill="#78C2FF" width="25.867" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles3">
 		<rect x="285.35" y="201.243" fill="#78C2FF" width="18.146" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="220.707" y="300.072" fill="#78C2FF" width="18.146" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="309.142" y="201.243" fill="#78C2FF" width="12.146" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="350.238" y="211.097" fill="#78C2FF" width="12.146" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="217.483" y="201.243" fill="#1487E3" width="23.119" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="309.142" y="300.072" fill="#1487E3" width="23.119" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="178.506" y="300.072" fill="#1487E3" width="23.118" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="307.562" y="211.097" fill="#1487E3" width="23.119" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="279.208" y="220.951" fill="#1487E3" width="23.119" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="259.119" y="300.072" fill="#1487E3" width="23.119" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="255.561" y="280.365" fill="#1487E3" width="23.119" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="249.108" y="230.805" fill="#1487E3" width="23.119" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="205.924" y="280.365" fill="#FF8761" width="4.984" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="305.235" y="220.951" fill="#78C2FF" width="16.435" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles4">
 		<rect x="257.702" y="201.243" fill="#FF8761" width="23.118" height="2.617"/>
 	</g>
-	<g>
+	<g  class="symboles5">
 		<rect x="231.322" y="230.805" fill="#FF8761" width="13.555" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles5">
 		<rect x="220.707" y="270.657" fill="#FF8761" width="13.556" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles5">
 		<rect x="244.877" y="201.243" fill="#E0E0E0" width="8.463" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles5">
 		<rect x="217.483" y="230.805" fill="#E0E0E0" width="8.462" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles5">
 		<rect x="336.256" y="211.097" fill="#E0E0E0" width="8.463" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles5">
 		<rect x="163.918" y="211.097" fill="#1487E3" width="13.238" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles5">
 		<rect x="199.241" y="260.657" fill="#1487E3" width="10.453" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles5">
 		<rect x="180.406" y="211.097" fill="#1487E3" width="4.275" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles5">
 		<rect x="268.164" y="211.097" fill="#E0E0E0" width="35.332" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles5">
 		<rect x="234.263" y="290.219" fill="#E0E0E0" width="35.332" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles5">
 		<rect x="187.822" y="211.097" fill="#FF8761" width="4.362" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles5">
 		<rect x="253.34" y="211.097" fill="#1487E3" width="11.559" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles5">
 		<rect x="264.898" y="220.951" fill="#FF8761" width="11.561" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles6">
 		<rect x="239.098" y="280.365" fill="#FF8761" width="11.559" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles6">
 		<rect x="205.459" y="300.072" fill="#FF8761" width="11.56" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles6">
 		<rect x="225.684" y="211.097" fill="#1487E3" width="24.597" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles6">
 		<rect x="282.911" y="280.365" fill="#1487E3" width="24.596" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles6">
 		<rect x="202.791" y="270.657" fill="#1487E3" width="14.369" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles6">
 		<rect x="201.867" y="290.219" fill="#1487E3" width="7.185" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles6">
 		<rect x="213.731" y="211.097" fill="#78C2FF" width="8.463" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles6">
 		<rect x="301.004" y="290.219" fill="#FF8761" width="8.462" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles6">
 		<rect x="185.248" y="220.951" fill="#FF8761" width="8.463" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles6">
 		<rect x="186.935" y="260.657" fill="#FF8761" width="8.463" height="2.617"/>
 	</g>
-	<g>
+	<g class="symboles6">
 		<rect x="195.761" y="211.097" fill="#1487E3" width="14.743" height="2.617"/>
 	</g>
 </g>
-<g>
+<!-- <g>
 	<g>
 		<g>
 			<path fill="#323657" d="M160.679,310.283c-0.003-0.001-0.007-0.002-0.011-0.001C160.715,310.303,160.722,310.305,160.679,310.283
 				z"/>
 		</g>
 	</g>
-</g>
+</g> -->
+<g id="Symboles">
 <g id="Security">
 	<g>
 		<path fill="#6AAFE8" d="M340.53,124.527l-0.199-0.102c-20.712-10.574-17.93-31.055-17.899-31.26l0.055-0.372h0.377
@@ -343,7 +344,7 @@
 			c0,1.286,1.046,2.332,2.332,2.332s2.332-1.046,2.332-2.332C103.994,191.236,102.948,190.19,101.663,190.19z"/>
 	</g>
 </g>
-<g id="Plus">
+<!-- <g id="Plus">
 	<g>
 		<path fill="#A1D4FF" d="M122.623,103.834h-21.994V81.839h21.994V103.834z M101.501,102.961h20.249V82.712h-20.249V102.961z"/>
 	</g>
@@ -353,8 +354,8 @@
 	<g>
 		<rect x="106.501" y="92.523" fill="#A1D4FF" width="10.25" height="0.872"/>
 	</g>
-</g>
-<g id="Enveloppe">
+</g> -->
+<!-- <g id="Enveloppe">
 	<g>
 		<path fill="#A1D4FF" d="M457.78,130.363h-31.437v-22.442h31.437V130.363z M427.216,129.491h29.692v-20.697h-29.692V129.491z"/>
 	</g>
@@ -370,9 +371,9 @@
 		
 			<rect x="431.985" y="115.781" transform="matrix(0.7259 0.6878 -0.6878 0.7259 203.8032 -263.4385)" fill="#A1D4FF" width="0.872" height="16.396"/>
 	</g>
-</g>
+</g> -->
 <g id="Engrenage">
-	<g>
+	<g id="Engrenage-gauche">
 		<path fill="#A1D4FF" d="M177.503,152.908l-0.326-0.854c-0.293-0.039-0.582-0.104-0.861-0.197l-0.667,0.626l-1.938-1.379
 			l0.374-0.836c-0.18-0.232-0.337-0.484-0.469-0.748l-0.915-0.029l-0.395-2.344l0.854-0.327c0.038-0.294,0.104-0.582,0.197-0.86
 			l-0.627-0.668l1.379-1.938l0.837,0.374c0.232-0.18,0.483-0.336,0.747-0.469l0.029-0.915l2.345-0.396l0.327,0.855
@@ -393,7 +394,7 @@
 			v0.001c0.868,0.617,2.075,0.414,2.693-0.454c0.617-0.867,0.413-2.075-0.454-2.692
 			C178.566,145.614,178.176,145.499,177.789,145.499z"/>
 	</g>
-	<g>
+	<g  id="Engrenage-droite">
 		<path fill="#A1D4FF" d="M159.341,155.644l-0.73-1.908c-0.783-0.089-1.553-0.265-2.292-0.526l-1.488,1.398l-4.044-2.878
 			l0.833-1.864c-0.489-0.614-0.908-1.283-1.248-1.993l-2.042-0.065l-0.824-4.894l1.908-0.73c0.088-0.783,0.264-1.551,0.525-2.292
 			l-1.397-1.489l2.877-4.042l1.865,0.831c0.613-0.489,1.281-0.907,1.993-1.247l0.064-2.042l4.895-0.825l0.729,1.908
@@ -485,6 +486,7 @@
 		<polygon fill="#78C2FF" points="124.647,356.178 90.532,356.178 90.532,355.305 123.774,355.305 123.774,318.227 135.988,318.227 
 			135.988,319.1 124.647,319.1 		"/>
 	</g>
+</g>
 </g>
 <g id="Man_right">
 	<path fill="#EEA886" d="M400.981,314.099c0,0-0.566-2.148,0.037-3.08c0.604-0.933,0.96-2.432,1.047-2.907
@@ -834,3 +836,4 @@
 		C148.863,300.361,147.276,300.977,147.276,300.977z"/>
 </g>
 </svg>
+

@@ -29,18 +29,6 @@
   &-content {
     margin-bottom: 150px;
     position: relative;
-    // &:before {
-    //   content: '';
-    //   position: absolute;
-    //   inset: 0;
-    //   top: 20px;
-    //   height: 100%;
-    //   width: 100%;
-    //   background-color: #994272;
-    //   filter: blur(60px);
-    //   opacity: 0.15;
-    //   z-index: -1;
-    // }
     @include mq(tablet) {
       margin-bottom: 0;
     }
@@ -61,9 +49,6 @@
     line-height: 0.9;
     margin: 1rem 0 2rem 0;
     color: var(--contrast);
-    // span {
-    //   opacity: 0.3;
-    // }
   }
   &-subtitle {
     font-size: 1.3rem;
@@ -82,17 +67,68 @@
       transform-origin: center;
     }
     #Check {
-      animation: rotateCheck 3s infinite linear;
+      animation: rotateClockwise 3s infinite linear;
+    }
+    #Engrenage-gauche {
+      animation: rotateClockwise 5s infinite linear;
+    }
+    #Engrenage-droite {
+      animation: rotateClockwiseReverse 5s infinite linear;
     }
     #Bulle_bleue {
       animation: opacityBulleBleue 3s infinite linear;
     }
-    @keyframes rotateCheck {
+    .symboles1 {
+      animation: blink 2s infinite linear;
+    }
+    .symboles2 {
+      animation: blink 1.8s infinite linear;
+      animation-delay: 0.4s;
+    }
+    .symboles3 {
+      animation: blink 2s infinite linear;
+      animation-delay: 0.8s;
+    }
+    .symboles4 {
+      animation: blink 2.1s infinite linear;
+      animation-delay: 1.2s;
+    }
+    .symboles5 {
+      animation: blink 2s infinite linear;
+      animation-delay: 1.5s;
+    }
+    .symboles6 {
+      animation: blink 2s infinite linear;
+      animation-delay: 1.8s;
+    }
+    @keyframes blink {
+      from {
+        opacity: 0;
+      }
+      1% {
+        opacity: 1;
+      }
+      60% {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+    @keyframes rotateClockwise {
       from {
         transform: rotate(0deg);
       }
       to {
         transform: rotate(360deg);
+      }
+    }
+    @keyframes rotateClockwiseReverse {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(-360deg);
       }
     }
   }

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef, useEffect } from 'react';
 import { PrestationItem } from './PrestationItem';
 import { FaChild } from 'react-icons/fa';
 import { GiMuscleUp } from 'react-icons/gi';
@@ -9,9 +9,39 @@ import { ReactComponent as SurMesure } from '../../assets/sur-mesure.svg';
 import { ReactComponent as SurMesureMobile } from '../../assets/sur-mesure-mobile.svg';
 import { useMediaQuery } from '@material-ui/core';
 import { PrestationsTools } from './PrestationsTools';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export const PrestationsBloc = () => {
   const isResponsive = useMediaQuery('(min-width: 768px)');
+
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    gsap.from('#ruban', {
+      x: -500,
+      duration: 1,
+      ease: 'Power4.easeOut',
+      scrollTrigger: {
+        start: 'center bottom-=100',
+        trigger: sectionRef.current,
+        //markers: true,
+        toggleActions: 'play none none reverse',
+      },
+    });
+    gsap.from('#main_droite', {
+      x: '-500',
+      duration: 1,
+      ease: 'Power4.easeOut',
+      scrollTrigger: {
+        start: 'center bottom-=100',
+        trigger: sectionRef.current,
+        //markers: true,
+        toggleActions: 'play none none reverse',
+      },
+    });
+  }, [sectionRef]);
 
   return (
     <section className="prestations">
@@ -57,7 +87,7 @@ export const PrestationsBloc = () => {
         </div>
       </div>
       <h3 className=" h2 taille-pour-vous">Nous réalisons le site taillé pour vous !</h3>
-      <div className="prestations-outro container">
+      <div className="prestations-outro container" ref={sectionRef}>
         {isResponsive ? <SurMesure /> : <SurMesureMobile />}
         <div className="prestation-description-wrapper">
           <div className="prestation-description-content">

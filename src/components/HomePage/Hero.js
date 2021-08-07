@@ -32,6 +32,11 @@ export const Hero = () => {
       ease: 'Power4.easeOut',
       duration: 0.3,
     });
+    tl.from('#Symboles', {
+      opacity: 0,
+      ease: 'Power4.easeOut',
+      duration: 0.8,
+    });
   }, []);
 
   return (
