@@ -15,13 +15,14 @@ const ContactForm = () => {
   const [values, setValues] = useState({});
 
   function handleForm() {
-    const { name, email, object, message } = values;
+    const { name, email, object, message, rgpd } = values;
 
     const data = {
       name,
       email,
       object,
       message,
+      rgpd,
     };
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, data, USER_ID).then(

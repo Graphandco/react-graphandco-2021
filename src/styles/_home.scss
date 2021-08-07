@@ -16,10 +16,10 @@
     column-gap: 4rem;
     grid-template-columns: 1fr 1fr;
     min-height: calc(100vh - 100px);
+    // @include mq(tablet) {
+    //   grid-template-columns: 3fr 2fr;
+    // }
     @include mq(tablet) {
-      grid-template-columns: 3fr 2fr;
-    }
-    @include mq(mobile) {
       display: flex;
       flex-direction: column-reverse;
       justify-content: space-around;
@@ -59,6 +59,9 @@
   svg {
     width: 500px;
     height: auto;
+    @include mq(tablet) {
+      width: 400px;
+    }
     @include mq(mobile) {
       width: 350px;
     }
@@ -78,27 +81,29 @@
     #Bulle_bleue {
       animation: opacityBulleBleue 3s infinite linear;
     }
+    //Blinks
+    --duration: 1.5s;
     .symboles1 {
       animation: blink 2s infinite linear;
     }
     .symboles2 {
-      animation: blink 1.8s infinite linear;
+      animation: blink var(--duration) infinite linear;
       animation-delay: 0.4s;
     }
     .symboles3 {
-      animation: blink 2s infinite linear;
+      animation: blink var(--duration) infinite linear;
       animation-delay: 0.8s;
     }
     .symboles4 {
-      animation: blink 2.1s infinite linear;
+      animation: blink var(--duration) infinite linear;
       animation-delay: 1.2s;
     }
     .symboles5 {
-      animation: blink 2s infinite linear;
+      animation: blink var(--duration) infinite linear;
       animation-delay: 1.5s;
     }
     .symboles6 {
-      animation: blink 2s infinite linear;
+      animation: blink var(--duration) infinite linear;
       animation-delay: 1.8s;
     }
     @keyframes blink {
@@ -108,8 +113,11 @@
       1% {
         opacity: 1;
       }
-      60% {
+      70% {
         opacity: 1;
+      }
+      71% {
+        opacity: 0;
       }
       to {
         opacity: 0;
