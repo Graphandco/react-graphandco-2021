@@ -92,8 +92,8 @@ export const ProjectItem = (props) => {
             className="project-img"
             src={`/img/projects/${props.project.slug}.jpg`}
             alt={props.project.name}
-            onMouseEnter={() => setPopupVisible(true)}
-            onMouseLeave={() => setPopupVisible(false)}
+            onMouseOver={(e) => setPopupVisible(true)}
+            onMouseLeave={(e) => setPopupVisible(false)}
           />
           <div className="project-item-content">
             {mockup && <div className="mockup">Mockup</div>}
