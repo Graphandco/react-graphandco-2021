@@ -24,8 +24,9 @@ export const PrestationsBloc = () => {
       duration: 1,
       ease: 'Power4.easeOut',
       scrollTrigger: {
-        start: 'center bottom-=100',
-        trigger: sectionRef.current,
+        //start: 'center bottom-=100',
+        // trigger: sectionRef.current,
+        trigger: '#ruban',
         //markers: true,
         toggleActions: 'play none none reverse',
       },
@@ -35,13 +36,14 @@ export const PrestationsBloc = () => {
       duration: 1,
       ease: 'Power4.easeOut',
       scrollTrigger: {
-        start: 'center bottom-=100',
-        trigger: sectionRef.current,
-        //markers: true,
+        //start: 'center bottom-=100',
+        // trigger: sectionRef.current,
+        trigger: '#main_droite',
+        markers: true,
         toggleActions: 'play none none reverse',
       },
     });
-  }, [sectionRef]);
+  }, []);
 
   return (
     <section className="prestations">

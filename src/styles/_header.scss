@@ -58,6 +58,10 @@ header {
       &.active {
         color: var(--secondary);
       }
+      @include mq(tablet) {
+        font-size: 1rem;
+        padding: 0 1vw;
+      }
       @include mq(mobile) {
         margin: 15px 0;
         font-size: 2rem;

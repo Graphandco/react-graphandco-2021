@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
 import { FaTrash, FaPencilAlt } from 'react-icons/fa';
 import { fb } from '../../services';
 import { useAuth } from '../../hooks';
 import Button from '../Button';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const ProjectItem = (props) => {
   const [name, setName] = useState(props.project.name);
@@ -11,7 +14,9 @@ export const ProjectItem = (props) => {
   const [slug, setSlug] = useState(props.project.slug);
   const [url, setUrl] = useState(props.project.url);
   const [mockup, setMockup] = useState(props.project.mockup);
+  const [responsive, setResponsive] = useState(props.project.responsive);
   const [position, setPosition] = useState(props.project.position);
+  const [popupVisible, setPopupVisible] = useState(false);
 
   const [edit, setEdit] = useState(false);
 
@@ -30,6 +35,7 @@ export const ProjectItem = (props) => {
       slug,
       url,
       mockup,
+      responsive,
       position,
     });
     setEdit(false);
@@ -49,23 +55,25 @@ export const ProjectItem = (props) => {
       gsap.fromTo(
         el,
         {
+          x: 50,
           autoAlpha: 0,
         },
         {
           duration: 0.5,
+          x: 0,
           autoAlpha: 1,
           ease: 'none',
           scrollTrigger: {
             id: `section-${index + 1}`,
             trigger: el,
             start: 'top center+=190',
-            //toggleActions: 'play none none reverse',
+            toggleActions: 'play none none reverse',
             //markers: true,
           },
         },
       );
     });
-  }, [realisationRefs]);
+  }, []);
 
   return (
     <div className="project-item" ref={addToRefs}>
@@ -73,7 +81,20 @@ export const ProjectItem = (props) => {
         <div className="project-loading"></div>
       ) : (
         <>
-          <img src={`/img/projects/${props.project.slug}.jpg`} alt="" />
+          {responsive && (
+            <img
+              className={`${popupVisible ? 'responsive-preview show' : 'responsive-preview'}`}
+              src={`/img/projects/${props.project.slug}-responsive.jpg`}
+              alt="{props.project.name}"
+            />
+          )}
+          <img
+            className="project-img"
+            src={`/img/projects/${props.project.slug}.jpg`}
+            alt={props.project.name}
+            onMouseEnter={() => setPopupVisible(true)}
+            onMouseLeave={() => setPopupVisible(false)}
+          />
           <div className="project-item-content">
             {mockup && <div className="mockup">Mockup</div>}
             <h2>{props.project.name}</h2>
@@ -107,9 +128,15 @@ export const ProjectItem = (props) => {
                       <label>URL du projet</label>
                       <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
                     </div>
-                    <div className="form-item">
-                      <label>Mockup ?</label>
-                      <input type="checkbox" value={mockup} checked={mockup} onChange={(e) => setMockup(!mockup)} />
+                    <div className="form-item form-item-checkboxes">
+                      <div className="checkbox-item">
+                        <label>Mockup ?</label>
+                        <input type="checkbox" value={mockup} checked={mockup} onChange={(e) => setMockup(!mockup)} />
+                      </div>
+                      <div className="checkbox-item">
+                        <label>Responsive Preview ?</label>
+                        <input type="checkbox" value={responsive} checked={responsive} onChange={(e) => setResponsive(!responsive)} />
+                      </div>
                     </div>
                     <div className="form-item">
                       <label>Position du projet</label>

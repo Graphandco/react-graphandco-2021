@@ -56,8 +56,8 @@ const Menu = forwardRef(({ setIsOpen }, ref) => {
 const Pointer = styled.span`
   position: absolute;
   bottom: -10px;
-  left: ${(props) => props.position};
-  width: calc(100% / ${(props) => props.linksLength});
+  left: calc(${(props) => props.position} + 15px);
+  width: calc(100% / ${(props) => props.linksLength} - 30px);
   height: 1px;
   background: var(--secondary);
   transition: 0.5s ease-in-out;
