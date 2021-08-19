@@ -15,7 +15,7 @@
     place-items: center;
     column-gap: 4rem;
     grid-template-columns: 1fr 1fr;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 125px);
     // @include mq(tablet) {
     //   grid-template-columns: 3fr 2fr;
     // }

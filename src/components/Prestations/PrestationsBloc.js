@@ -39,7 +39,7 @@ export const PrestationsBloc = () => {
         //start: 'center bottom-=100',
         // trigger: sectionRef.current,
         trigger: '#main_droite',
-        markers: true,
+        //markers: true,
         toggleActions: 'play none none reverse',
       },
     });

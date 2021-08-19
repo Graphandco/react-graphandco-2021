@@ -1,7 +1,7 @@
 header {
   // background-color: var(--bg2);
   //@include bg-pattern2;
-  height: 100px;
+  height: 125px;
   display: flex;
   align-items: center;
   z-index: 9;
@@ -12,7 +12,9 @@ header {
     position: relative;
   }
   .site-logo img {
-    width: 120px;
+    width: 100px;
+    padding-top: 25px;
+    margin-left: 50px;
   }
   .header-menu {
     display: flex;

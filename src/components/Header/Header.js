@@ -6,7 +6,7 @@ import User from './User';
 import { gsap } from 'gsap';
 import { useMediaQuery } from '@material-ui/core';
 
-import logo from '../../assets/logo.jpg';
+import logo from '../../assets/logo.png';
 
 const Header = ({ theme, toggleTheme }) => {
   const isResponsive = useMediaQuery('(max-width: 768px)');
