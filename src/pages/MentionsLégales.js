@@ -28,6 +28,7 @@ const MentionsLégales = ({ variant, transition }) => {
                 </a>
               </p>
               <p>SIRET : 803049154 00021</p>
+              Réalisation logo : Sébastien Frey
             </div>
 
             <div className="mention">
