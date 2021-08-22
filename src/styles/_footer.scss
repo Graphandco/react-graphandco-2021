@@ -72,7 +72,12 @@ footer {
       margin-top: 1rem;
       font-weight: bold;
       display: flex;
+      align-items: center;
       gap: 7px;
+      img {
+        width: 25px;
+        height: 25px;
+      }
     }
   }
 }

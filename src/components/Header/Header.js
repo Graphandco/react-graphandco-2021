@@ -6,7 +6,7 @@ import User from './User';
 import { gsap } from 'gsap';
 import { useMediaQuery } from '@material-ui/core';
 
-import logo from '../../assets/logo.png';
+import { ReactComponent as Logo } from '../../assets/logo.svg';
 
 const Header = ({ theme, toggleTheme }) => {
   const isResponsive = useMediaQuery('(max-width: 768px)');
@@ -110,7 +110,8 @@ const Header = ({ theme, toggleTheme }) => {
       <header className={`header ${isResponsive ? 'mobile' : ''}`}>
         <div className="header-wrapper container">
           <Link to="/" className="site-logo">
-            <img src={logo} alt="Logo" />
+            {/* <img src={logo} alt="Logo" /> */}
+            <Logo />
           </Link>
           <div
             ref={navMenuRef}

@@ -26,7 +26,8 @@ export const Footer = () => {
             <Link to="/politique-confidentialite">Politique de confidentialité</Link>
           </div>
           <div className="copyright">
-            <FaCopyright /> 2021 Graph and Co
+            <img src="/img/logo-footer.png" alt="Logo" />
+            Graph and Co <FaCopyright /> 2021
           </div>
         </div>
       </div>

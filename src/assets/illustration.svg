@@ -56,6 +56,12 @@
 	<polygon fill="#FFFFFF" points="342.647,419.927 351.348,419.927 352.869,425.734 344.017,425.734 	"/>
 	<rect x="160.986" y="465.384" fill="#B9B9B9" width="207.056" height="2.856"/>
 </g>
+<g id="Pied_ordinateur">
+	<g>
+		<rect x="250.886" y="314.409" fill="#518AFA" width="28.496" height="86.552"/>
+	</g>
+	<rect x="201.034" y="397.694" fill="#B9B9B9" width="128.2" height="6.534"/>
+</g>
 <g id="Bord-ecran">
 	<path fill="#B9B9B9" d="M150.764,356.103h228.742c4.783,0,8.66-3.878,8.66-8.661V191.178c0-4.783-3.877-8.661-8.66-8.661H150.764
 		c-4.783,0-8.661,3.878-8.661,8.661v156.264C142.103,352.225,145.98,356.103,150.764,356.103z"/>
@@ -71,12 +77,7 @@
 <g id="Bouton-ecran">
 	<circle fill="#696969" cx="265.135" cy="341.348" r="7.938"/>
 </g>
-<g id="Pied_ordinateur">
-	<g>
-		<rect x="250.886" y="314.409" fill="#518AFA" width="28.496" height="86.552"/>
-	</g>
-	<rect x="201.034" y="397.694" fill="#B9B9B9" width="128.2" height="6.534"/>
-</g>
+
 <g id="Symboles-ecran">
 	<g class="symboles1">
 		<rect x="163.918" y="201.243" fill="#E0E0E0" width="25.561" height="2.617"/>

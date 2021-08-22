@@ -10,11 +10,23 @@ header {
     align-items: center;
     justify-content: space-between;
     position: relative;
+    @include mq(mobile) {
+      justify-content: center;
+    }
   }
-  .site-logo img {
-    width: 100px;
-    padding-top: 25px;
-    margin-left: 50px;
+  .site-logo {
+    width: 75px;
+    height: 75px;
+    margin-left: 2rem;
+    @include mq(mobile) {
+      margin-left: 0;
+      width: 100px;
+      height: 100px;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
   .header-menu {
     display: flex;
