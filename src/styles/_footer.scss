@@ -72,6 +72,8 @@ footer {
       margin-top: 1rem;
       font-weight: bold;
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
       gap: 7px;
       img {
