@@ -4,6 +4,7 @@ export const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
       box-sizing: border-box;
   }
+
    body {
       --primary: hsl(209, 80%, 60%, 1);
       --secondary: hsl(42, 90%, 50%, 1);

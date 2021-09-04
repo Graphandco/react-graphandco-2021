@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import FooterColumn from './FooterColumn';
-import { FaCopyright, FaChevronUp } from 'react-icons/fa';
+import { FaChevronUp } from 'react-icons/fa';
 import { Jump } from 'react-jump';
 import { Link } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ export const Footer = () => {
           </div>
           <div className="copyright">
             <img src="/img/logo-footer.png" alt="Logo" />
-            Graph and Co <FaCopyright /> 2021
+            <span>Graph and Co {new Date().getFullYear()}</span>
           </div>
         </div>
       </div>
