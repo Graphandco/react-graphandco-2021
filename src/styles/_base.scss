@@ -152,6 +152,7 @@ h2,
 html {
   scrollbar-width: normal;
   scrollbar-color: rgb(242 173 13 / 40%) rgb(212, 212, 212);
+  overflow-x: hidden;
 }
 html::-webkit-scrollbar {
   width: 2vw;
