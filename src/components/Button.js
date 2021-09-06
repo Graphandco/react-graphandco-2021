@@ -24,7 +24,7 @@ const Button = ({ title, link, outside, small, onClick, center, disabled, mt, mr
 
 const Btn = styled.button`
   display: block;
-  background: none;
+  //background: none;
   border: none;
   cursor: pointer;
   line-height: 1.5;
@@ -48,12 +48,13 @@ const Btn = styled.button`
   span {
     display: block;
     padding: ${(props) => (props.small ? '0.5em 1.5em' : '1em 3em')};
-    color: var(--contrast);
+    color: black;
     font-size: 1rem;
+    font-weight: bold;
   }
-  &:hover span {
+  /* &:hover span {
     color: var(--secondary-400);
-  }
+  } */
 `;
 
 export default Button;
