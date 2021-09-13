@@ -8,6 +8,10 @@
 
     .form-item {
       margin: 1rem 0;
+      &-checkboxes {
+        display: flex;
+        justify-content: space-between;
+      }
       label {
         display: block;
         margin-bottom: 5px;

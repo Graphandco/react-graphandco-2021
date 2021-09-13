@@ -200,6 +200,10 @@ p {
 button {
   @include btn-border-drawing(var(--secondary), var(--contrast), 2px, bottom, right);
   background-color: var(--secondary);
+  transition: 0.3s;
+  &:hover {
+    background-color: hsl(42deg 100% 50%);
+  }
 }
 a {
   color: var(--contrast);

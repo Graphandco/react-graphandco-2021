@@ -48,7 +48,7 @@ export const Hero = () => {
             <span>Un</span> métier<span>, une </span>
             <TextAnimation />
           </div>
-          <div className="hero-subtitle">Une agence spécialisée dans la création de sites web modernes et intuitifs.</div>
+          <div className="hero-subtitle">Nous sommes spécialisés dans la création de sites web modernes et intuitifs.</div>
           <Button title="Voir nos offres" mt="3" link="/prestations" />
         </div>
         <HeroImg />

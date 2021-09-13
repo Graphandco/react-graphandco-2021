@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaTrash, FaPencilAlt } from 'react-icons/fa';
+import { MdTouchApp } from 'react-icons/md';
 import { fb } from '../../services';
 import { useAuth } from '../../hooks';
 import Button from '../Button';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { icons } from 'react-icons/lib';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,16 +87,22 @@ export const ProjectItem = (props) => {
             <img
               className={`${popupVisible ? 'responsive-preview show' : 'responsive-preview'}`}
               src={`/img/projects/${props.project.slug}-responsive.jpg`}
-              alt="{props.project.name}"
+              alt={props.project.name}
             />
           )}
-          <img
-            className="project-img"
-            src={`/img/projects/${props.project.slug}.jpg`}
-            alt={props.project.name}
-            onMouseOver={(e) => setPopupVisible(true)}
-            onMouseLeave={(e) => setPopupVisible(false)}
-          />
+          <div className="project-img">
+            <img
+              src={`/img/projects/${props.project.slug}.jpg`}
+              alt={props.project.name}
+              onMouseOver={(e) => setPopupVisible(true)}
+              onMouseLeave={(e) => setPopupVisible(false)}
+            />
+            {!mockup && (
+              <div className="click-icon">
+                <MdTouchApp />
+              </div>
+            )}
+          </div>
           <div className="project-item-content">
             {mockup && <div className="mockup">Mockup</div>}
             <h2>{props.project.name}</h2>

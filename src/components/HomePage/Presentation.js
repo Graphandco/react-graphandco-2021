@@ -87,7 +87,7 @@ export const Presentation = () => {
   return (
     <section ref={sectionRef} className="presentation">
       <div ref={contentRef} className="presentation-content container">
-        <h2>Une agence web à votre service</h2>
+        <h2>Nos compétences à votre service</h2>
         {content.map((p, index) => (
           <p ref={addToRefs} key={index} dangerouslySetInnerHTML={{ __html: p }}></p>
         ))}

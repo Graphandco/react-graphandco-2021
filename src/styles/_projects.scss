@@ -46,7 +46,36 @@
   // }
   .project-img {
     position: relative;
-    display: block;
+    display: grid;
+    place-items: center;
+    &:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, var(--bloc-4) 0%, rgba(0, 0, 0, 0.25) 10%, rgba(0, 0, 0, 0.25) 40%);
+      pointer-events: none;
+    }
+    .click-icon {
+      position: absolute;
+      bottom: 0;
+      color: var(--secondary);
+      font-size: 1.5rem;
+      animation: clickme 2s linear infinite;
+      //box-shadow: 0 0 2px 0px var(--secondary), 0 14px 28px rgba(0, 0, 0, 0.25);
+      padding: 2px;
+      pointer-events: none;
+      @keyframes clickme {
+        from {
+          transform: scale(1.2);
+        }
+        50% {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.2);
+        }
+      }
+    }
   }
   .responsive-preview {
     position: absolute;
