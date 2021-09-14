@@ -6,7 +6,6 @@ import { useAuth } from '../../hooks';
 import Button from '../Button';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { icons } from 'react-icons/lib';
 
 gsap.registerPlugin(ScrollTrigger);
 
