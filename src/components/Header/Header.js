@@ -35,7 +35,7 @@ const Header = ({ theme, toggleTheme }) => {
           {
             duration: 0.1,
             opacity: 1,
-            left: 300,
+            left: 450,
             ease: 'Expo.easeOut',
             stagger: 0.1,
           },

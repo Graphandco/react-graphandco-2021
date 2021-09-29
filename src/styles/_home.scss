@@ -22,7 +22,8 @@
     @include mq(tablet) {
       display: flex;
       flex-direction: column-reverse;
-      justify-content: space-around;
+      // justify-content: space-around;
+      justify-content: flex-end;
     }
   }
 
@@ -39,14 +40,16 @@
     }
   }
   &-site-name {
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 100;
     color: var(--secondary);
+    font-size: clamp(1.2rem, 2rem, 2vw);
+    letter-spacing: 5px;
   }
   &-title {
     font-family: var(--title-font);
     font-size: clamp(2rem, 5rem, 7vw);
-    line-height: 0.9;
+    line-height: 0.7;
     margin: 1rem 0 2rem 0;
     color: var(--contrast);
   }
@@ -54,16 +57,19 @@
     font-size: 1.3rem;
     justify-self: end;
     @include border-left;
+    @include mq(mobile) {
+      text-align: center;
+    }
   }
 
   svg {
     width: 500px;
     height: auto;
     @include mq(tablet) {
-      width: 400px;
+      width: 350px;
     }
     @include mq(mobile) {
-      width: 350px;
+      width: 300px;
     }
     g {
       transform-box: fill-box;
@@ -78,13 +84,13 @@
     #Engrenage-droite {
       animation: rotateClockwiseReverse 5s infinite linear;
     }
-    #Bulle_bleue {
-      animation: opacityBulleBleue 3s infinite linear;
-    }
+    // #Bulle_bleue {
+    //   animation: opacityBulleBleue 3s infinite linear;
+    // }
     //Blinks
-    --duration: 1.5s;
+    --duration: 3.5s;
     .symboles1 {
-      animation: blink 2s infinite linear;
+      animation: blink var(--duration) infinite linear;
     }
     .symboles2 {
       animation: blink var(--duration) infinite linear;

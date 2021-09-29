@@ -35,6 +35,7 @@ const Btn = styled.button`
   margin-right: ${(props) => props.mr && props.mr + 'rem'};
   margin-bottom: ${(props) => props.mb && props.mb + 'rem'};
   margin-left: ${(props) => props.ml && props.ml + 'rem'};
+  font-family: var(--main-font);
 
   &:focus {
     outline: 2px solid var(--secondary-400);
@@ -47,10 +48,13 @@ const Btn = styled.button`
 
   span {
     display: block;
-    padding: ${(props) => (props.small ? '0.5em 1.5em' : '1em 3em')};
+    padding: ${(props) => (props.small ? '0.5em 1.5em' : '.6em 2em')};
     color: black;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
+    @media (max-width: 767px) {
+      padding: ${(props) => (props.small ? '0.3em 1em' : '.4em 1.5em')};
+    }
   }
   /* &:hover span {
     color: var(--secondary-400);
