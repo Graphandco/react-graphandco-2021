@@ -49,7 +49,7 @@ export const darkTheme = {
   bloc1: 'hsl(209, 20%, 16%, 1)',
   bloc2: 'hsl(209, 20%, 14%, 1)',
   bloc3: 'hsl(209, 20%, 12%, 1)',
-  bloc4: 'hsl(209, 20%, 10%, 1)',
+  bloc4: 'hsl(209, 30%, 10%, 1)',
   contrast: '#FFF',
   //text: '#cecece',
   text: 'hsl(205deg 15% 70%)',
