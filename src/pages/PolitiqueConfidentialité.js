@@ -11,7 +11,7 @@ const PolitiqueConfidentialité = ({ variant, transition }) => {
           <h1>Politique de Confidentialité</h1>
           <div className="mention">
             <h2>Qui sommes-nous ?</h2>
-            <p>L’adresse de notre site Web est : https://www.graphandco.net</p>
+            <p>L’adresse de notre site Web est : https://www.graphandco.com</p>
           </div>
           <div className="mention">
             <h2>Commentaires</h2>

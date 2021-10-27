@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
       --bloc-4: ${({ theme }) => theme.bloc4};
       --primary: ${({ theme }) => theme.primary};
       --contrast: ${({ theme }) => theme.contrast};
+      --contrastOpacity: ${({ theme }) => theme.contrastOpacity};
       --text-color: ${({ theme }) => theme.text};
       --bg1: ${({ theme }) => theme.bg1};
       --bg2: ${({ theme }) => theme.bg2};
@@ -38,6 +39,7 @@ export const lightTheme = {
   bloc3: 'hsl(209, 20%, 96%, 1)',
   bloc4: 'hsl(209, 20%, 98%, 1)',
   contrast: '#000',
+  contrastOpacity: 'rgba(0, 0, 0, 0.05)',
   text: '#4b4b4c',
   bg1: 'hsl(210, 10%, 95%, 1)',
   bg2: 'hsl(210, 30%, 90%, 1)',
@@ -51,6 +53,7 @@ export const darkTheme = {
   bloc3: 'hsl(209, 20%, 12%, 1)',
   bloc4: 'hsl(209, 30%, 10%, 1)',
   contrast: '#FFF',
+  contrastOpacity: 'rgba(255, 255, 255, 0.05)',
   //text: '#cecece',
   text: 'hsl(205deg 15% 70%)',
   // bg1: '#092436 ',

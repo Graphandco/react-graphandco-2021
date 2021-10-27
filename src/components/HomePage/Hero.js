@@ -43,15 +43,20 @@ export const Hero = () => {
     <section className="hero">
       <div className="hero-wrapper container">
         <div className="hero-content">
-          <div className="hero-site-name">Graph and Co</div>
+          <div className="hero-site-name">Création de sites web</div>
           <div className="hero-title">
             <span>Un</span> métier<span>, une </span>
             <TextAnimation />
           </div>
-          <div className="hero-subtitle">Nous sommes spécialisés dans la création de sites web modernes et intuitifs.</div>
-          <Button title="Voir nos offres" mt="3" link="/prestations" />
+          <div className="hero-subtitle">Nous sommes spécialisés dans la réalisation de sites web modernes et intuitifs.</div>
+          <Button title="Voir nos offres" mt="1" link="/prestations" />
         </div>
         <HeroImg />
+        {/* <div className="site-title">
+          <span className="graph">Graph</span>
+          <span className="and">and</span>
+          <span className="co">Co</span>
+        </div> */}
       </div>
     </section>
   );
