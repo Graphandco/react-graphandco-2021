@@ -69,17 +69,19 @@ header {
     @include mq(mobile) {
       grid-template-columns: 1fr !important;
     }
-    .pointer {
-      position: absolute;
-      bottom: -25px;
-      transition: 0.3s;
-    }
+    // .pointer {
+    //   position: absolute;
+    //   bottom: -25px;
+    //   transition: 0.3s;
+    // }
     a {
       position: relative;
-      padding: 0 1.5vw;
+      display: block;
+      height: 100%;
+      padding: 20px 1vw;
       text-align: center;
       text-transform: uppercase;
-      font-size: 1.1rem;
+      font-size: 1rem;
       letter-spacing: 0.05rem;
       &.active {
         color: var(--secondary);

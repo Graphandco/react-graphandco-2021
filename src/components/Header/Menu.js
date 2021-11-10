@@ -53,22 +53,28 @@ const Menu = forwardRef(({ setIsOpen }, ref) => {
   );
 });
 
-const Pointer = styled.span`
-  position: absolute;
-  bottom: -10px;
-  left: calc(${(props) => props.position} + 15px);
-  width: calc(100% / ${(props) => props.linksLength} - 30px);
-  height: 1px;
-  background: var(--secondary);
-  transition: 0.5s ease-in-out;
-  @media (max-width: 767px) {
-    display: none;
-  }
-`;
 const Nav = styled.nav`
   position: relative;
   margin-right: 2rem;
   display: grid;
   grid-template-columns: repeat(${(props) => props.columns}, 1fr);
+  &:hover span {
+    opacity: 1;
+  }
+`;
+
+const Pointer = styled.span`
+  position: absolute;
+  bottom: 5px;
+  left: calc(${(props) => props.position} + 15px);
+  width: calc(100% / ${(props) => props.linksLength} - 30px);
+  height: 3px;
+  background: var(--secondary);
+  border-radius: 50px;
+  opacity: 0;
+  transition: left 0.5s ease-in-out, opacity 0.2s;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 export default Menu;
