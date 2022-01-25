@@ -106,7 +106,7 @@ export const Projects = () => {
       console.log(projects);
     });
     return unsubscribe;
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   //TRI DES PROJETS PAR POSITION
   const dynamicSort = (property) => {
