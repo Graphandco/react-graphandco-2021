@@ -201,7 +201,7 @@ p {
   line-height: 1.5rem;
 }
 button {
-  @include btn-border-drawing(var(--secondary), var(--contrast), 2px, bottom, right);
+  //@include btn-border-drawing(var(--secondary), var(--contrast), 2px, bottom, right);
   background-color: var(--secondary);
   transition: 0.3s;
   &:hover {

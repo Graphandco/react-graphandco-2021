@@ -23,6 +23,7 @@ const Button = ({ title, link, outside, small, onClick, center, disabled, mt, mr
 };
 
 const Btn = styled.button`
+  position: relative;
   display: block;
   //background: none;
   border: none;
@@ -37,8 +38,28 @@ const Btn = styled.button`
   margin-left: ${(props) => props.ml && props.ml + 'rem'};
   font-family: var(--main-font);
 
-  &:focus {
-    outline: 2px solid var(--secondary-400);
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border: 1px solid var(--contrast);
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: var(--contrast);
+    &:before {
+      opacity: 1;
+    }
+    span {
+      color: var(--bloc-1);
+    }
   }
 
   &:disabled {

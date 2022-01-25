@@ -6,6 +6,90 @@ import { fb } from '../../services';
 import { ProjectItem } from './ProjectItem';
 import { ReactComponent as RealisationImage } from '../../assets/realisations.svg';
 
+const localData = [
+  {
+    description: 'Exemple de création pour un barbier',
+    name: 'Barber Shop',
+    position: '5',
+    slug: 'barber-shop',
+    url: 'https://barber.graphandco.com',
+    responsive: true,
+    mockup: false,
+  },
+  {
+    description: 'Prototype pour un site de stockage en ligne',
+    name: 'Fylo',
+    position: '1',
+    slug: 'fylo',
+    url: 'https://fylo.graphandco.com',
+    responsive: false,
+    mockup: true,
+  },
+  {
+    description: 'Site pour un magasin de pêche à Kingersheim',
+    name: '3 Frontières Pêche',
+    position: '6',
+    slug: '3fp',
+    url: 'https://3frontierespeche.fr',
+    responsive: true,
+    mockup: false,
+  },
+  {
+    description: 'Site pour un magasin de pêche à Dannemarie',
+    name: 'Pêche Exotique',
+    position: '6',
+    slug: 'peche-exotique',
+    url: 'https://3frontierespeche.fr',
+    responsive: true,
+    mockup: false,
+  },
+  {
+    description: "Exemple de réalisation d'un site pour un restaurant spécialisé dans les burgers",
+    name: 'Burgerio',
+    position: '4',
+    slug: 'burgerio',
+    url: 'https://burgerio.graphandco.com',
+    responsive: false,
+    mockup: true,
+  },
+  {
+    description: 'Site pour le distributeur français des bateaux-amorceurs Boatman',
+    name: 'Boatman',
+    position: '9',
+    slug: 'boatman',
+    url: 'https://www.boatmanfrance.fr',
+    responsive: true,
+    mockup: false,
+  },
+  {
+    description: 'Site pour la pizzeria La Toscana à Mulhouse avec commande et paiement en click and collect.',
+    name: 'La Toscana',
+    position: '2',
+    slug: 'la-toscana',
+    url: 'https://latoscana.fr',
+    responsive: true,
+    mockup: false,
+  },
+  {
+    description: 'Site d’accompagnement à travers la taromancie.',
+    name: 'Willow Tarot',
+    position: '3',
+    slug: 'willow-tarot',
+    url: 'https://willow-tarot.fr',
+    responsive: true,
+    mockup: false,
+  },
+  {
+    description: 'Site vitrine pour un créateur de guitares originales en tissu.',
+    name: 'Loïde Guitare',
+    position: '8',
+    slug: 'loide-guitare',
+    url: 'https://loide-guitare.fr',
+    responsive: true,
+    mockup: false,
+  },
+];
+
 export const Projects = () => {
   const { authUser } = useAuth();
   const [projects, setprojects] = useState([]);
@@ -19,6 +103,7 @@ export const Projects = () => {
       }));
       setprojects(data);
       setIsLoading(false);
+      console.log(projects);
     });
     return unsubscribe;
   }, []);
@@ -38,7 +123,7 @@ export const Projects = () => {
       return result * sortOrder;
     };
   };
-  projects.sort(dynamicSort('position'));
+  localData.sort(dynamicSort('position'));
 
   return (
     <>
@@ -65,8 +150,8 @@ export const Projects = () => {
               <p>Retrouvez ici les différents projets que nous avons pu développer pour nos clients.</p>
             </div>
           </div>
-          {projects.map((project) => (
-            <ProjectItem key={project.id} project={project} isLoading={isLoading} />
+          {localData.map((project) => (
+            <ProjectItem key={project.slug} project={project} isLoading={isLoading} />
           ))}
         </div>
         {authUser && <CreateProject />}
