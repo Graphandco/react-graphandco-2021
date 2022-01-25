@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 export const Presentation = () => {
   const sectionRef = useRef(null);
   const imgRef = useRef(null);
-  const contentRef = useRef(null);
+  const titleRef = useRef(null);
   const btnRef = useRef(null);
   const paragraphRefs = useRef([]);
   paragraphRefs.current = [];
@@ -20,34 +20,34 @@ export const Presentation = () => {
   };
 
   useEffect(() => {
-    gsap.from(contentRef.current, {
-      x: '-100%',
-      opacity: 0,
+    gsap.to(titleRef.current, {
+      x: 0,
+      opacity: 1,
       duration: 2,
-      ease: 'Power4.easeOut',
+      ease: 'Elastic.easeOut',
       scrollTrigger: {
         start: 'top bottom-=300',
         trigger: sectionRef.current,
         //toggleActions: 'play none none reverse',
       },
     });
-    gsap.from(imgRef.current, {
-      x: '100%',
-      opacity: 0,
-      scale: 1.5,
-      duration: 2,
+
+    gsap.to(imgRef.current, {
+      clipPath: 'polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%)',
+      // duration: 2,
       ease: 'Power4.easeOut',
       scrollTrigger: {
-        start: 'top bottom-=200',
+        start: 'top bottom-=300',
         trigger: sectionRef.current,
+        scrub: 1,
         //toggleActions: 'play none none reverse',
       },
     });
-    gsap.from(btnRef.current, {
-      opacity: 0,
-      scale: 0,
-      duration: 2,
-      ease: 'Power4.easeOut',
+    gsap.to(btnRef.current, {
+      opacity: 1,
+      //scale: 0,
+      duration: 1,
+      ease: 'Expo.easeIn',
       scrollTrigger: {
         start: 'top bottom-=200',
         trigger: btnRef.current,
@@ -62,7 +62,7 @@ export const Presentation = () => {
           autoAlpha: 0,
         },
         {
-          duration: 1,
+          duration: 2,
           autoAlpha: 1,
           ease: 'none',
           scrollTrigger: {
@@ -86,8 +86,8 @@ export const Presentation = () => {
 
   return (
     <section ref={sectionRef} className="presentation">
-      <div ref={contentRef} className="presentation-content container">
-        <h2>Nos compétences à votre service</h2>
+      <div className="presentation-content container">
+        <h2 ref={titleRef}>Nos compétences à votre service</h2>
         {content.map((p, index) => (
           <p ref={addToRefs} key={index} dangerouslySetInnerHTML={{ __html: p }}></p>
         ))}
@@ -95,8 +95,8 @@ export const Presentation = () => {
           <Button title="Voir nos réalisations" link="/realisations" center mt="4" mb="2" />
         </div>
       </div>
-      <div className="presentation-hero">
-        <img ref={imgRef} src="/img/presentation.jpg" alt="Présentation" />
+      <div ref={imgRef} className="presentation-hero">
+        <img src="/img/presentation.jpg" alt="Présentation" />
       </div>
     </section>
   );
