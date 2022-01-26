@@ -38,7 +38,7 @@ const Btn = styled.button`
   margin-left: ${(props) => props.ml && props.ml + 'rem'};
   font-family: var(--main-font);
 
-  &:before {
+  /* &:before {
     content: '';
     position: absolute;
     top: 50%;
@@ -49,14 +49,14 @@ const Btn = styled.button`
     border: 1px solid var(--contrast);
     opacity: 0;
     transition: 0.3s;
-  }
+  } */
 
   &:focus,
   &:hover {
     background-color: var(--contrast);
-    &:before {
+    /* &:before {
       opacity: 1;
-    }
+    } */
     span {
       color: var(--bloc-1);
     }
