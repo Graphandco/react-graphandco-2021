@@ -37,23 +37,22 @@ function App() {
 
   const pageVariants = {
     initial: {
-      opacity: 0,
-      x: '-100vw',
+      // clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
+      clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)',
     },
     in: {
-      opacity: 1,
-      x: 0,
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
     },
     out: {
-      opacity: 0,
-      x: '100vw',
+      clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)',
+      // clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
     },
   };
 
   const pageTransition = {
     type: 'tween',
     ease: 'anticipate',
-    duration: 0.4,
+    duration: 0.5,
   };
 
   // const pageTransition = {
@@ -61,7 +60,7 @@ function App() {
   //   //duration: 0.2,
   //   //bounce: 0.5,
   //   damping: 10,
-  //   stiffness: 150,
+  //   stiffness: 100,
   //   //mass: 0.5,
   //   velocity: 2,
   // };

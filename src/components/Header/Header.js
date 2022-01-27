@@ -7,11 +7,13 @@ import { gsap } from 'gsap';
 import { useMediaQuery } from '@material-ui/core';
 
 import { ReactComponent as Logo } from '../../assets/logo.svg';
+// import { ReactComponent as SiteName } from '../../assets/site-title.svg';
 
 const Header = ({ theme, toggleTheme }) => {
   const isResponsive = useMediaQuery('(max-width: 768px)');
   const [isOpen, setIsOpen] = useState(false);
 
+  const headerRef = useRef(null);
   const navMenuRef = useRef(null);
   const navLinkRef = useRef(null);
 
@@ -107,7 +109,7 @@ const Header = ({ theme, toggleTheme }) => {
 
   return (
     <>
-      <header className={`header ${isResponsive ? 'mobile' : ''}`}>
+      <header ref={headerRef} className={`header ${isResponsive ? 'mobile' : ''}`}>
         <div className="header-wrapper container">
           <Link to="/" className="site-logo">
             {/* <img src={logo} alt="Logo" /> */}
@@ -139,29 +141,3 @@ const Header = ({ theme, toggleTheme }) => {
   );
 };
 export default Header;
-
-// const [scrolled, setscrolled] = useState(false);
-// useEffect(() => {
-//   if (typeof window !== 'undefined') {
-//     window.addEventListener('scroll', () => setscrolled(window.pageYOffset > 100));
-//   }
-// }, []);
-
-// const [prevScrollPos, setPrevScrollPos] = useState(0);
-// const [visible, setVisible] = useState(true);
-// const [top, setTop] = useState(true);
-
-// const handleScroll = debounce(() => {
-//   const currentScrollPos = window.pageYOffset;
-//   const scrollTop = document.documentElement.scrollTop;
-
-//   setVisible((prevScrollPos > currentScrollPos && prevScrollPos - currentScrollPos > 1) || currentScrollPos < 1);
-//   setTop(scrollTop < 10);
-//   setPrevScrollPos(currentScrollPos);
-// }, 50);
-
-// useEffect(() => {
-//   window.addEventListener('scroll', handleScroll);
-
-//   return () => window.removeEventListener('scroll', handleScroll);
-// }, [prevScrollPos, visible, handleScroll, top, setTop]);
