@@ -73,6 +73,9 @@ const Pointer = styled.span`
   border-radius: 50px;
   opacity: 0;
   transition: left 0.5s ease-in-out, opacity 0.2s;
+  @media (max-width: 1024px) {
+    bottom: -15px;
+  }
   @media (max-width: 767px) {
     display: none;
   }

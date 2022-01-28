@@ -18,8 +18,8 @@
   &-wrapper {
     display: grid;
     place-items: center;
-    column-gap: 5vw;
-    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    // grid-template-columns: 1fr 1fr;
     min-height: calc(100vh - 160px);
     // @include mq(tablet) {
     //   grid-template-columns: 3fr 2fr;
@@ -35,8 +35,9 @@
   }
 
   &-content {
-    //margin-bottom: 150px;
     position: relative;
+    opacity: 0;
+    transform: translateY(-150px);
     @include mq(tablet) {
       margin-bottom: 0;
     }
@@ -46,7 +47,7 @@
       align-items: center;
     }
   }
-  &-site-name {
+  &-uptitle {
     font-size: 2rem;
     font-weight: 100;
     color: var(--secondary);
@@ -57,7 +58,7 @@
     font-family: var(--title-font);
     font-size: clamp(2rem, 5rem, 7vw);
     line-height: 0.7;
-    margin: 1rem 0 5rem 0;
+    padding: 1rem 0 2rem 0;
     color: var(--contrast);
     @include mq(tablet) {
       margin: 1rem 0 2rem 0;
@@ -73,88 +74,96 @@
   }
 
   svg {
+    position: absolute;
     width: 500px;
-    height: auto;
-    @include mq(tablet) {
-      width: 350px;
-    }
-    @include mq(mobile) {
-      width: 300px;
-    }
-    g {
-      transform-box: fill-box;
-      transform-origin: center;
-    }
-    // #Check {
-    //   animation: rotateClockwise 3s infinite linear;
-    // }
-    #Engrenage-gauche {
-      animation: rotateClockwise 5s infinite linear;
-    }
-    #Engrenage-droite {
-      animation: rotateClockwiseReverse 5s infinite linear;
-    }
-    // #Bulle_bleue {
-    //   animation: opacityBulleBleue 3s infinite linear;
-    // }
-    //Blinks
-    --duration: 3.5s;
-    .symboles1 {
-      animation: blink var(--duration) infinite linear;
-    }
-    .symboles2 {
-      animation: blink var(--duration) infinite linear;
-      animation-delay: 0.4s;
-    }
-    .symboles3 {
-      animation: blink var(--duration) infinite linear;
-      animation-delay: 0.8s;
-    }
-    .symboles4 {
-      animation: blink var(--duration) infinite linear;
-      animation-delay: 1.2s;
-    }
-    .symboles5 {
-      animation: blink var(--duration) infinite linear;
-      animation-delay: 1.5s;
-    }
-    .symboles6 {
-      animation: blink var(--duration) infinite linear;
-      animation-delay: 1.8s;
-    }
-    @keyframes blink {
-      from {
-        opacity: 0;
-      }
-      1% {
-        opacity: 1;
-      }
-      70% {
-        opacity: 1;
-      }
-      71% {
-        opacity: 0;
-      }
-      to {
-        opacity: 0;
-      }
-    }
-    @keyframes rotateClockwise {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-    @keyframes rotateClockwiseReverse {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(-360deg);
-      }
-    }
+    //left: 50%;
+    //transform: translate(-50%, -50%);
+    // clip-path: polygon(0% 0%, 100% 1%, 100% 0%, 0% 0%);
+  }
+
+  svg {
+    //   width: 500px;
+    //   height: auto;
+    //   @include mq(tablet) {
+    //     width: 350px;
+    //   }
+    //   @include mq(mobile) {
+    //     width: 300px;
+    //   }
+    //   g {
+    //     transform-box: fill-box;
+    //     transform-origin: center;
+    //   }
+    //   // #Check {
+    //   //   animation: rotateClockwise 3s infinite linear;
+    //   // }
+    //   #Engrenage-gauche {
+    //     animation: rotateClockwise 5s infinite linear;
+    //   }
+    //   #Engrenage-droite {
+    //     animation: rotateClockwiseReverse 5s infinite linear;
+    //   }
+    //   // #Bulle_bleue {
+    //   //   animation: opacityBulleBleue 3s infinite linear;
+    //   // }
+    //   //Blinks
+    //   --duration: 3.5s;
+    //   .symboles1 {
+    //     animation: blink var(--duration) infinite linear;
+    //   }
+    //   .symboles2 {
+    //     animation: blink var(--duration) infinite linear;
+    //     animation-delay: 0.4s;
+    //   }
+    //   .symboles3 {
+    //     animation: blink var(--duration) infinite linear;
+    //     animation-delay: 0.8s;
+    //   }
+    //   .symboles4 {
+    //     animation: blink var(--duration) infinite linear;
+    //     animation-delay: 1.2s;
+    //   }
+    //   .symboles5 {
+    //     animation: blink var(--duration) infinite linear;
+    //     animation-delay: 1.5s;
+    //   }
+    //   .symboles6 {
+    //     animation: blink var(--duration) infinite linear;
+    //     animation-delay: 1.8s;
+    //   }
+    //   @keyframes blink {
+    //     from {
+    //       opacity: 0;
+    //     }
+    //     1% {
+    //       opacity: 1;
+    //     }
+    //     70% {
+    //       opacity: 1;
+    //     }
+    //     71% {
+    //       opacity: 0;
+    //     }
+    //     to {
+    //       opacity: 0;
+    //     }
+    //   }
+    //   @keyframes rotateClockwise {
+    //     from {
+    //       transform: rotate(0deg);
+    //     }
+    //     to {
+    //       transform: rotate(360deg);
+    //     }
+    //   }
+    //   @keyframes rotateClockwiseReverse {
+    //     from {
+    //       transform: rotate(0deg);
+    //     }
+    //     to {
+    //       transform: rotate(-360deg);
+    //     }
+    //   }
   }
 
   .site-title {
@@ -244,7 +253,7 @@
 ----------------------*/
 .presentation {
   display: grid;
-  grid-template-columns: 5fr 4fr;
+  grid-template-columns: 4fr 3fr;
   overflow: hidden;
   background-color: var(--contrastOpacity);
 
@@ -285,36 +294,28 @@
 ----------------------*/
 .atouts {
   display: grid;
-  grid-template-columns: 5fr 4fr;
-  //padding-top: 100px;
-  //@include bg1;
-  //@include bg-pattern1;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    'item1 item1 item2 item2 hero hero hero'
+    'item1 item1 item2 item2 hero hero hero'
+    'item3 item3 item4 item4 hero hero hero'
+    'item3 item3 item4 item4 hero hero hero';
   h2 {
     padding-left: 2vw;
   }
 
   @include mq(tablet) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      'item1 hero'
+      'item2 hero'
+      'item3 item4';
   }
   @include mq(mobile) {
     display: flex;
-    flex-direction: column-reverse;
-  }
-
-  &-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    place-content: center;
-    @include mq(tablet) {
-      grid-template-columns: 1fr;
-    }
-    @include mq(mobile) {
-      gap: 5vw;
-      padding: 0 2vw;
-      // max-width: 80%;
-      // align-self: center;
-    }
+    flex-direction: column;
   }
 
   &-item {
@@ -329,6 +330,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    &-1 {
+      grid-area: item1;
+      order: 2;
+    }
+    &-2 {
+      grid-area: item2;
+      order: 3;
+    }
+    &-3 {
+      grid-area: item3;
+      order: 4;
+    }
+    &-4 {
+      grid-area: item4;
+      order: 5;
+    }
     @include mq(tablet) {
       aspect-ratio: auto;
     }
@@ -368,6 +385,8 @@
   }
 
   &-hero {
+    grid-area: hero;
+    order: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -376,7 +395,7 @@
     h2 {
       padding-inline: 2vw;
       margin-top: -20px;
-      //text-align: right;
+      text-align: center;
       @include mq(mobile) {
         margin: 7rem 0 4rem 0;
       }

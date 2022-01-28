@@ -7,7 +7,6 @@ import { gsap } from 'gsap';
 import { useMediaQuery } from '@material-ui/core';
 
 import { ReactComponent as Logo } from '../../assets/logo.svg';
-// import { ReactComponent as SiteName } from '../../assets/site-title.svg';
 
 const Header = ({ theme, toggleTheme }) => {
   const isResponsive = useMediaQuery('(max-width: 768px)');
