@@ -11,41 +11,75 @@ export const Hero = () => {
   const svgRef = useRef(null);
   const contentRef = useRef(null);
 
-  useEffect(() => {
+  function getScaleLogoValue() {
+    if (window.matchMedia('(min-width: 600px)').matches) {
+      return 0.5;
+    } else {
+      return 1;
+    }
+  }
+
+  const createTL = () => {
     let tl = gsap.timeline({ Defaults: { Easing: 'Expo.EaseOut' } });
-    tl.from(svgRef.current, {
-      y: -150,
-      duration: 2,
-      // clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-    });
+    // tl.from(svgRef.current, {
+    //   y: -150,
+    //   duration: 2,
+    //   scaleY: 0.2,
+    //   // clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+    // });
     tl.to(
       svgRef.current,
       {
-        // clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);',
-        opacity: 0,
-        duration: 1,
-        y: -150,
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+        duration: 2,
+        y: 0,
       },
-      '+=.1'
+      '+=.3'
     );
+    tl.to(
+      svgRef.current,
+      {
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
+        duration: 1,
+        //y: -150,
+      },
+      '+=1'
+    );
+
     tl.to(svgRef.current, {
       // clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);',
-      width: '90vw',
-      y: 0,
       duration: 0,
+      width: 'auto',
+      scale: getScaleLogoValue,
     });
-    tl.to(contentRef.current, {
-      // clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);',
-      opacity: 1,
-      y: 0,
-      duration: 2,
-    });
-    tl.to(svgRef.current, {
-      // clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);',
-      width: '90vw',
-      opacity: 0.05,
-    });
-  }, []);
+
+    tl.to(
+      contentRef.current,
+      {
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+        y: 0,
+        duration: 2,
+      },
+      '-=1'
+    );
+    tl.to(
+      svgRef.current,
+      {
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+        duration: 2,
+      },
+      '+=.5'
+    );
+  };
+
+  useEffect(() => {
+    // if (window.matchMedia('(min-width: 600px)').matches) {
+    //   let ScaleLogoSize = 1;
+    // } else {
+    //   let ScaleLogoSize = 0.5;
+    // }
+    createTL();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // useEffect(() => {
   //   let tl = gsap.timeline({ delay: 0.5 });
