@@ -32,7 +32,7 @@ export const Hero = () => {
       {
         clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
         duration: 2,
-        y: 0,
+        y: 150,
       },
       '+=.3'
     );
@@ -41,13 +41,13 @@ export const Hero = () => {
       {
         clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
         duration: 1,
-        //y: -150,
       },
       '+=1'
     );
 
     tl.to(svgRef.current, {
       // clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);',
+      y: 0,
       duration: 0,
       width: 'auto',
       scale: getScaleLogoValue,
@@ -60,7 +60,7 @@ export const Hero = () => {
         y: 0,
         duration: 2,
       },
-      '-=1'
+      '-=1.1'
     );
     tl.to(
       svgRef.current,

@@ -48,6 +48,7 @@
     position: relative;
     display: grid;
     place-items: center;
+    pointer-events: none;
     // &:before {
     //   content: '';
     //   position: absolute;
@@ -168,6 +169,22 @@
       span {
         padding: 5px;
       }
+    }
+  }
+}
+
+.projects-slider {
+  cursor: grab;
+  overflow: hidden;
+  .projects-slider-inner {
+    display: flex;
+    gap: 30px;
+  }
+  .project-item {
+    min-width: 350px;
+    padding: 30px;
+    .responsive-preview {
+      display: none;
     }
   }
 }

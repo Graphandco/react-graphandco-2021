@@ -80,7 +80,7 @@
     height: 200px;
     width: 100%;
     align-self: start;
-    transform: translateY(-150px), scale(1);
+    transform: translateY(50px) scale(0.8);
     clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
     transform-origin: bottom left;
     @include mq(mobile) {

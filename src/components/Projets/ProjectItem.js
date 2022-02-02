@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { FaTrash, FaPencilAlt } from 'react-icons/fa';
 import { MdTouchApp } from 'react-icons/md';
 import { fb } from '../../services';
@@ -6,6 +6,7 @@ import { useAuth } from '../../hooks';
 import Button from '../Button';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { motion } from 'framer-motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,33 +52,33 @@ export const ProjectItem = (props) => {
     }
   };
 
-  useEffect(() => {
-    realisationRefs.current.forEach((el, index) => {
-      gsap.fromTo(
-        el,
-        {
-          x: 50,
-          autoAlpha: 0,
-        },
-        {
-          duration: 0.5,
-          x: 0,
-          autoAlpha: 1,
-          ease: 'none',
-          scrollTrigger: {
-            id: `section-${index + 1}`,
-            trigger: el,
-            start: 'top center+=190',
-            toggleActions: 'play none none reverse',
-            //markers: true,
-          },
-        },
-      );
-    });
-  }, []);
+  // useEffect(() => {
+  //   realisationRefs.current.forEach((el, index) => {
+  //     gsap.fromTo(
+  //       el,
+  //       {
+  //         x: 50,
+  //         autoAlpha: 0,
+  //       },
+  //       {
+  //         duration: 0.5,
+  //         x: 0,
+  //         autoAlpha: 1,
+  //         ease: 'none',
+  //         scrollTrigger: {
+  //           id: `section-${index + 1}`,
+  //           trigger: el,
+  //           start: 'top center+=190',
+  //           toggleActions: 'play none none reverse',
+  //           //markers: true,
+  //         },
+  //       },
+  //     );
+  //   });
+  // }, []);
 
   return (
-    <div className="project-item" ref={addToRefs}>
+    <motion.div className="project-item" ref={addToRefs}>
       {props.isLoading ? (
         <div className="project-loading"></div>
       ) : (
@@ -161,6 +162,6 @@ export const ProjectItem = (props) => {
         </>
       )}
       {/* <UpdateDeleteProject project={project} /> */}
-    </div>
+    </motion.div>
   );
 };

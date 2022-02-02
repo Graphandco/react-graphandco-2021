@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useAuth } from '../../hooks';
 import { CreateProject } from './CreateProject';
 // import { UpdateDeleteProject } from './UpdateDeleteProject';
 import { fb } from '../../services';
 import { ProjectItem } from './ProjectItem';
 import { ReactComponent as RealisationImage } from '../../assets/realisations.svg';
+
+import { motion } from 'framer-motion';
 
 const localData = [
   {
@@ -95,6 +97,13 @@ export const Projects = () => {
   const [projects, setprojects] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [width, setWidth] = useState(0);
+  const sliderRef = useRef();
+
+  useEffect(() => {
+    setWidth(sliderRef.current.scrollWidth - sliderRef.current.offsetWidth);
+  }, []);
+
   useEffect(() => {
     const unsubscribe = fb.firestore.collection('projects').onSnapshot((snapshot) => {
       const data = snapshot.docs.map((doc) => ({
@@ -127,7 +136,7 @@ export const Projects = () => {
 
   return (
     <>
-      <div className="projects container">
+      <div className="projects">
         <div className="projects-description">
           <div className="projects-description-content">
             <p>
@@ -142,18 +151,25 @@ export const Projects = () => {
           </div>
           <RealisationImage />
         </div>
-        <div className="projects-list">
+        <motion.div ref={sliderRef} whileTap={{ cursor: 'grabbing' }} className="projects-slider">
+          <motion.div drag="x" dragConstraints={{ right: 0, left: -width }} className="projects-slider-inner">
+            {localData.map((project) => (
+              <ProjectItem key={project.slug} project={project} isLoading={isLoading} />
+            ))}
+          </motion.div>
+        </motion.div>
+        {/* <div className="projects-list">
           <div className="project-item description">
             <img src="/img/projects/project-lead.png" alt="" />
             <div className="content">
-              {/* <h2>Portfolio</h2> */}
+              <h2>Portfolio</h2>
               <p>Retrouvez ici les différents projets que nous avons pu développer pour nos clients.</p>
             </div>
           </div>
           {localData.map((project) => (
             <ProjectItem key={project.slug} project={project} isLoading={isLoading} />
           ))}
-        </div>
+        </div> */}
         {authUser && <CreateProject />}
       </div>
     </>
