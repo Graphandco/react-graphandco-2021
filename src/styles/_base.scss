@@ -5,100 +5,100 @@
 ----------------------*/
 
 @mixin container {
-  margin: 0 auto;
-  max-width: 1600px;
-  width: 100%;
-  padding: 0 2vw;
-  transform-origin: bottom;
+    margin: 0 auto;
+    max-width: 1600px;
+    width: 100%;
+    padding: 0 2vw;
+    transform-origin: bottom;
 }
 @mixin border-left {
-  border-left: 2px solid var(--secondary);
-  padding-left: 1rem;
+    border-left: 2px solid var(--secondary);
+    padding-left: 1rem;
 }
 @mixin border-right {
-  border-right: 2px solid var(--secondary);
-  padding-right: 1rem;
+    border-right: 2px solid var(--secondary);
+    padding-right: 1rem;
 }
 @mixin bg1 {
-  background: linear-gradient(0deg, var(--bg1) 0%, var(--bg2) 100%);
+    background: linear-gradient(0deg, var(--bg1) 0%, var(--bg2) 100%);
 }
 @mixin bg2 {
-  background: linear-gradient(0deg, var(--bg2) 0%, var(--bg1) 100%);
+    background: linear-gradient(0deg, var(--bg2) 0%, var(--bg1) 100%);
 }
 
 .container {
-  @include container;
+    @include container;
 }
 .sample {
-  @include container;
+    @include container;
 }
 
 $breakpoints: (
-  mobile: 767px,
-  tablet: 1024px,
+    mobile: 767px,
+    tablet: 1024px,
 );
 
 @mixin mq($key) {
-  $size: map.get($breakpoints, $key);
+    $size: map.get($breakpoints, $key);
 
-  @media (max-width: $size) {
-    @content;
-  }
+    @media (max-width: $size) {
+        @content;
+    }
 }
 
 @mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.25s) {
-  box-shadow: inset 0 0 0 $width $color;
-  color: $color;
-  transition: color $duration $duration/3;
-  position: relative;
-
-  &::before,
-  &::after {
-    border: 0 solid transparent;
-    box-sizing: border-box;
-    content: '';
-    pointer-events: none;
-    position: absolute;
-    width: 0;
-    height: 0;
-
-    #{$vertical}: 0;
-    #{$horizontal}: 0;
-  }
-
-  &::before {
-    $h-side: if($horizontal == 'left', 'right', 'left');
-
-    border-#{$vertical}-width: $width;
-    border-#{$h-side}-width: $width;
-  }
-
-  &::after {
-    $v-side: if($vertical == 'top', 'bottom', 'top');
-
-    border-#{$v-side}-width: $width;
-    border-#{$horizontal}-width: $width;
-  }
-
-  &:hover {
-    color: $hover;
+    box-shadow: inset 0 0 0 $width $color;
+    color: $color;
+    transition: color $duration $duration/3;
+    position: relative;
 
     &::before,
     &::after {
-      border-color: $hover;
-      transition: border-color 0s, width $duration, height $duration;
-      width: 100%;
-      height: 100%;
+        border: 0 solid transparent;
+        box-sizing: border-box;
+        content: '';
+        pointer-events: none;
+        position: absolute;
+        width: 0;
+        height: 0;
+
+        #{$vertical}: 0;
+        #{$horizontal}: 0;
     }
 
     &::before {
-      transition-delay: 0s, 0s, $duration;
+        $h-side: if($horizontal == 'left', 'right', 'left');
+
+        border-#{$vertical}-width: $width;
+        border-#{$h-side}-width: $width;
     }
 
     &::after {
-      transition-delay: 0s, $duration, 0s;
+        $v-side: if($vertical == 'top', 'bottom', 'top');
+
+        border-#{$v-side}-width: $width;
+        border-#{$horizontal}-width: $width;
     }
-  }
+
+    &:hover {
+        color: $hover;
+
+        &::before,
+        &::after {
+            border-color: $hover;
+            transition: border-color 0s, width $duration, height $duration;
+            width: 100%;
+            height: 100%;
+        }
+
+        &::before {
+            transition-delay: 0s, 0s, $duration;
+        }
+
+        &::after {
+            transition-delay: 0s, $duration, 0s;
+        }
+    }
 }
 
 /*--------------------
@@ -106,12 +106,12 @@ $breakpoints: (
 ----------------------*/
 
 @font-face {
-  font-family: 'MostraNuova';
-  src: url('./fonts/mostranuova5.woff2') format('woff2'), url('./fonts/mostranuova5.woff') format('woff');
+    font-family: 'MostraNuova';
+    src: url('./fonts/mostranuova5.woff2') format('woff2'), url('./fonts/mostranuova5.woff') format('woff');
 }
 @font-face {
-  font-family: 'MostraNuova2';
-  src: url('./fonts/mostranuova2.woff2') format('woff2'), url('./fonts/mostranuova2.woff') format('woff');
+    font-family: 'MostraNuova2';
+    src: url('./fonts/mostranuova2.woff2') format('woff2'), url('./fonts/mostranuova2.woff') format('woff');
 }
 
 h1,
@@ -119,40 +119,40 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: var(--title-font);
-  line-height: 1;
-  color: var(--contrast);
+    font-family: var(--title-font);
+    line-height: 1;
+    color: var(--contrast);
 }
 h1,
 .h1 {
-  font-size: calc(2rem + 1vw);
-  text-transform: uppercase;
-  position: relative;
-  margin-bottom: 5rem;
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    width: calc(300px + 5vw);
-    height: 2px;
-    background: linear-gradient(to right, var(--secondary) 0%, #ffffff00 100%);
-    border-radius: 50px;
-  }
+    font-size: calc(2rem + 1vw);
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 5rem;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: calc(300px + 5vw);
+        height: 2px;
+        background: linear-gradient(to right, var(--secondary) 0%, #ffffff00 100%);
+        border-radius: 50px;
+    }
 }
 h2,
 .h2 {
-  font-size: calc(1.5rem + 1vw);
-  text-transform: uppercase;
+    font-size: calc(1.5rem + 1vw);
+    text-transform: uppercase;
 }
 
 /*--------------------
   GLOBALS
 ----------------------*/
 html {
-  //scrollbar-width: normal;
-  //scrollbar-color: rgb(242 173 13 / 40%) rgb(212, 212, 212);
-  overflow-x: hidden;
+    //scrollbar-width: normal;
+    //scrollbar-color: rgb(242 173 13 / 40%) rgb(212, 212, 212);
+    overflow-x: hidden;
 }
 // html::-webkit-scrollbar {
 //   width: 2vw;
@@ -171,49 +171,49 @@ html {
 //   color: var(--contrast);
 // }
 ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 img,
 svg {
-  max-width: 100%;
+    max-width: 100%;
 }
 .main-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 main {
-  //@include bg1;
-  flex-grow: 1;
+    //@include bg1;
+    flex-grow: 1;
 }
 body:not(#home) main {
-  padding: 50px 0 100px;
-  //@include bg-pattern1;
+    padding: 50px 0 100px;
+    //@include bg-pattern1;
 }
 section,
 footer {
-  position: relative;
-  z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 p {
-  line-height: 1.5rem;
+    line-height: 1.5rem;
 }
 button {
-  //@include btn-border-drawing(var(--secondary), var(--contrast), 2px, bottom, right);
-  background-color: var(--secondary);
-  transition: 0.3s;
-  &:hover {
-    background-color: hsl(42deg 100% 50%);
-  }
+    //@include btn-border-drawing(var(--secondary), var(--contrast), 2px, bottom, right);
+    background-color: var(--secondary);
+    transition: 0.3s;
+    &:hover {
+        background-color: hsl(42deg 100% 50%);
+    }
 }
 a {
-  color: var(--contrast);
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0;
-  &:hover {
-    color: var(--secondary);
-  }
+    color: var(--contrast);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0;
+    &:hover {
+        color: var(--secondary);
+    }
 }
