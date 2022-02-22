@@ -123,7 +123,7 @@ export const Projects = () => {
             return result * sortOrder;
         };
     };
-    localData.sort(dynamicSort('position'));
+    projects.sort(dynamicSort('position'));
 
     return (
         <>
@@ -151,7 +151,7 @@ export const Projects = () => {
                             <p>Retrouvez ici les différents projets que nous avons pu développer pour nos clients.</p>
                         </div>
                     </div>
-                    {localData.map((project) => (
+                    {projects.map((project) => (
                         <ProjectItem key={project.slug} project={project} isLoading={isLoading} />
                     ))}
                 </div>
